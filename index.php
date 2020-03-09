@@ -1,37 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include('makeHeader.php');
+include('makeNav.php');
+echo makeHeader();
+echo makeNav();
+?>
 
-<head>
-  <title>MetroGym</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stlesheet" href="resources/css/main.css">
-</head>
-
-<body>
-
-  <!--Nav bar-->
-  <div class="navbar">
-    <div class="container">
-      <div class="logo_div"><a href="index.html">
-          <img class="logo" src="resources/images/logo.png">
-        </a>
-      </div>
-      <div class="navbar_link">
-        <ul class="menu">
-          <li><a href="#"></a>Home</li>
-          <li><a href="#"></a>Join Now</li>
-          <li><a href="#"></a>Classes</li>
-          <li><a href="#"></a>Forum</li>
-          <li><a href="#"></a>About</li>
-          <li><a href="#"></a>Contact</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="content-divider"></div>
+<div class="center">
 
   <!-- Content -->
   <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
@@ -238,11 +213,11 @@
       <i class="fa fa-twitter w3-hover-opacity"></i>
       <i class="fa fa-linkedin w3-hover-opacity"></i>
     </div>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
-        class="w3-hover-text-green">w3.css</a></p>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   </footer>
+</div>
 
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 
