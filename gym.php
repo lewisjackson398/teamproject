@@ -5,7 +5,8 @@ echo makeHeader();
 echo makeNav();
 ?>
 
-
+</div>
+</div>
 
 
 <?php

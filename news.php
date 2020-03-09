@@ -32,7 +32,8 @@ echo makeNav();
     <p><strong>We're waiting eagerly waiting to help you on your fitness journey!</strong></p>
     <p style="margin-bottom: 10em;"><strong>Enroll today!</strong></p>
 </div>
-
+</div>
+</div>
 <?php
 include('makeFooter.php');
 echo makeFooter();

@@ -109,7 +109,8 @@ echo makeNav();
         *Participating locations only. Pricing may vary by location. See club for details.
     </p>
 </main>
-
+</div>
+</div>
 
 <?php
 include('makeFooter.php');

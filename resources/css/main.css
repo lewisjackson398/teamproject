@@ -33,7 +33,7 @@ nav {
     -moz-box-shadow: 0px 2px 10px 0.3px rgba(0, 0, 0, 0.81);
     box-shadow: 0px 2px 10px 0.3px rgba(0, 0, 0, 0.81);
     z-index: 1000;
-    
+
     line-height: 70px;
 }
 
@@ -51,7 +51,7 @@ li a {
 
 nav ul li:last-child {
     float: right;
-    list-style-position:inside;
+    list-style-position: inside;
     border: 3px solid gray;
 }
 
@@ -67,6 +67,7 @@ li a:hover {
     margin: auto;
     width: 60%;
 }
+
 .logo {
     width: 120px;
     float: left;
@@ -81,6 +82,7 @@ h3 {
     margin: 0;
     padding: 0;
 }
+
 .mySlides {
     display: none
 }
@@ -98,3 +100,31 @@ h3 {
 }
 
 
+#pricing {
+    background-image: linear-gradient(to right, #1eb589, #00ba7f, #00bf73, #00c463, #00c851);
+    color: #fff;
+}
+
+#pricing .wrapper {
+    display: flex;
+    color: #222;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#pricing .wrapper .bg-white {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.price-heading { 
+    background: #424242; 
+    background-color: #424242; 
+    color: #fff;
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+
+  .text-center {
+    text-align: center;
+  }

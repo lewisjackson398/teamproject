@@ -31,7 +31,8 @@ echo makeNav();
 </form>
 
 </div>
-
+</div>
+</div>
 
 <!-- Footer -->
 <?php
