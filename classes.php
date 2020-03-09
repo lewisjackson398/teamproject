@@ -7,7 +7,7 @@ echo makeNav();
 
 <link rel="stylesheet" href="resources/css/classes.css">
 
-
+</div>
 <!-- Timetable -->
 <div class="timetable">
     <div class="tt_overlay"></div>
@@ -15,7 +15,7 @@ echo makeNav();
         <div class="row">
             <div class="col">
                 <div class="section_title_container">
-                    <div class="section_subtitle">welcome to Metro Gym</div>
+                    <div class="section_subtitle">Welcome to Metro Gym</div>
                     <div class="section_title">Classes Timetable</div>
                 </div>
                 <div class="timetable_filtering">
