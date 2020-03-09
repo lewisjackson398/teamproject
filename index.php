@@ -4,12 +4,8 @@ include('makeNav.php');
 echo makeHeader();
 echo makeNav();
 ?>
-
-<div class="content-divider"></div>
-<div class="center">
-
   <!-- Content -->
-  <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+  <div id="content" style="margin-top:80px;margin-bottom:80px">
 
     <!-- Slideshow -->
     <div class="w3-container">
@@ -45,31 +41,25 @@ echo makeNav();
       <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
     </div>
 
-    <!-- What we offer container -->
-    <div class="w3-row w3-container">
-      <div class="w3-center w3-padding-64">
-        <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
-      </div>
-      <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
-        <h3>Design</h3>
-        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    <!-- Offers container -->
+      <div class="w3-third w3-margin-bottom w3-padding-64">
+        <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <h3>FIND YOUR NEAREST GYM</h3>
+        <p>Choose your local PureGym from hundreds of gyms nationwide.</p>
       </div>
 
-      <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
-        <h3>Branding</h3>
-        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <div class="w3-third w3-margin-bottom w3-padding-64">
+        <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <h3>STUDENT GYM MEMBERSHIPS</h3>
+        <p>Save up to 30% off fixed-term memberships.</p>
       </div>
 
-      <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
-        <h3>Consultation</h3>
-        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <div class="w3-third w3-margin-bottom w3-padding-64">
+        <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <h3>NO CONTRACT – LEAVE ANYTIME</h3>
+        <p>Our memberships are flexible so it’s easy to leave and join again whenever you want.</p>
       </div>
 
-      <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
-        <h3>Promises</h3>
-        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      </div>
-    </div>
 
     <!-- Grid -->
     <div class="w3-row-padding" id="plans">
@@ -173,49 +163,12 @@ echo makeNav();
       </div>
     </div>
 
-    <!-- Contact -->
-    <div class="w3-center w3-padding-64" id="contact">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
-    </div>
-
-    <form class="w3-container" action="/action_page.php" target="_blank">
-      <div class="w3-section">
-        <label>Name</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">
-        <label>Email</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">
-        <label>Subject</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
-      </div>
-      <div class="w3-section">
-        <label>Message</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
-      </div>
-      <button type="submit" class="w3-button w3-block w3-black">Send</button>
-    </form>
-
-  </div>
-
   <!-- Footer -->
+<?php 
+include('makeFooter.php');
+echo makeFooter();
+?>
 
-  <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
-    <h4>Footer</h4>
-    <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-    <div class="w3-xlarge w3-section">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  </footer>
-</div>
 
 <script src="js/script.js"></script>
 

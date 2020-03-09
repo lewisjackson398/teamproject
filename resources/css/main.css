@@ -49,8 +49,10 @@ li a {
     text-decoration: none;
 }
 
-nav ul li:first-child {
-    float: left;
+nav ul li:last-child {
+    float: right;
+    list-style-position:inside;
+    border: 3px solid gray;
 }
 
 li a:hover {
