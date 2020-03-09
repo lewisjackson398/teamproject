@@ -1,0 +1,87 @@
+/*** Imports ***/
+@import url('https://fonts.googleapis.com/css?family=Lustria&display=swap');
+
+/*** Classes ***/
+.cta-btn {
+  background: #FCD900 !important;
+  color:#222 !important;
+  font-weight: bold;
+}
+
+.cta-btn:hover { transform: scale(1.1); }
+
+.fa-check { color: #762B85; }
+.fa-times { color: red; }
+
+.font-18px { font-size: 18px; }
+
+.hero--background__image {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fefefe;
+  min-height: 250px;
+  position: relative;
+  z-index: -1;
+}
+
+.overlay {
+  background:rgba(0, 0, 0, 0.5);  
+  z-index: 1;
+}
+
+.padding-2em { padding: 0.5em 2em; }
+
+.text-bold { font-weight: bold; }
+
+/*** IDs ***/
+#membership-heading-text {
+position: relative;
+top: -200px;
+text-align: center;
+}
+
+#membership-heading-text h1 { font-size: 4em; font-family: 'Arimo', Arial, Helvetica, sans-serif; }
+#membership-heading-text p { font-size: 25px; font-family: 'Lustria', Arial, Helvetica, sans-serif; }
+
+#plan-comparison th { font-size: 20px; }
+
+/*** HTML Elements ***/
+table {
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  color: #fff;
+  margin: 5em auto;
+  width: 90%;
+}
+
+table th { font-size: 25px !important; text-align: center; }
+table td, table th, tr { border: 1px solid #222; border-radius: 5px; }
+
+td { font-size: 18px !important; font-weight: bold; height: 100px; }
+
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+tr:nth-child(odd) {
+  background: #fefefe;
+  background-color: #fefefe;
+  color: #222;
+}
+tr:nth-child(even) {
+  background: #00C368;
+  background-color: #00C368;
+}
+
+
+/*** Media Queries ***/
+@media only screen and (max-width: 650px)
+{
+  .overlay { background:rgba(0, 0, 0, 0.6); }
+  #membership-heading-text h1 { font-size: 2em; }
+  #membership-heading-text p { font-size: 22px; font-weight: 500; }
+}
