@@ -1,4 +1,4 @@
-//small script that makes schedule system work on homepage and schedule page - aaron
+//small script that makes schedule system work on homepage and schedule page - 
 (function($) {
 
     //nav bar animation while scrolling
