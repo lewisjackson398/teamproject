@@ -1,48 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include('makeHeader.php');
 
-<head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>MetroGym - Pricing</title>
-   <link rel="shortcut icon" type="image/x-icon"
-      href="https://static1.squarespace.com/static/54627257e4b0f587f5d3706c/t/54628d1ce4b073a05b571f08/favicon.ico" />
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-   <link href="css/style.css" rel="stylesheet">
-   
-</head>
+echo makeHeader();
+?>
 
 <body id="page-top" class="page coaches">
    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-               data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand logo" href="index.html"><span style="font-weight:200; color:white;">Metro</span><span
-                  style="font-weight:700; color:#37ecba;">Gym</span></a>
+            <a class="navbar-brand logo" href="index.php"><span style="font-weight:200; color:white;">Metro</span><span style="font-weight:700; color:#37ecba;">Gym</span></a>
          </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
                <li>
-                  <a class="page-scroll" href="index.html">Home</a>
+                  <a class="page-scroll" href="index.php">Home</a>
                </li>
                <li class="active">
-                  <a class="page-scroll" href="pricing.html">Pricing</a>
+                  <a class="page-scroll" href="pricing.php">Pricing</a>
                </li>
                <li>
-                  <a class="page-scroll" href="schedule.html">Schedule</a>
+                  <a class="page-scroll" href="schedule.php">Schedule</a>
                </li>
                <li>
-                  <a class="page-scroll" href="coaches.html">Coaches</a>
+                  <a class="page-scroll" href="coaches.php">Coaches</a>
                </li>
                <li>
-                  <a class="page-scroll" href="about.html">About</a>
+                  <a class="page-scroll" href="about.php">About</a>
                </li>
                <li>
-                  <a class="page-scroll" href="contact.html">Contact</a>
+                  <a class="page-scroll" href="contact.php">Contact</a>
                </li>
             </ul>
          </div>
@@ -123,54 +112,8 @@
             </div>
          </div>
    </section>
-   <section class="footer">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-3 col-sm-12">
-               <div class="title">
-                  <h3>Where <span>are we</span></h3>
-               </div>
-               <p>
-                  <span>Baruch College</span>
-                  <span>55 Lexington Ave.</span>
-                  <span>New York, NY 10010</span>
-               </p>
-               <p>
-                  <span>Phone: <b><a href="tel:7181234567">7181234567</a></b></span>
-                  <span>email: <b><a href="mailto:contact@metrogym.com">contact@metrogym.com</a></b></span>
-               </p>
-            </div>
-            <div class="col-md-3 col-sm-12">
-               <div class="title">
-                  <h3>gift <span>cards</span></h3>
-               </div>
-               <p>Give the gift of fitness. Gift cards and certificates can be used at any US location for spa services,
-                  personal training, pilates classes, The Shop and more.</p>
-            </div>
-            <div class="col-md-3 col-sm-12">
-               <div class="title">
-                  <h3>Start <span>today</span></h3>
-               </div>
-               <p>Let's get started!<br>
-                  Call for an appointment today!
-               </p>
-            </div>
-            <div class="col-md-3 col-sm-12">
-               <div class="title">
-                  <h3>free <span>Trial</span></h3>
-               </div>
-               <p>No committment. Free 14 day trial pass on your first visit.</p>
-            </div>
-         </div>
-         <div style="color:#4c4c4c; padding-top: 30px;">© 2020, MetroGym. A WEBSITE BY LEWIS, BRANDON, ARLANA AND
-            OLIVER.</div>
-      </div>
-   </section>
-   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-      crossorigin="anonymous"></script>
-</body>
+   <?php
+   include('makeFooter.php');
 
-</html>
+   echo makeFooter();
+   ?>
