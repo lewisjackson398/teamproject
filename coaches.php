@@ -1,6 +1,5 @@
 <?php
 include('makeHeader.php');
-
 echo makeHeader();
 ?>
 
@@ -30,10 +29,16 @@ echo makeHeader();
             <a class="page-scroll" href="coaches.php">Coaches</a>
           </li>
           <li>
+            <a class="page-scroll" href="forum.php">Forum</a>
+          </li>
+          <li>
             <a class="page-scroll" href="about.php">About</a>
           </li>
           <li>
             <a class="page-scroll" href="contact.php">Contact</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="login.php">Login</a>
           </li>
         </ul>
       </div>
@@ -99,6 +104,5 @@ echo makeHeader();
 
   <?php
   include('makeFooter.php');
-
   echo makeFooter();
   ?>

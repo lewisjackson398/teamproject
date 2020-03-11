@@ -1,6 +1,5 @@
 <?php
 include('makeHeader.php');
-
 echo makeHeader();
 ?>
 
@@ -27,11 +26,17 @@ echo makeHeader();
                <li>
                   <a class="page-scroll" href="coaches.php">Coaches</a>
                </li>
+               <li>
+                  <a class="page-scroll" href="forum.php">Forum</a>
+               </li>
                <li class="active">
                   <a class="page-scroll" href="about.php">About</a>
                </li>
                <li>
                   <a class="page-scroll" href="contact.php">Contact</a>
+               </li>
+               <li>
+                  <a class="page-scroll" href="login.php">Login</a>
                </li>
             </ul>
          </div>
@@ -45,7 +50,7 @@ echo makeHeader();
                   <source src="video.mp4" type="video/mp4">
                </video>
                <h4>How did MetroGym begin?</h4>
-               <p style="padding-bottom: 20px;">It all started when Jill gave us the task. Love you Jill 😀</p>
+               <p style="padding-bottom: 20px;">It all started when Jill gave us the task. Love you Jill</p>
                <h4>What is our vision?</h4>
                <p>Some may call it a vision, but for us, it’s a way of life. It’s our Monday-thru-every-day mantra.
                   <br>An unfiltered philosophy that drives us to create a community and a gym for all.</p>
@@ -58,6 +63,5 @@ echo makeHeader();
    </section>
    <?php
    include('makeFooter.php');
-
    echo makeFooter();
    ?>

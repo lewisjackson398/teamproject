@@ -1,6 +1,5 @@
 <?php
 include('makeHeader.php');
-
 echo makeHeader();
 ?>
 
@@ -27,19 +26,53 @@ echo makeHeader();
                     <li>
                         <a class="page-scroll" href="coaches.php">Coaches</a>
                     </li>
-                    <li class="active">
+                    <li>
+                        <a class="page-scroll" href="forum.php">Forum</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="about.php">About</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="contact.php">Contact</a>
+                    </li>
+                    <li class="active">
+                        <a class="page-scroll" href="login.php">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <section class="login">
+        <div class="text-center">
+            <form>
+                <h2 class="login">Login</h2>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Email</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="email" required='required' placeholder="email@email.com">
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Password</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="password" required='required' placeholder="Your Password">
+                    </div>
+                </div>
+
+                <div class="uk-margin uk-alert uk-alert-danger js-error" style='display: none;'></div>
+
+                <div class="uk-margin">
+                    <button class="uk-button uk-button-default" type="submit">Login</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
     <?php
     include('makeFooter.php');
-
     echo makeFooter();
     ?>
