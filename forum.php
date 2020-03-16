@@ -43,6 +43,7 @@ echo makeHeader();
         </div>
     </nav>
 
+    echo "Yo Yo Wut wut"; 
     <?php
     include('makeFooter.php');
     echo makeFooter();
