@@ -15,7 +15,7 @@ echo makeHeader();
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
                <li class="active">
-                  <a class="page-scroll" href="index.php">Home</a>
+                  <a class="page-scroll" href="index.php">Homea</a>
                </li>
                <li>
                   <a class="page-scroll" href="pricing.php">Pricing</a>
