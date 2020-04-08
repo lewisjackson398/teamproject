@@ -8,7 +8,7 @@ echo makeHeader();
       <div class="container-fluid">
          <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-               <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+               <span class="sr-only">Toggle navigation here is a change</span> Menu <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand logo" href="index.php"><span style="font-weight:200; color:white;">Metro</span><span style="font-weight:700; color:#37ecba;">Gym</span></a>
          </div>
