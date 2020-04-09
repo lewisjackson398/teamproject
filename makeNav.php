@@ -38,6 +38,9 @@ function makeNav()
              <li>
                <a class="page-scroll" href="login.php">Login</a>
              </li>
+             <li>
+               <a class="page-scroll" href="membership.php">Membership</a>
+             </li>
           </ul>
        </div>
     </div>
