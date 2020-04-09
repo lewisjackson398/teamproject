@@ -271,7 +271,7 @@ echo makeHeader();
                <div class="service-block">
                   <h1 class="default-title ">Fitness Classes</h1>
                   <p>We offer a variety of classes for everyone. Your wish is our command at MetroGym.</p>
-                  <a href="classes/schedule.php" class="btn btn-default">View ALL Classes</a>
+                  <a href="classes/classes.php" class="btn btn-default">View ALL Classes</a>
                </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
