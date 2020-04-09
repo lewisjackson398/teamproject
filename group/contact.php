@@ -1,10 +1,11 @@
 <?php
-include('makeHeader.php');
+include('global/makeHeader.php');
 echo makeHeader();
 ?>
 
-<body id="page-top" class="page contact_page">
-   <?php include('makeNav.php');
+
+<body id="page-top" class="page contact">
+   <?php include('global/makeNav.php');
    echo makeNav();
    ?>
    <section class="contact">
@@ -67,6 +68,9 @@ echo makeHeader();
       </div>
    </section>
    <?php
-   include('makeFooter.php');
+   include('group/global/makeFooter.php');
+   include('group/global/makeScript.php');
    echo makeFooter();
+   echo makeScript();
    ?>
+</body>

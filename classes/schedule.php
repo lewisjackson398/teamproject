@@ -1,10 +1,10 @@
 <?php
-include('makeHeader.php');
+include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>
 
 <body id="page-top" class="page page_schedule">
-   <?php include('makeNav.php');
+   <?php include('../group/global/makeNav.php');
    echo makeNav();
    ?>
    <section class="schedule">
@@ -250,6 +250,6 @@ echo makeHeader();
       </div>
    </section>
    <?php
-   include('makeFooter.php');
+   include('../group/global/makeFooter.php');
    echo makeFooter();
    ?>

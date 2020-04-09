@@ -1,8 +1,8 @@
 <?php
 // Initialize the session
-require_once('membershipsql.php');
-include('makeHeader.php');
-include('makeNav.php');
+require_once('includes/membershipsql.php');
+include('../group/global/makeHeader.php');
+include('../group/global/makeNav.php');
 echo makeHeader();
 echo makeNav();
 ?>

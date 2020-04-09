@@ -1,12 +1,12 @@
 <?php
-include('makeHeader.php');
+include('group/global/makeHeader.php');
 echo makeHeader();
 ?>
 
 <body id="page-top">
-  <?php include('makeNav.php'); 
+   <?php include('group/global/makeNav.php');
    echo makeNav();
-  ?>
+   ?>
    <header>
       <div class="header-content">
          <div class="header-content-inner">
@@ -331,7 +331,11 @@ echo makeHeader();
             </div>
          </div>
    </section>
+
    <?php
-   include('makeFooter.php');
-   echo makeFooter();
-   ?>
+include('group/global/makeFooter.php');
+include('group/global/makeScript.php');
+echo makeFooter();
+echo makeScript();
+?>
+</body>

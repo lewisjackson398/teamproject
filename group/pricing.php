@@ -1,12 +1,11 @@
 <?php
-include('makeHeader.php');
+include('global/makeHeader.php');
+include('global/makeNav.php');
 echo makeHeader();
+echo makeNav();
 ?>
 
-<body id="page-top" class="page coaches">
-   <?php include('makeNav.php');
-   echo makeNav();
-   ?>
+<body id="page-top" class="page pricing">
    <section class="about_coach">
       <div class="text-center">
          <h1>Our Packages</h1>
@@ -83,6 +82,9 @@ echo makeHeader();
          </div>
    </section>
    <?php
-   include('makeFooter.php');
+   include('group/global/makeFooter.php');
+   include('group/global/makeScript.php');
    echo makeFooter();
+   echo makeScript();
    ?>
+</body>
