@@ -8,7 +8,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 }
 
 // Initialize the session
-require_once('includes/membershipsql.php');
+require_once('includes/membership_resource.php');
 include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>

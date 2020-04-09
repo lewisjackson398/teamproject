@@ -1,5 +1,5 @@
 <?php
-require_once('includes/loginsql.php');
+require_once('includes/login_resource.php');
 include('global/makeHeader.php');
 echo makeHeader();
 ?>
