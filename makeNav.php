@@ -1,7 +1,7 @@
 <?php
 function makeNav()
 {
-    $nav = <<<NAV
+   $nav = <<<NAV
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
        <div class="navbar-header">
@@ -26,16 +26,22 @@ function makeNav()
              <li>
                 <a class="page-scroll" href="coaches.php">Coaches</a>
              </li>
-             <li class="active">
+             <li>
                 <a class="page-scroll" href="about.php">About</a>
              </li>
              <li>
                 <a class="page-scroll" href="contact.php">Contact</a>
+             </li>
+             <li>
+                <a class="page-scroll" href="register.php">Register</a>
+             </li>
+             <li>
+               <a class="page-scroll" href="login.php">Login</a>
              </li>
           </ul>
        </div>
     </div>
  </nav>
 NAV;
-    return $nav;
+   return $nav;
 }
