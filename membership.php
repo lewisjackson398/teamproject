@@ -38,9 +38,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <body>
     <br><br>
-    <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Looking to start a membership?.</h1>
-    </div>
     <div class="wrapper">
             <h2>Sign Up</h2>
             <p>Please fill this form to create a membership.</p>
