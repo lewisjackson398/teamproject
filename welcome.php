@@ -1,7 +1,9 @@
 <?php
 // Initialize the session
 include('makeHeader.php');
+include('makeNav.php');
 echo makeHeader();
+echo makeNav();
 ?>
 
 <?php
@@ -30,6 +32,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </head>
 
 <body>
+    <br><br>
     <div class="page-header">
         <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
     </div>
