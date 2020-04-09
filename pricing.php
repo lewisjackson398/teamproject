@@ -67,17 +67,17 @@ echo makeHeader();
          <div class="row">
             <div class="col-md-4 col-sm-4">
                <div class="price-box">
-                  <input type="submit" class="btn btn-primary btn-xl" value="Select">
+                  <input href="membership.php" type="submit" class="btn btn-primary btn-xl" value="Select">
                </div>
             </div>
             <div class="col-md-4 col-sm-4">
                <div class="price-box">
-                  <input type="submit" class="btn btn-primary btn-xl" value="Select">
+                  <input href="membership.php" type="submit" class="btn btn-primary btn-xl" value="Select">
                </div>
             </div>
             <div class="col-md-4 col-sm-4">
                <div class="price-box">
-                  <input type="submit" class="btn btn-primary btn-xl" value="Select">
+                  <input href="membership.php" type="submit" class="btn btn-primary btn-xl" value="Select">
                </div>
             </div>
          </div>
