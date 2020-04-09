@@ -1,5 +1,7 @@
 <?php
 // Initialize the session
+include('makeHeader.php');
+echo makeHeader();
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
