@@ -12,7 +12,7 @@ echo makeHeader();
          <div class="row">
             <div class="col-md-12" style="margin:50px 0; text-align: center;">
                <video height="400" autoplay muted loop id="myVideo">
-                  <source src="video.mp4" type="video/mp4">
+                  <source src="/teamproject/resources/videos/video.mp4" type="video/mp4">
                </video>
                <h4>How did MetroGym begin?</h4>
                <p style="padding-bottom: 20px;">Because jill gave us the task idea</p>
@@ -27,8 +27,8 @@ echo makeHeader();
       </div>
    </section>
    <?php
-   include('group/global/makeFooter.php');
-   include('group/global/makeScript.php');
+   include('global/makeFooter.php');
+   include('global/makeScript.php');
    echo makeFooter();
    echo makeScript();
    ?>

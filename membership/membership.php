@@ -1,44 +1,25 @@
 <?php
-// Initialize the session
-require_once('includes/membershipsql.php');
-include('../group/global/makeHeader.php');
-include('../group/global/makeNav.php');
-echo makeHeader();
-echo makeNav();
-?>
-
-<?php
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: login.php");
+    header("location: ../group/login.php");
     exit;
 }
+
+// Initialize the session
+require_once('includes/membershipsql.php');
+include('../group/global/makeHeader.php');
+echo makeHeader();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-        <meta charset="UTF-8">
-        <title>Sign Up</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-        <style type="text/css">
-            body {
-                font: 14px sans-serif;
-            }
-
-            .wrapper {
-                width: 350px;
-                padding: 20px;
-            }
-        </style>
-    </head>
-
-<body>
+<body id="page-top" class="page membership">
+    <?php include('../group/global/makeNav.php');
+    echo makeNav();
+    ?>
     <br><br>
-    <div class="wrapper">
+    <section class="membership_cont">
+        <div class="container">
             <h2>Sign Up</h2>
             <p>Please fill this form to create a membership.</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -78,11 +59,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 </div>
             </form>
         </div>
-</body>
-
-</html>
-
-<?php
-    include('makeFooter.php');
+    </section>
+    <?php
+    include('../group/global/makeFooter.php');
+    include('../group/global/makeScript.php');
     echo makeFooter();
-?>
+    echo makeScript();
+    ?>
+</body>

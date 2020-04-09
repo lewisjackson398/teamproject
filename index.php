@@ -12,7 +12,7 @@ echo makeHeader();
          <div class="header-content-inner">
             <h1 id="homeHeading">Unrivaled Fitness.<span>Unparalleled personal training.</span></h1>
             <p>MetroGym is the best gym in the universe.</p>
-            <a href="about.php" class="btn btn-primary btn-xl page-scroll">More about us</a>
+            <a href="group/about.php" class="btn btn-primary btn-xl page-scroll">More about us</a>
          </div>
       </div>
    </header>
@@ -271,7 +271,7 @@ echo makeHeader();
                <div class="service-block">
                   <h1 class="default-title ">Fitness Classes</h1>
                   <p>We offer a variety of classes for everyone. Your wish is our command at MetroGym.</p>
-                  <a href="schedule.php" class="btn btn-default">View ALL Classes</a>
+                  <a href="classes/schedule.php" class="btn btn-default">View ALL Classes</a>
                </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">

@@ -1,5 +1,8 @@
 <?php
 session_start();
+include('global/makeHeader.php');
+echo makeHeader();
+
 
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
@@ -11,31 +14,23 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 ?>
 
 <body id="page-top" class="page welcome">
-    <!DOCTYPE html>
-    <html lang="en">
+    <?php include('global/makeNav.php');
+    echo makeNav();
+    ?>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Welcome</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-        <style type="text/css">
-            body {
-                font: 14px sans-serif;
-                text-align: center;
-            }
-        </style>
-    </head>
-
-    <br><br>
-    <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
-    </div>
-    <p>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-        <a href="membership.php" class="btn btn-danger">Looking to start a membership?</a>
-    </p>
-
+    <section class="register_cont">
+        <div class="container">
+            <br><br>
+            <div class="page-header">
+                <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+            </div>
+            <p>
+                <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
+                <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+                <a href="../membership/membership.php" class="btn btn-danger">Looking to start a membership?</a>
+            </p>
+        </div>
+    </section>
     <?php
     include('global/makeFooter.php');
     include('global/makeScript.php');
@@ -44,5 +39,3 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     ?>
 
 </body>
-
-</html>
