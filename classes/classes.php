@@ -13,11 +13,11 @@ echo makeHeader();
             <h2>schedule</h2>
         </div>
         <div class="buttons text-center">
-            <a href="#" id="choice-all" class="btn btn-primary btn-xl">All Coaches</a>
-            <a href="#" id="choice-group" class="btn btn-primary btn-xl">Willard</a>
-            <a href="#" id="choice-kid" class="btn btn-primary btn-xl">Moe</a>
-            <a href="#" id="choice-personal" class="btn btn-primary btn-xl">Sarah</a>
-            <a href="#" id="choice-outdoor" class="btn btn-primary btn-xl">Adrian</a>
+            <a href="#" id="all" class="btn btn-primary btn-xl">All trainers</a>
+            <a href="#" id="lewis" class="btn btn-primary btn-xl">Lewis</a>
+            <a href="#" id="brandon" class="btn btn-primary btn-xl">Brandon</a>
+            <a href="#" id="oliver" class="btn btn-primary btn-xl">Oliver</a>
+            <a href="#" id="arlana" class="btn btn-primary btn-xl">Arlana</a>
             <div class="search-box">
                 <input type="text" autocomplete="off" id="myInput" onkeyup="myFunction()" placeholder="Search classes..." />
                 <div class="result"></div>
@@ -37,22 +37,22 @@ echo makeHeader();
                     </tr>
                 </thead>
                 <tbody id="test">
-                        <?php
-                        include('../server/config/config.php');
-                        $sql = "Select * from tbltimetable ORDER BY start";
-                        $result = mysqli_query($link, $sql);
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo "<tr><td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td></tr>";
-                            }
+                    <?php
+                    include('../server/config/config.php');
+                    $sql = "Select * from tbltimetable ORDER BY start";
+                    $result = mysqli_query($link, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo "<tr><td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=arlana>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=brandon>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=oliver>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td></tr>";
                         }
-                        ?>
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

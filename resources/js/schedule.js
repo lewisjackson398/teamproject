@@ -39,3 +39,33 @@ function myFunction() {
         };
     };
 }
+
+$(document).ready(function(){
+	$('#lewis').on('click',function(){	
+		$('.lewis').toggle();
+	});
+});
+
+$(document).ready(function(){
+	$('#brandon').on('click',function(){	
+		$('.brandon').toggle();
+	});
+});
+
+$(document).ready(function(){
+	$('#arlana').on('click',function(){	
+		$('.arlana').toggle();
+	});
+});
+
+$(document).ready(function(){
+	$('#oliver').on('click',function(){	
+		$('.oliver').toggle();
+	});
+});
+
+$(document).ready(function(){
+	$('#all').on('click',function(){	
+		$('.oliver, .lewis, .brandon, .arlana').show();
+	});
+});
