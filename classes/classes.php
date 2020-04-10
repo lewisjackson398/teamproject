@@ -39,19 +39,19 @@ include('../server/config/config.php');
                 </thead>
                 <tbody id="test">
                     <?php
-                    $sql = "Select * from tbltimetable ORDER BY date";
+                    $sql = "Select * from tbltimetable ORDER BY start";
                     $result = mysqli_query($link, $sql);
-                    print($result);
-
                     if (mysqli_num_rows($result) > 0) {
-                        // output data of each row
-                        while ($row = mysqli_fetch_assoc($result)) {
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo "<tr><td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=arlana>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=brandon>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=oliver>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
                             echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td></tr>";
                         }
-                    } else {
-                        echo "0 results";
                     }
-
                     ?>
                 </tbody>
             </table>
