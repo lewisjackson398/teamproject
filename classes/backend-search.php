@@ -1,16 +1,16 @@
 <?php
 require_once('../server/config/config.php');
 
-if(isset($_REQUEST["workout_name"])){
+if(isset($_REQUEST["class"])){
     // Prepare a select statement
-    $sql = "SELECT * FROM tblworkout WHERE workout_name LIKE ?";
+    $sql = "SELECT * FROM tbltimetable WHERE class LIKE ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
         mysqli_stmt_bind_param($stmt, "s", $param_name);
         
         // Set parameters
-        $param_name = $_REQUEST["workout_name"] . '%';
+        $param_name = $_REQUEST["class"] . '%';
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
@@ -20,7 +20,7 @@ if(isset($_REQUEST["workout_name"])){
             if(mysqli_num_rows($result) > 0){
                 // Fetch result rows as an associative array
                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                    echo "<p>" . $row["workout_name"] . "</p>";
+                    echo "<p>" . $row["class"] . "</p>";
                 }
             } else{
                 echo "<p>No matches found</p>";
