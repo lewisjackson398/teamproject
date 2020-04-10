@@ -1,5 +1,5 @@
 <?php
-require_once('includes/register_resource.php');
+require_once('includes/register_process.php');
 include('global/makeHeader.php');
 echo makeHeader();
 ?>
