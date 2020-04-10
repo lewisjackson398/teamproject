@@ -66,17 +66,17 @@ echo makeNav();
          <div class="row">
             <div class="col-md-4 col-sm-4">
                <div class="price-box">
-                  <input type="submit" class="btn btn-primary btn-xl" value="Select" onClick="<?php header("..membership/membership.php"); ?>">
+                  <input type="submit" class="btn btn-primary btn-xl" value="Select" id="membershipBtn">
                </div>
             </div>
             <div class="col-md-4 col-sm-4">
                <div class="price-box">
-                  <input type="submit" class="btn btn-primary btn-xl" value="Select" onClick="<?php header("..membership/membership.php"); ?>">
+                  <input type="submit" class="btn btn-primary btn-xl" value="Select" id="membershipBtn">
                </div>
             </div>
             <div class="col-md-4 col-sm-4">
                <div class="price-box">
-                  <input type="submit" class="btn btn-primary btn-xl" value="Select" onClick="<?php header("..membership/membership.php"); ?>">
+                  <input type="submit" class="btn btn-primary btn-xl" value="Select" id="membershipBtn">
                </div>
             </div>
          </div>
@@ -88,3 +88,11 @@ echo makeNav();
    echo makeScript();
    ?>
 </body>
+
+<script>
+    var btn = document.getElementById('membershipBtn');
+   btn.addEventListener('click', function() 
+   {
+      document.location.href = '/teamproject/membership/membership.php';
+   });
+</script>
