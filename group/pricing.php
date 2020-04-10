@@ -66,17 +66,17 @@ echo makeNav();
          <div class="row">
             <div class="col-md-4 col-sm-4">
                <div class="price-box">
-                  <input type="submit" class="btn btn-primary btn-xl" value="Select" onClick="<?php header("Location: ..membership/membership.php"); ?>">
+                  <input type="submit" class="btn btn-primary btn-xl" value="Select" onClick="<?php header("..membership/membership.php"); ?>">
                </div>
             </div>
             <div class="col-md-4 col-sm-4">
                <div class="price-box">
-                  <input type="submit" class="btn btn-primary btn-xl" value="Select" onClick="<?php header("Location: ..membership/membership.php"); ?>">
+                  <input type="submit" class="btn btn-primary btn-xl" value="Select" onClick="<?php header("..membership/membership.php"); ?>">
                </div>
             </div>
             <div class="col-md-4 col-sm-4">
                <div class="price-box">
-                  <input type="submit" class="btn btn-primary btn-xl" value="Select" onClick="<?php header("Location: ..membership/membership.php"); ?>">
+                  <input type="submit" class="btn btn-primary btn-xl" value="Select" onClick="<?php header("..membership/membership.php"); ?>">
                </div>
             </div>
          </div>
