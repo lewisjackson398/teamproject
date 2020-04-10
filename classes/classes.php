@@ -19,7 +19,7 @@ echo makeHeader();
             <a href="#" id="choice-personal" class="btn btn-primary btn-xl">Sarah</a>
             <a href="#" id="choice-outdoor" class="btn btn-primary btn-xl">Adrian</a>
             <div class="search-box">
-                <input type="text" autocomplete="off" placeholder="Search classes..." />
+                <input type="text" autocomplete="off" id="myInput" onkeyup="myFunction()" placeholder="Search classes..." />
                 <div class="result"></div>
             </div>
         </div>
@@ -36,7 +36,7 @@ echo makeHeader();
                         <th>Sunday</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="test">
                         <?php
                         include('../server/config/config.php');
                         $sql = "Select * from tbltimetable ORDER BY start";
