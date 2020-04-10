@@ -6,7 +6,7 @@ $(document).ready(
             var resultDropdown = $(this).siblings(".result");
             if (inputVal.length) {
                 $.get("backend-search.php", {
-                    workout_name: inputVal
+                    class: inputVal
                 }).done(function (data) {
                     // Display the returned data in browser
                     resultDropdown.html(data);
