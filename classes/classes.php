@@ -27,7 +27,6 @@ echo makeHeader();
             <table class="table">
                 <thead class="hidden-xs">
                     <tr>
-                        <th></th>
                         <th>Monday</th>
                         <th>Tuesday</th>
                         <th>Wednesday</th>
@@ -44,10 +43,15 @@ echo makeHeader();
                         $result = mysqli_query($link, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "<tr><td>" . $row["date"] . "</td><td>" . $row["class"] . "</td><td>" . $row["description"] . "</td>
-        <td>" . $row["start"] . "</td><td>" . $row["finish"] . "</td></tr>";
+                                echo "<tr><td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td></tr>";
+                                
                             }
-                            echo "</table>";
                         }
                         ?>
                 </tbody>
