@@ -39,7 +39,7 @@ echo makeHeader();
                 <tbody>
                         <?php
                         include('../server/config/config.php');
-                        $sql = "Select * from tbltimetable";
+                        $sql = "Select * from tbltimetable ORDER BY start";
                         $result = mysqli_query($link, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
@@ -50,7 +50,6 @@ echo makeHeader();
                                 echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
                                 echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
                                 echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td></tr>";
-                                
                             }
                         }
                         ?>
