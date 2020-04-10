@@ -12,14 +12,14 @@ echo makeHeader();
         <div class="text-center">
             <h2>schedule</h2>
         </div>
-        <div class="buttons text-center">
-            <a href="#" id="choice-all" class="btn btn-primary btn-xl">All Coaches</a>
-            <a href="#" id="choice-group" class="btn btn-primary btn-xl">Willard</a>
-            <a href="#" id="choice-kid" class="btn btn-primary btn-xl">Moe</a>
-            <a href="#" id="choice-personal" class="btn btn-primary btn-xl">Sarah</a>
-            <a href="#" id="choice-outdoor" class="btn btn-primary btn-xl">Adrian</a>
+        <div class="buttons text-center" id="myBtnContainer">
+            <a href="#" class="btn active" id="btn btn-primary btn-xl" onclick="filterSelection('all')">All Coaches</a>
+            <a href="#" class="btn" id="btn btn-primary btn-xl" onclick="filterSelection('lewis')">Lewis</a>
+            <a href="#" class="btn" id="btn btn-primary btn-xl" onclick="filterSelection('brandon')">Brandon</a>
+            <a href="#" class="btn" id="btn btn-primary btn-xl" onclick="filterSelection('oliver')">Oliver</a>
+            <a href="#" class="btn" id="btn btn-primary btn-xl" onclick="filterSelection('arlana')">Arlana</a>
             <div class="search-box">
-                <input type="text" autocomplete="off" id="myInput" onkeyup="myFunction()" placeholder="Search classes..." />
+                <input type="text" autocomplete="off" id="myInput" placeholder="Search classes..." />
                 <div class="result"></div>
             </div>
         </div>
@@ -43,13 +43,13 @@ echo makeHeader();
                         $result = mysqli_query($link, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "<tr><td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
-                                echo "<td>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td></tr>";
+                                echo "<td class='filterDiv lewis'>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td class='filterDiv lewis'>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td class='filterDiv arlana'>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td class='filterDiv oliver'>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td class='filterDiv brandon'>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td class='filterDiv brandon'>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
+                                echo "<td class='filterDiv lewis'>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"]. "</td>";
                             }
                         }
                         ?>
