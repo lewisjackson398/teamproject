@@ -7,6 +7,7 @@ echo makeHeader();
     <?php include('../group/global/makeNav.php');
     echo makeNav();
     ?>
+
     <section class="schedule">
         <div class="text-center">
             <h2>schedule</h2>
@@ -17,6 +18,10 @@ echo makeHeader();
             <a href="#" id="choice-kid" class="btn btn-primary btn-xl">Moe</a>
             <a href="#" id="choice-personal" class="btn btn-primary btn-xl">Sarah</a>
             <a href="#" id="choice-outdoor" class="btn btn-primary btn-xl">Adrian</a>
+            <div class="search-box">
+                <input type="text" autocomplete="off" placeholder="Search classes..." />
+                <div class="result"></div>
+            </div>
         </div>
         <div class="container">
             <table class="table">
