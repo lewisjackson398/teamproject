@@ -1,6 +1,7 @@
 <?php
 include('../group/global/makeHeader.php');
 echo makeHeader();
+include('../server/config/config.php');
 ?>
 
 <body id="page-top" class="page page_schedule">
@@ -38,20 +39,19 @@ echo makeHeader();
                 </thead>
                 <tbody id="test">
                     <?php
-                    include('../server/config/config.php');
-                    $sql = "Select * from tbltimetable ORDER BY start";
+                    $sql = "Select * from tbltimetable ORDER BY date";
                     $result = mysqli_query($link, $sql);
+                    print($result);
+
                     if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_array($result)) {
-                            echo "<tr><td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=arlana>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=brandon>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=oliver>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
+                        // output data of each row
+                        while ($row = mysqli_fetch_assoc($result)) {
                             echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td></tr>";
                         }
+                    } else {
+                        echo "0 results";
                     }
+
                     ?>
                 </tbody>
             </table>
