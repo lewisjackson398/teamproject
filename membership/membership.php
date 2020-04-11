@@ -20,8 +20,9 @@ echo makeHeader();
     <br><br>
     <section class="membership_cont">
         <div class="container">
-            <h2>Sign Up</h2>
-            <p>Please fill this form to create a membership.</p>
+
+            <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]) ; ?></b>. Fill out this form to start a membership.</h1>
+            <br></br>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group <?php echo (!empty($name_error)) ? 'has-error' : ''; ?>">
                     <label>Name</label>
@@ -52,6 +53,15 @@ echo makeHeader();
                     <label>Confirm Password</label>
                     <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                     <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                </div>
+                <div class="form-group <?php echo (!empty($memembership_type_err)) ? 'has-error' : ''; ?>"">
+                    <label>Membership Type</label>
+                    <select type="membership_type" name="membership_type" class="form-control" value="<?php echo $membership_type; ?>">
+                        <option value="bronze">Bronze</option>
+                        <option value="silver">Silver</option>
+                        <option value="gold">Gold</option>
+                    </select>
+                    <span class="help-block"><?php echo $membership_type_err; ?></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
