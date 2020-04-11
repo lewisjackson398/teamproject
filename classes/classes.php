@@ -25,238 +25,28 @@ include('../server/config/config.php');
             </div>
         </div>
         <div class="container">
-            <table class="table">
-                <thead class="hidden-xs">
+            <table border="5" class="table">
+                <thead class="thead-dark">
                     <tr>
-                        <th></th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                        <th>Sunday</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">Instructor</th>
+                        <th scope="col">Starting Time</th>
+                        <th scope="col">Ending Time</th>
                     </tr>
                 </thead>
-                <tbody id="test">
-                    <?php $sql = "Select * from tbltimetable where date LIKE 'Monday' ";
+                <tbody>
+                    <?php
+                    $sql = "Select * from tbltimetable ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start ";
                     $result = mysqli_query($link, $sql);
                     if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<tr>
-                        <th class="row hidden-lg">Monday</th>
-                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                    </tr>';
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo "<tr><td>" . $row["date"] . "</td><td>" . $row["class"] . "</td><td>" . $row["instructor_name"] .  "</td>
+        <td>" . $row["start"] . "</td><td>" . $row["finish"] . "</td></tr>";
                         }
-                    } ?>
-
-                    <?php $sql = "Select * from tbltimetable where date LIKE 'Tuesday' ";
-                    $result = mysqli_query($link, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<tr>
-                        <th class="row hidden-lg">Monday</th>
-                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                    </tr>';
-                        }
-                    } ?>
-                    <?php $sql = "Select * from tbltimetable where date LIKE 'Wednesday' ";
-                    $result = mysqli_query($link, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<tr>
-                        <th class="row hidden-lg">Monday</th>
-                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                    </tr>';
-                        }
-                    } ?>
-                    <?php $sql = "Select * from tbltimetable where date LIKE 'Thursday' ";
-                    $result = mysqli_query($link, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<tr>
-                        <th class="row hidden-lg">Monday</th>
-                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                    </tr>';
-                        }
-                    } ?>
-                    <?php $sql = "Select * from tbltimetable where date LIKE 'Friday' ";
-                    $result = mysqli_query($link, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<tr>
-                        <th class="row hidden-lg">Monday</th>
-                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                    </tr>';
-                        }
-                    } ?>
-                    <?php $sql = "Select * from tbltimetable where date LIKE 'Saturday' ";
-                    $result = mysqli_query($link, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<tr>
-                        <th class="row hidden-lg">Monday</th>
-                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                    </tr>';
-                        }
-                    } ?>
-                    <?php $sql = "Select * from tbltimetable where date LIKE 'Sunday' ";
-                    $result = mysqli_query($link, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<tr>
-                        <th class="row hidden-lg">Monday</th>
-                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                    </tr>';
-                        }
-                    } ?>
+                        echo "</table>";
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
