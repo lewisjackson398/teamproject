@@ -39,183 +39,183 @@ include('../server/config/config.php');
                     </tr>
                 </thead>
                 <tbody id="test">
-                    <?php $sql = "Select * from tbltimetable";
+                    <?php $sql = "Select * from tbltimetable order by start";
                     $result = mysqli_query($link, $sql);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_array($result)) {
                             echo '<tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">7:00 - 7:00</th>
+                        <th scope="row">7:00 - 8:00am</th>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span> 7:00 - 8:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>7:00 - 8:00</span></div>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span>7:00 - 8:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span>7:00 - 8:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="oliver">' . $row["class"] . '<span>7:00 - 8:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>7:00 - 8:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="oliver">' . $row["class"] . '<span>7:00 - 8:00</span></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="row hidden-lg">Monday</th>
-                        <th scope="row">8:00 - 8:00</th>
-                        <td>
-                            <div class="oliver">' . $row["class"] . '<span>8:00 - 9:00</span></div>
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . '<span>8:00 - 9:00</span></div>
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . '<span>8:00 - 9:00</span></div>
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . '<span>8:00 - 9:00</span></div>
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . '<span>8:00 - 9:00</span></div>
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . '<span>8:00 - 9:00</span></div>
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . '<span>8:00 - 9:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                     </tr>
                     <tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">9:00 - 9:00</th>
+                        <th scope="row">8:00 - 9:00am</th>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>9:00 - 10:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>9:00 - 10:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>9:00 - 9:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="oliver">' . $row["class"] . '<span>9:00 - 9:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="oliver">' . $row["class"] . '<span>9:00 - 9:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>9:00 - 9:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>9:00 - 9:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                     </tr>
                     <tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">10:00 - 10:00</th>
+                        <th scope="row">9:00 - 10:00am</th>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span>10:00 - 10:00</span></div>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span>10:00 - 10:00</span></div>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>10:00 - 10:00</span></div>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span>10:00 - 10:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>10:00 - 10:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>10:00 - 10:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>10:00 - 10:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="row hidden-lg">Monday</th>
+                        <th scope="row">10:00 - 11:00am</th>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                     </tr>
                     <tr>
                         <th class="row hidden-lg">Monday</th>
                         <th scope="row">11:00 - 12:00pm</th>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span>11:00 - 12:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>11:00 - 12:00</span></div>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span>11:00 - 12:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span>11:00 - 12:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>11:00 - 12:00</span></div>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="lewis">' . $row["class"] . '<span>11:00 - 12:00</span></div>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>1:00 - 12:00</span></div>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                     </tr>
                     <tr>
                         <th class="row hidden-lg">Monday</th>
                         <th scope="row">1:00pm - 2:00pm</th>
                         <td>
-                            <div class="oliver">' . $row["class"] . '<span>1:00 - 2:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>1:00 - 2:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>1:00 - 2:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="oliver">' . $row["class"] . '<span>1:00 - 2:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>1:00 - 2:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="oliver">' . $row["class"] . '<span>1:00 - 2:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="oliver">' . $row["class"] . '<span>1:00 - 2:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                     </tr>
                     <tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">3:00pm - 3:00pm</th>
+                        <th scope="row">2:00pm - 3:00pm</th>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>3:00 - 3:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="oliver">' . $row["class"] . '<span>3:00 - 3:00</span></div>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>3:00 - 3:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>3:00 - 3:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . '<span>3:00 - 3:00</span></div>
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>3:00 - 7:00</span></div>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . '<span>3:00 - 3:00</span></div>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                     </tr>';
                         }
