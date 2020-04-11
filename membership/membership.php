@@ -21,34 +21,57 @@ echo makeHeader();
     <section class="membership_cont">
         <div class="container">
 
-            <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]) ; ?></b>. Fill out this form to start a membership.</h1>
+            <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Fill out this form to start a membership.</h1>
             <br></br>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <div class="form-group <?php echo (!empty($name_error)) ? 'has-error' : ''; ?>">
-                    <label>Name</label>
-                    <input type="text" name="complete_name" class="form-control" value="<?php echo $name; ?>">
-                    <span class="help-block"><?php echo $name_error; ?></span>
+            <form action="includes/membership_resource.php" method="post">
+                <div class="form-group">
+                    <label>Age</label>
+                    <select class="form-control" name="age">
+                        <?php
+                            for($i = 16; $i <= 100; $i++)
+                            {
+                                ?>
+                                    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                <?php
+                            }
+                        ?>
+                    </select>
+                    <span class="help-block"></span>
                 </div>
-                <div class="form-group <?php echo (!empty($contact_erorr)) ? 'has-error' : ''; ?>">
-                    <label>Contact</label>
-                    <input type="text" name="contact" class="form-control" value="<?php echo $contact; ?>">
-                    <span class="help-block"><?php echo $contact_erorr; ?></span>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select class="form-control" name="gender">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                        <option value="O">O</option>
+                    </select>
+                    <span class="help-block"></span>
                 </div>
-                <div class="form-group <?php echo (!empty($memembership_type_err)) ? 'has-error' : ''; ?>">
+                <div class="form-group">
                     <label>Membership Type</label>
-                    <select onclick="checkpackage()" id="package_type" name="membership_type" class="form-control" value="<?php echo $membership_type; ?>">
+                    <select onchange="checkpackage()" class="form-control" id="package_type" name="membership_type" value="">
                         <option value="bronze">Bronze</option>
                         <option value="silver">Silver</option>
                         <option value="gold">Gold</option>
                     </select>
-                    <span class="help-block"><?php echo $membership_type_err; ?></span>
+                    <span class="help-block"></span>
                 </div>
-                <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
+                <div class="form-group"> 
                     <label>Price</label>
-                    <input id="price" type="text" name="price" class="form-control" value="" readonly></input>
-                    <span class="help-block"><?php echo $price_err; ?></span>
+                    <input class="form-control" id="price" type="text" name="price" readonly>
+                    <span class="help-block"></span>
                 </div>
                 <div class="form-group">
+                    <label>Start of membership</label>
+                    <input class="form-control" id="membership_start" type="text" name="membership_start" value="" readonly>
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label>End of membership</label>
+                    <input class="form-control" id="membership_end" type="text" name="membership_end" value="" readonly>
+                    <span></span>
+                </div>
+                <div>
                     <input type="submit" class="btn btn-primary" value="Submit">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
@@ -64,6 +87,7 @@ echo makeHeader();
 </body>
 
 <script>
+
     function checkpackage() 
     {
         var package_type = document.getElementById("package_type").value.toLowerCase();
@@ -78,5 +102,13 @@ echo makeHeader();
         }
 
         document.getElementById("price").value = price;
-    }             
+    }     
+
+    var today = new Date();
+    var current_date = today.getDate()+ '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+    var next_date = today.getDate()+ '-' + (today.getMonth() + 2) + '-' + today.getFullYear();
+
+    document.getElementById("membership_start").value = current_date;
+    document.getElementById("membership_end").value = next_date;
+
 </script>
