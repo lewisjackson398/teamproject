@@ -55,11 +55,6 @@ CREATE TABLE IF NOT EXISTS `tblinstructor` (
 DROP TABLE IF EXISTS `tblmember`;
 CREATE TABLE IF NOT EXISTS `tblmember` (
   `member_id` int(11) NOT NULL AUTO_INCREMENT,
-  `member_id_no` varchar(15) NOT NULL,
-  `member_name` varchar(50) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `contact` varchar(11) NOT NULL,
-  `email` varchar(30) NOT NULL,
   `age` int(3) NOT NULL,
   `gender` int(1) NOT NULL,
   `joining_date` date NOT NULL,
@@ -67,27 +62,6 @@ CREATE TABLE IF NOT EXISTS `tblmember` (
   `membership_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`member_id`),
-  KEY `membership_id` (`membership_id`,`user_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblmembershiptype`
---
--- Creation: Apr 08, 2020 at 09:16 PM
---
-
-DROP TABLE IF EXISTS `tblmembershiptype`;
-CREATE TABLE IF NOT EXISTS `tblmembershiptype` (
-  `type_id` int(11) NOT NULL AUTO_INCREMENT,
-  `type_name` varchar(15) NOT NULL,
-  `membership_period` varchar(15) NOT NULL,
-  `membership_amount` float NOT NULL,
-  `signup_fee` float NOT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`type_id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -106,10 +80,8 @@ CREATE TABLE IF NOT EXISTS `tblpayment` (
   `amount` float NOT NULL,
   `payment_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `payment_date` date NOT NULL,
-  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`payment_id`),
-  KEY `member_id` (`member_id`,`user_id`),
-  KEY `user_id` (`user_id`)
+  KEY `member_id` (`member_id`),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
