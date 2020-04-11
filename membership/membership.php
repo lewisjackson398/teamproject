@@ -34,14 +34,19 @@ echo makeHeader();
                     <input type="text" name="contact" class="form-control" value="<?php echo $contact; ?>">
                     <span class="help-block"><?php echo $contact_erorr; ?></span>
                 </div>
-                <div class="form-group <?php echo (!empty($memembership_type_err)) ? 'has-error' : ''; ?>"">
+                <div class="form-group <?php echo (!empty($memembership_type_err)) ? 'has-error' : ''; ?>">
                     <label>Membership Type</label>
-                    <select type="membership_type" name="membership_type" class="form-control" value="<?php echo $membership_type; ?>">
+                    <select onclick="checkpackage()" id="package_type" name="membership_type" class="form-control" value="<?php echo $membership_type; ?>">
                         <option value="bronze">Bronze</option>
                         <option value="silver">Silver</option>
                         <option value="gold">Gold</option>
                     </select>
                     <span class="help-block"><?php echo $membership_type_err; ?></span>
+                </div>
+                <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
+                    <label>Price</label>
+                    <input id="price" type="text" name="price" class="form-control" value="" readonly></input>
+                    <span class="help-block"><?php echo $price_err; ?></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
@@ -57,3 +62,21 @@ echo makeHeader();
     echo makeScript();
 ?>
 </body>
+
+<script>
+    function checkpackage() 
+    {
+        var package_type = document.getElementById("package_type").value.toLowerCase();
+        var price = "";
+
+        if (package_type == "bronze") {
+            price = "150";
+        }else if(package_type == "silver") {
+            price = "200";
+        }else if(package_type == "gold") {
+            price = "250";
+        }
+
+        document.getElementById("price").value = price;
+    }             
+</script>
