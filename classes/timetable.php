@@ -24,6 +24,7 @@
     <tr>
       <th scope="col">Date</th>
       <th scope="col">Class</th>
+      <th scope="col">Instructor</th>
       <th scope="col">Description</th>
       <th scope="col">Starting Time</th>
       <th scope="col">Ending Time</th>
@@ -32,11 +33,11 @@
   <tbody>
   <?php
 include('../server/config/config.php');
-$sql = "Select * from tbltimetable";
+$sql = "Select * from tbltimetable ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start ";
 $result = mysqli_query($link, $sql);
 if(mysqli_num_rows($result)>0){
     while($row=mysqli_fetch_array($result)) {
-        echo "<tr><td>" . $row["date"]. "</td><td>" . $row["class"] . "</td><td>" . $row["description"] . "</td>
+        echo "<tr><td>" . $row["date"]. "</td><td>" . $row["class"] . "</td><td>" . $row["instructor_name"] . "</td><td>". $row["description"] . "</td>
         <td>". $row["start"] . "</td><td>" . $row["finish"]. "</td></tr>";
     }
     echo "</table>";

@@ -25,32 +25,26 @@ include('../server/config/config.php');
             </div>
         </div>
         <div class="container">
-            <table class="table">
-                <thead class="hidden-xs">
+            <table border="5" class="table">
+                <thead class="thead-dark">
                     <tr>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                        <th>Sunday</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">Instructor</th>
+                        <th scope="col">Starting Time</th>
+                        <th scope="col">Ending Time</th>
                     </tr>
                 </thead>
-                <tbody id="test">
+                <tbody>
                     <?php
-                    $sql = "Select * from tbltimetable ORDER BY start";
+                    $sql = "Select * from tbltimetable ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start ";
                     $result = mysqli_query($link, $sql);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_array($result)) {
-                            echo "<tr><td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=arlana>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=brandon>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=oliver>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td>";
-                            echo "<td class=lewis>" . $row["class"] . "<br>" . $row["description"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . "</td></tr>";
+                            echo "<tr><td>" . $row["date"] . "</td><td>" . $row["class"] . "</td><td>" . $row["instructor_name"] .  "</td>
+        <td>" . $row["start"] . "</td><td>" . $row["finish"] . "</td></tr>";
                         }
+                        echo "</table>";
                     }
                     ?>
                 </tbody>

@@ -84,177 +84,177 @@ echo makeHeader();
             <tbody>
                <tr>
                   <th class="row hidden-lg">Monday</th>
-                  <th scope="row">7:00 - 7:45</th>
+                  <th scope="row">7:00 - 7:00</th>
                   <td>
-                     <div class="group">indoor <span>7:00 - 7:45</span></div>
+                     <div class="group">indoor <span>7:00 - 7:00</span></div>
                   </td>
                   <td>
-                     <div class="kid">outdoor <span>7:00 - 7:45</span></div>
+                     <div class="kid">outdoor <span>7:00 - 7:00</span></div>
                   </td>
                   <td>
-                     <div class="group">outdoor <span>7:00 - 7:45</span></div>
+                     <div class="group">outdoor <span>7:00 - 7:00</span></div>
                   </td>
                   <td>
-                     <div class="personal">indoor <span>7:00 - 7:45</span></div>
+                     <div class="personal">indoor <span>7:00 - 7:00</span></div>
                   </td>
                   <td>
-                     <div class="personal">cycling <span>7:00 - 7:45</span></div>
+                     <div class="personal">cycling <span>7:00 - 7:00</span></div>
                   </td>
                   <td>
-                     <div class="kid">yoga <span>7:00 - 7:45</span></div>
+                     <div class="kid">yoga <span>7:00 - 7:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">cycling <span>7:00 - 7:45</span></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg">Monday</th>
-                  <th scope="row">8:00 - 8:45</th>
-                  <td>
-                     <div class="personal">outdoor <span>8:00 - 8:45</span></div>
-                  </td>
-                  <td>
-                     <div class="group">indoor <span>8:00 - 8:45</span></div>
-                  </td>
-                  <td>
-                     <div class="outdoor">outdoor <span>8:00 - 8:45</span></div>
-                  </td>
-                  <td>
-                     <div class="outdoor">indoor <span>8:00 - 8:45</span></div>
-                  </td>
-                  <td>
-                     <div class="kid">indoor <span>8:00 - 8:45</span></div>
-                  </td>
-                  <td>
-                     <div class="outdoor">yoga <span>8:00 - 8:45</span></div>
-                  </td>
-                  <td>
-                     <div class="outdoor">cycling <span>8:00 - 8:45</span></div>
+                     <div class="outdoor">cycling <span>7:00 - 7:00</span></div>
                   </td>
                </tr>
                <tr>
                   <th class="row hidden-lg">Monday</th>
-                  <th scope="row">9:00 - 9:45</th>
+                  <th scope="row">8:00 - 8:00</th>
                   <td>
-                     <div class="personal">pilates <span>9:00 - 9:45</span></div>
+                     <div class="personal">outdoor <span>8:00 - 8:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">indoor <span>9:00 - 9:45</span></div>
+                     <div class="group">indoor <span>8:00 - 8:00</span></div>
                   </td>
                   <td>
-                     <div class="group">outdoor <span>9:00 - 9:45</span></div>
+                     <div class="outdoor">outdoor <span>8:00 - 8:00</span></div>
                   </td>
                   <td>
-                     <div class="kid">indoor <span>9:00 - 9:45</span></div>
+                     <div class="outdoor">indoor <span>8:00 - 8:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">indoor <span>9:00 - 9:45</span></div>
+                     <div class="kid">indoor <span>8:00 - 8:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">yoga <span>9:00 - 9:45</span></div>
+                     <div class="outdoor">yoga <span>8:00 - 8:00</span></div>
                   </td>
                   <td>
-                     <div class="group">cycling <span>9:00 - 9:45</span></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg">Monday</th>
-                  <th scope="row">10:00 - 10:45</th>
-                  <td>
-                     <div class="outdoor">cycling <span>10:00 - 10:45</span></div>
-                  </td>
-                  <td>
-                     <div class="personal">pilates <span>10:00 - 10:45</span></div>
-                  </td>
-                  <td>
-                     <div class="group">outdoor <span>10:00 - 10:45</span></div>
-                  </td>
-                  <td>
-                     <div class="group">indoor <span>10:00 - 10:45</span></div>
-                  </td>
-                  <td>
-                     <div class="outdoor">pilates <span>10:00 - 10:45</span></div>
-                  </td>
-                  <td>
-                     <div class="kid">yoga <span>10:00 - 10:45</span></div>
-                  </td>
-                  <td>
-                     <div class="group">pilates <span>10:00 - 10:45</span></div>
+                     <div class="outdoor">cycling <span>8:00 - 8:00</span></div>
                   </td>
                </tr>
                <tr>
                   <th class="row hidden-lg">Monday</th>
-                  <th scope="row">11:00 - 12:45pm</th>
+                  <th scope="row">9:00 - 9:00</th>
                   <td>
-                     <div class="personal">outdoor <span>11:00 - 12:45</span></div>
+                     <div class="personal">pilates <span>9:00 - 9:00</span></div>
                   </td>
                   <td>
-                     <div class="group">indoor <span>11:00 - 12:45</span></div>
+                     <div class="outdoor">indoor <span>9:00 - 9:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">outdoor <span>11:00 - 12:45</span></div>
+                     <div class="group">outdoor <span>9:00 - 9:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">indoor <span>11:00 - 12:45</span></div>
+                     <div class="kid">indoor <span>9:00 - 9:00</span></div>
                   </td>
                   <td>
-                     <div class="kid">indoor <span>11:00 - 12:45</span></div>
+                     <div class="outdoor">indoor <span>9:00 - 9:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">yoga <span>11:00 - 12:45</span></div>
+                     <div class="outdoor">yoga <span>9:00 - 9:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">cycling <span>1:00 - 12:45</span></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg">Monday</th>
-                  <th scope="row">1:00pm - 2:45pm</th>
-                  <td>
-                     <div class="outdoor">cycling <span>1:00 - 2:45</span></div>
-                  </td>
-                  <td>
-                     <div class="personal">pilates <span>1:00 - 2:45</span></div>
-                  </td>
-                  <td>
-                     <div class="group">outdoor <span>1:00 - 2:45</span></div>
-                  </td>
-                  <td>
-                     <div class="group">indoor <span>1:00 - 2:45</span></div>
-                  </td>
-                  <td>
-                     <div class="outdoor">pilates <span>1:00 - 2:45</span></div>
-                  </td>
-                  <td>
-                     <div class="kid">yoga <span>1:00 - 2:45</span></div>
-                  </td>
-                  <td>
-                     <div class="group">pilates <span>1:00 - 2:45</span></div>
+                     <div class="group">cycling <span>9:00 - 9:00</span></div>
                   </td>
                </tr>
                <tr>
                   <th class="row hidden-lg">Monday</th>
-                  <th scope="row">3:00pm - 3:45pm</th>
+                  <th scope="row">10:00 - 10:00</th>
                   <td>
-                     <div class="group">indoor <span>3:00 - 3:45</span></div>
+                     <div class="outdoor">cycling <span>10:00 - 10:00</span></div>
                   </td>
                   <td>
-                     <div class="kid">outdoor <span>3:00 - 3:45</span></div>
+                     <div class="personal">pilates <span>10:00 - 10:00</span></div>
                   </td>
                   <td>
-                     <div class="group">outdoor <span>3:00 - 3:45</span></div>
+                     <div class="group">outdoor <span>10:00 - 10:00</span></div>
                   </td>
                   <td>
-                     <div class="personal">indoor <span>3:00 - 3:45</span></div>
+                     <div class="group">indoor <span>10:00 - 10:00</span></div>
                   </td>
                   <td>
-                     <div class="personal">cycling <span>3:00 - 3:45</span></div>
+                     <div class="outdoor">pilates <span>10:00 - 10:00</span></div>
                   </td>
                   <td>
-                     <div class="kid">yoga <span>3:00 - 7:45</span></div>
+                     <div class="kid">yoga <span>10:00 - 10:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">cycling <span>3:00 - 3:45</span></div>
+                     <div class="group">pilates <span>10:00 - 10:00</span></div>
+                  </td>
+               </tr>
+               <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">11:00 - 12:00pm</th>
+                  <td>
+                     <div class="personal">outdoor <span>11:00 - 12:00</span></div>
+                  </td>
+                  <td>
+                     <div class="group">indoor <span>11:00 - 12:00</span></div>
+                  </td>
+                  <td>
+                     <div class="outdoor">outdoor <span>11:00 - 12:00</span></div>
+                  </td>
+                  <td>
+                     <div class="outdoor">indoor <span>11:00 - 12:00</span></div>
+                  </td>
+                  <td>
+                     <div class="kid">indoor <span>11:00 - 12:00</span></div>
+                  </td>
+                  <td>
+                     <div class="outdoor">yoga <span>11:00 - 12:00</span></div>
+                  </td>
+                  <td>
+                     <div class="outdoor">cycling <span>1:00 - 12:00</span></div>
+                  </td>
+               </tr>
+               <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">1:00pm - 2:00pm</th>
+                  <td>
+                     <div class="outdoor">cycling <span>1:00 - 2:00</span></div>
+                  </td>
+                  <td>
+                     <div class="personal">pilates <span>1:00 - 2:00</span></div>
+                  </td>
+                  <td>
+                     <div class="group">outdoor <span>1:00 - 2:00</span></div>
+                  </td>
+                  <td>
+                     <div class="group">indoor <span>1:00 - 2:00</span></div>
+                  </td>
+                  <td>
+                     <div class="outdoor">pilates <span>1:00 - 2:00</span></div>
+                  </td>
+                  <td>
+                     <div class="kid">yoga <span>1:00 - 2:00</span></div>
+                  </td>
+                  <td>
+                     <div class="group">pilates <span>1:00 - 2:00</span></div>
+                  </td>
+               </tr>
+               <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">3:00pm - 3:00pm</th>
+                  <td>
+                     <div class="group">indoor <span>3:00 - 3:00</span></div>
+                  </td>
+                  <td>
+                     <div class="kid">outdoor <span>3:00 - 3:00</span></div>
+                  </td>
+                  <td>
+                     <div class="group">outdoor <span>3:00 - 3:00</span></div>
+                  </td>
+                  <td>
+                     <div class="personal">indoor <span>3:00 - 3:00</span></div>
+                  </td>
+                  <td>
+                     <div class="personal">cycling <span>3:00 - 3:00</span></div>
+                  </td>
+                  <td>
+                     <div class="kid">yoga <span>3:00 - 7:00</span></div>
+                  </td>
+                  <td>
+                     <div class="outdoor">cycling <span>3:00 - 3:00</span></div>
                   </td>
                </tr>
             </tbody>
