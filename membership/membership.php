@@ -34,26 +34,6 @@ echo makeHeader();
                     <input type="text" name="contact" class="form-control" value="<?php echo $contact; ?>">
                     <span class="help-block"><?php echo $contact_erorr; ?></span>
                 </div>
-                <div class="form-group <?php echo (!empty($address_erorr)) ? 'has-error' : ''; ?>">
-                    <label>Email Address</label>
-                    <input type="email" name="address" class="form-control" value="<?php echo $address; ?>">
-                    <span class="help-block"><?php echo $address_erorr; ?></span>
-                </div>
-                <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                    <label>Username</label>
-                    <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                    <span class="help-block"><?php echo $username_err; ?></span>
-                </div>
-                <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-                    <span class="help-block"><?php echo $password_err; ?></span>
-                </div>
-                <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                    <label>Confirm Password</label>
-                    <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-                    <span class="help-block"><?php echo $confirm_password_err; ?></span>
-                </div>
                 <div class="form-group <?php echo (!empty($memembership_type_err)) ? 'has-error' : ''; ?>"">
                     <label>Membership Type</label>
                     <select type="membership_type" name="membership_type" class="form-control" value="<?php echo $membership_type; ?>">
@@ -70,10 +50,10 @@ echo makeHeader();
             </form>
         </div>
     </section>
-    <?php
+<?php
     include('../group/global/makeFooter.php');
     include('../group/global/makeScript.php');
     echo makeFooter();
     echo makeScript();
-    ?>
+?>
 </body>
