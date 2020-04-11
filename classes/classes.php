@@ -39,13 +39,13 @@ include('../server/config/config.php');
                     </tr>
                 </thead>
                 <tbody id="test">
-                    <?php $sql = "Select * from tbltimetable order by start";
+                    <?php $sql = "Select * from tbltimetable where date LIKE 'Monday' ";
                     $result = mysqli_query($link, $sql);
                     if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_array($result)) {
+                        while ($row = mysqli_fetch_assoc($result)) {
                             echo '<tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">7:00 - 8:00am</th>
+                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
                         <td>
                             <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
@@ -67,12 +67,28 @@ include('../server/config/config.php');
                         <td>
                             <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
-                    </tr>
-                    <tr>
+                    </tr>';
+                        }
+                    } ?>
+
+                    <?php $sql = "Select * from tbltimetable where date LIKE 'Tuesday' ";
+                    $result = mysqli_query($link, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">8:00 - 9:00am</th>
+                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
                         <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
                             <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
@@ -81,32 +97,29 @@ include('../server/config/config.php');
                             <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                    </tr>
-                    <tr>
+                    </tr>';
+                        }
+                    } ?>
+                    <?php $sql = "Select * from tbltimetable where date LIKE 'Wednesday' ";
+                    $result = mysqli_query($link, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">9:00 - 10:00am</th>
+                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
                         <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
                             <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
                             <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
@@ -115,21 +128,18 @@ include('../server/config/config.php');
                             <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
-                    </tr>
-                    <tr>
+                    </tr>';
+                        }
+                    } ?>
+                    <?php $sql = "Select * from tbltimetable where date LIKE 'Thursday' ";
+                    $result = mysqli_query($link, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">10:00 - 11:00am</th>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
+                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
                         <td>
                             <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
@@ -137,15 +147,30 @@ include('../server/config/config.php');
                             <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
                             <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
-                    </tr>
-                    <tr>
+                        <td>
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                    </tr>';
+                        }
+                    } ?>
+                    <?php $sql = "Select * from tbltimetable where date LIKE 'Friday' ";
+                    $result = mysqli_query($link, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">11:00 - 12:00pm</th>
+                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
                         <td>
                             <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
@@ -159,18 +184,36 @@ include('../server/config/config.php');
                             <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
-                    </tr>
-                    <tr>
+                    </tr>';
+                        }
+                    } ?>
+                    <?php $sql = "Select * from tbltimetable where date LIKE 'Saturday' ";
+                    $result = mysqli_query($link, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">1:00pm - 2:00pm</th>
+                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
                         <td>
                             <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
@@ -178,26 +221,29 @@ include('../server/config/config.php');
                             <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
                             <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                    </tr>
-                    <tr>
+                    </tr>';
+                        }
+                    } ?>
+                    <?php $sql = "Select * from tbltimetable where date LIKE 'Sunday' ";
+                    $result = mysqli_query($link, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<tr>
                         <th class="row hidden-lg">Monday</th>
-                        <th scope="row">2:00pm - 3:00pm</th>
+                        <th scope="row">' . $row["start"]  . "<br> - "  . $row["finish"] . "AM" . '</th>
                         <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                        </td>
+                        <td>
+                            <div class="lewis">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
                             <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
@@ -206,22 +252,13 @@ include('../server/config/config.php');
                             <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                         <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="brandon">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
-                        </td>
-                        <td>
-                            <div class="arlana">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
+                            <div class="oliver">' . $row["class"] . "<br>"  . $row["start"]  . "<br>"  . $row["finish"] . '
                         </td>
                     </tr>';
                         }
                     } ?>
                 </tbody>
-            </table>"
+            </table>
         </div>
     </section>
     <section class="work_day">
