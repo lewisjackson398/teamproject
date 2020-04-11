@@ -90,7 +90,7 @@ echo makeNav();
 </body>
 
 <script>
-    var btn = document.getElementById('membershipBtn');
+   var btn = document.getElementById('membershipBtn');
    btn.addEventListener('click', function() 
    {
       document.location.href = '/teamproject/membership/membership.php';
