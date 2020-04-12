@@ -8,13 +8,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 }
 
 // Initialize the session
-require_once('includes/membership_resource.php');
 include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>
 
 <body id="page-top" class="page membership">
-    <?php include('../group/global/makeNav.php');
+    <?php 
+    include('../group/global/makeNav.php');
     echo makeNav();
     ?>
     <br><br>
@@ -26,7 +26,7 @@ echo makeHeader();
             <form action="includes/membership_resource.php" method="post">
                 <div class="form-group">
                     <label>Age</label>
-                    <select class="form-control" name="age">
+                    <select class="form-control" name="age" value="">
                         <?php
                             for($i = 16; $i <= 100; $i++)
                             {
@@ -40,7 +40,7 @@ echo makeHeader();
                 </div>
                 <div class="form-group">
                     <label>Gender</label>
-                    <select class="form-control" name="gender">
+                    <select class="form-control" name="gender" value="">
                         <option value="M">M</option>
                         <option value="F">F</option>
                         <option value="O">O</option>
@@ -58,7 +58,16 @@ echo makeHeader();
                 </div>
                 <div class="form-group"> 
                     <label>Price</label>
-                    <input class="form-control" id="price" type="text" name="price" readonly>
+                    <input class="form-control" id="price" type="text" name="price" value="" readonly>
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label>Payment type</label>
+                    <select class="form-control" name="payment_type" value="">
+                        <option value="PayPal">PayPal</option>
+                        <option value="Visa">Visa</option>
+                        <option value="Mastercard">Mastercard</option>
+                    </select>
                     <span class="help-block"></span>
                 </div>
                 <div class="form-group">
@@ -69,10 +78,13 @@ echo makeHeader();
                 <div class="form-group">
                     <label>End of membership</label>
                     <input class="form-control" id="membership_end" type="text" name="membership_end" value="" readonly>
-                    <span></span>
+                    <span class="help-block"></span>
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-primary" value="Submit">
+                <div class="form-group">
+                    <input type="hidden" name="payment_time" id="payment_time" value="">
+                </div>
+                    <input onclick="checktime()" type="submit" class="btn btn-primary" value="Submit" name="submit">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
             </form>
@@ -93,11 +105,16 @@ echo makeHeader();
         var package_type = document.getElementById("package_type").value.toLowerCase();
         var price = "";
 
-        if (package_type == "bronze") {
+        if (package_type == "bronze") 
+        {
             price = "150";
-        }else if(package_type == "silver") {
+        }
+        else if(package_type == "silver") 
+        {
             price = "200";
-        }else if(package_type == "gold") {
+        }
+        else if(package_type == "gold") 
+        {
             price = "250";
         }
 
@@ -110,5 +127,14 @@ echo makeHeader();
 
     document.getElementById("membership_start").value = current_date;
     document.getElementById("membership_end").value = next_date;
+
+    function checktime()
+    {
+        var time = new Date();
+        var current_time = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
+
+        document.getElementById("payment_time").value = current_time;
+    }
+    
 
 </script>
