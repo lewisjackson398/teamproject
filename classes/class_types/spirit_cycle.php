@@ -10,7 +10,7 @@ include('../../server/config/config.php');
     ?>
     <section class="schedule">
         <div class="text-left" style="color: white">
-            <h2>Zumba</h2>
+            <h2>Spririt Cycle</h2>
             <p>Tuesday nights 6.00-7.00pm in our Malmesbury gym
                 Friday mornings 11:30am-12:30pm</p>
             <p>Yoga means union. It is the union of our mind, breath and body. Breathing slowly and holding poses for a certain amount of time will slow your heart rate, and focusing your mind on the practice will develop mental peace, deep insight and fantastic benefits in flexibility.</p>
