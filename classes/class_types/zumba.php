@@ -27,7 +27,7 @@ include('../../server/config/config.php');
                     <li>Wednesday evenings: 7.15-8.00pm</li>
                     <li>Friday morning: 7.15-7.45am</li>
                     <li>Wednesday lunchtime: 1.15-1.45pm</li>
-                    <li>Sunday morning: 8.30-9.00am/li>
+                    <li>Sunday morning: 8.30-9.00am</li>
                 </ul>
 
                 <p>The ZUMBA program is a Latin-inspired, dance-fitness class that incorporates Latin and international music and dance movements, creating a dynamic, exciting, exhilarating and effective fitness system.

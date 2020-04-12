@@ -27,7 +27,7 @@ include('../../server/config/config.php');
                     <li>Wednesday evenings: 7.15-8.00pm</li>
                     <li>Friday morning: 7.15-7.45am</li>
                     <li>Wednesday lunchtime: 1.15-1.45pm</li>
-                    <li>Sunday morning: 8.30-9.00am/li>
+                    <li>Sunday morning: 8.30-9.00am</li>
                 </ul>
 
                 <p>This is a popular, fun class with a serious purpose! This class isn’t just about looking great,
@@ -48,7 +48,7 @@ include('../../server/config/config.php');
         <?php include('../../classes/includes/make_booking.php');
         echo makeBooking(); ?>
     </section>
-    
+
     <?php
     include('../../classes/includes/make_info.php');
     include('../../group/global/makeFooter.php');
