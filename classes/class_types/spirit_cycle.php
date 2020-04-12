@@ -22,29 +22,15 @@ include('../../server/config/config.php');
                 <h2>Spirit Cycle</h2>
                 <p>All classes are available to non-members and all levels are welcome.</p>
                 <div class="1">
-                    <ul>Monday
-                        <li>Morning: 7:00 - 7:45am</li>
-                        <li>Afternoon: 12:00 - 1:00pm</li>
-                        <li>Evening: 5:00 - 6:00pm</li>
-                    </ul>
-                    <ul>Wednesday
-                        <li>Afternoon: 3:00 - 4:00pm</li>
-                    </ul>
-                    <ul>Thursday
-                        <li>Evening: 5:00 - 5:45pm</li>
+                    <ul>Tuesday
+                        <li>Morning: 10:00 - 10:45am</li>
+                        <li>Afternoon: 12:00 - 12:45pm</li>
                     </ul>
                     <ul>Friday
-                        <li>Evening: 5:00 - 5:45pm</li>
-                    </ul>
-                    <ul>Saturday
-                        <li>Morning: 10:00 - 10:45am</li>
-                        <li>Morning: 11:00 - 11:45am</li>
-                        <li>Afternoon: 1:00 - 2:00pm</li>
-                        <li>Afternoon: 2:00 - 2:45pm</li>
-                        <li>Evening: 4:00 - 5:00pm</li>
+                        <li>Afternoon: 12:00 - 1:00pm</li>
                     </ul>
                     <ul>Sunday
-                        <li>Afternoon: 12:00 - 12:45pm</li>
+                        <li>Morning: 7:00 - 7:45am</li>
                     </ul>
                 </div>
 
