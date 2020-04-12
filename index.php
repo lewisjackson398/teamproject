@@ -98,13 +98,13 @@ echo makeHeader();
                      <div class="personal">indoor <span>7:00 - 7:00</span></div>
                   </td>
                   <td>
-                     <div class="personal">cycling <span>7:00 - 7:00</span></div>
+                     <div class="personal">Beginner <span>7:00 - 7:00</span></div>
                   </td>
                   <td>
                      <div class="kid">yoga <span>7:00 - 7:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">cycling <span>7:00 - 7:00</span></div>
+                     <div class="outdoor">Beginner <span>7:00 - 7:00</span></div>
                   </td>
                </tr>
                <tr>
@@ -129,7 +129,7 @@ echo makeHeader();
                      <div class="outdoor">yoga <span>8:00 - 8:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">cycling <span>8:00 - 8:00</span></div>
+                     <div class="outdoor">Beginner <span>8:00 - 8:00</span></div>
                   </td>
                </tr>
                <tr>
@@ -154,14 +154,14 @@ echo makeHeader();
                      <div class="outdoor">yoga <span>9:00 - 9:00</span></div>
                   </td>
                   <td>
-                     <div class="group">cycling <span>9:00 - 9:00</span></div>
+                     <div class="group">Beginner <span>9:00 - 9:00</span></div>
                   </td>
                </tr>
                <tr>
                   <th class="row hidden-lg">Monday</th>
                   <th scope="row">10:00 - 10:00</th>
                   <td>
-                     <div class="outdoor">cycling <span>10:00 - 10:00</span></div>
+                     <div class="outdoor">Beginner <span>10:00 - 10:00</span></div>
                   </td>
                   <td>
                      <div class="personal">pilates <span>10:00 - 10:00</span></div>
@@ -204,14 +204,14 @@ echo makeHeader();
                      <div class="outdoor">yoga <span>11:00 - 12:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">cycling <span>1:00 - 12:00</span></div>
+                     <div class="outdoor">Beginner <span>1:00 - 12:00</span></div>
                   </td>
                </tr>
                <tr>
                   <th class="row hidden-lg">Monday</th>
                   <th scope="row">1:00pm - 2:00pm</th>
                   <td>
-                     <div class="outdoor">cycling <span>1:00 - 2:00</span></div>
+                     <div class="outdoor">Beginner <span>1:00 - 2:00</span></div>
                   </td>
                   <td>
                      <div class="personal">pilates <span>1:00 - 2:00</span></div>
@@ -248,13 +248,13 @@ echo makeHeader();
                      <div class="personal">indoor <span>3:00 - 3:00</span></div>
                   </td>
                   <td>
-                     <div class="personal">cycling <span>3:00 - 3:00</span></div>
+                     <div class="personal">Beginner <span>3:00 - 3:00</span></div>
                   </td>
                   <td>
                      <div class="kid">yoga <span>3:00 - 7:00</span></div>
                   </td>
                   <td>
-                     <div class="outdoor">cycling <span>3:00 - 3:00</span></div>
+                     <div class="outdoor">Beginner <span>3:00 - 3:00</span></div>
                   </td>
                </tr>
             </tbody>
@@ -314,7 +314,7 @@ echo makeHeader();
                   </div>
                   <div class="service-content insideService">
                      <h2 class="service-title"><a href="#" class="title">Spirit Cycle</a></h2>
-                     <p>Spirit Cycle has revolutionized indoor cycling and taken the world of fitness by storm.</p>
+                     <p>Spirit Cycle has revolutionized indoor Beginner and taken the world of fitness by storm.</p>
                   </div>
                </div>
             </div>

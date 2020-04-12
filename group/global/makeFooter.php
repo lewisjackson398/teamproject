@@ -16,7 +16,7 @@ function makeFooter()
           </p>
           <p>
             <span>Phone: <b><a href="tel:7181234567">7181234567</a></b></span>
-            <span>email: <b><a href="mailto:contact@metrogym.com">contact@metrogym.com</a></b></span>
+            <span>email: <b><a href="mailto:contact@metrogym.co.uk">contact@metrogym.co.uk</a></b></span>
           </p>
         </div>
         <div class="col-md-3 col-sm-12">

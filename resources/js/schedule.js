@@ -1,6 +1,8 @@
+/*
+
 //search classes found in database
 $('.search-box input[type="text"]').on("keyup input", function () {
-    /* Get input value on change */
+    // Get input value on change
     var inputVal = $(this).val();
     var resultDropdown = $(this).siblings(".result");
     if (inputVal.length) {
@@ -20,52 +22,90 @@ $(document).on("click", ".result p", function () {
     $(this).parent(".result").empty();
 });
 
+*/
 //hide elements that dont appear in search
 function myFunction() {
+    // Declare variables
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
-    table = document.getElementById("test");
+    table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
+        td = tr[i].getElementsByTagName("div")[0];   
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
             } else {
                 tr[i].style.display = "none";
-            };
-        };
-    };
+            }
+        }
+    }
 }
+
+function contact() {
+    window.open("/teamproject/group/contact.php", "_self");
+}
+/*
+
+function lewis() {
+    a = $('.instructor_name')
+
+    if ($('#brandon').on('click', function () {
+        toggle()
+    }));
+}
+
+
+
+$('#brandon').on('click', function () {
+    $('.instructor_name').value = "Brandon".toggle();
+});
+
+
+$('#brandon').on('click', function () {
+    if ($('.instructor_name'.value = "Brandon")) {
+        toggle();
+    }
+});
+
+$('#oliver').on('click', function () {
+    if ($('.instructor_name'.value = "Oliver")) {
+        toggle();
+    }
+});
+
+$('#arlana').on('click', function () {
+    if ($('.instructor_name'.value = "Arlana")) {
+        toggle();
+    }
+});
+
+$('#all').on('click', function () {
+    if ($('.instructor_name'.value = "Brandon")) {
+        toggle();
+    }
+});
 
 $(document).ready(function(){
 	$('#lewis').on('click',function(){	
-		$('.lewis').toggle();
+		$('.instructor_name').val('LEWIS').toggle();
 	});
 });
 
-$(document).ready(function(){
-	$('#brandon').on('click',function(){	
-		$('.brandon').toggle();
-	});
-});
+*/
 
-$(document).ready(function(){
-	$('#arlana').on('click',function(){	
-		$('.arlana').toggle();
-	});
+$(".buttons").on('click', 'a', function () {
+    event.preventDefault();
+    var classToShow = this.id.split('-')[1],
+        filter = classToShow === "all" ? 'div' : '.' + classToShow;
+    $(".table tbody tr td")
+        .children().show().addClass('active')
+        .not(filter).hide();
 });
-
-$(document).ready(function(){
-	$('#oliver').on('click',function(){	
-		$('.oliver').toggle();
-	});
-});
-
-$(document).ready(function(){
-	$('#all').on('click',function(){	
-		$('.oliver, .lewis, .brandon, .arlana').show();
-	});
-});
+$(".buttons").on('click', '#choice-all', function () {
+    $(".table tbody tr td div").removeClass('active');
+}); 
