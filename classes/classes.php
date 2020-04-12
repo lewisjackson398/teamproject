@@ -193,7 +193,7 @@ include('../server/config/config.php');
 
                         </td>
                         <td>
-                            <div class="lewis"><a href="class_types/hot_yoga.php">Hot yoga <span>9:00 - 9:45</span></a></div>
+                            <div class="lewis"><a href="class_types/hot_yoga.php">Hot yoga <span>12:00 - 12:45</span></a></div>
                         </td>
                     </tr>
                     <tr>

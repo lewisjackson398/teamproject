@@ -42,43 +42,30 @@ include('../../server/config/config.php');
                         <li>Afternoon: 1:00 - 2:00pm</li>
                         <li>Evening: 4:00 - 5:00pm</li>
                     </ul>
+                    <ul>Friday
+                        <li>Morning: 8:00 - 8:45am</li>
+                        <li>Morning: 9:00 - 9:45am</li>
+                        <li>Morning: 11:00 - 11:45am</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="text-left" style="color: white">
-                <ul>Friday
-                    <li>Morning: 8:00 - 8:45am</li>
-                    <li>Morning: 9:00 - 9:45am</li>
-                    <li>Morning: 11:00 - 11:45am</li>
-                </ul>
-                <ul>Saturday
-                    <li></li>
-                </ul>
-                <ul>Sunday
-                    <li></li>
-                </ul>
-            </div>
+                <div style="color: white">
+                    <p>This is a popular, fun class with a serious purpose! This class isn’t just about looking great,
+                        but also about maintaining a general level of fitness that will keep you healthy and motivated in your work and personal life.</p>
 
-            <div style="color: white">
+                    <p>Benefits of Beach Body include:</p>
 
-
-
-                <p>This is a popular, fun class with a serious purpose! This class isn’t just about looking great,
-                    but also about maintaining a general level of fitness that will keep you healthy and motivated in your work and personal life.</p>
-
-                <p>Benefits of Beach Body include:</p>
-
-                <ul>
-                    <li>Full body aerobic and toning workout</li>
-                    <li>Increased stamina and endurance</li>
-                    <li>Builds strength</li>
-                    <li>Increased energy levels</li>
-                    <li>Increased flexibility</li>
-                    <li>A great calorie burner</li>
-                    <li>Enjoyable exercise</li>
-                </ul>
-            </div>
-            <?php include('../../classes/includes/make_booking.php');
-            echo makeBooking(); ?>
+                    <ul>
+                        <li>Full body aerobic and toning workout</li>
+                        <li>Increased stamina and endurance</li>
+                        <li>Builds strength</li>
+                        <li>Increased energy levels</li>
+                        <li>Increased flexibility</li>
+                        <li>A great calorie burner</li>
+                        <li>Enjoyable exercise</li>
+                    </ul>
+                </div>
+                <?php include('../../classes/includes/make_booking.php');
+                echo makeBooking(); ?>
     </section>
 
     <?php
