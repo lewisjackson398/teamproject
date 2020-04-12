@@ -32,7 +32,8 @@ include('../../server/config/config.php');
 
                 <p>Spinning is a very popular class for all ages and abilities. The class is excellent for burning calories, improving your aerobic
                     capacity and toning up those muscles! The classes are 45 minute intense sessions involving various different sections from hill climbs to short sprints.</p>
-                <ul>Benefits of spinning include:
+                <p>Benefits of Spirit Cycle include:</p>
+                <ul>
                     <li>Increased stamina and endurance</li>
                     <li>A great calorie burner (burning up to 800kcals in a class)</li>
                     <li>Excellent improvements in aerobic capacity</li>

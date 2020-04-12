@@ -29,8 +29,8 @@ include('../../server/config/config.php');
                     <li>Wednesday lunchtime: 1.15-1.45pm</li>
                     <li>Sunday morning: 8.30-9.00am</li>
                 </ul>
-
-                <ul>Benefits of Senior Keep Fit include
+                <p>Benefits of Senior Keep Fit include:</p>
+                <ul>
                     <li>A low-impact class designed specifically for the more mature exerciser.</li>
                     <li>Heart and lungs exercises that will improve stamina for everyday activities.</li>
                     <li>Strength training that will help maintain strong joints and keep osteoporosis at bay.</li>

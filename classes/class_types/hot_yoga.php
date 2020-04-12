@@ -33,7 +33,8 @@ include('../../server/config/config.php');
                 <p>Yoga means union. It is the union of our mind, breath and body. Breathing slowly and holding poses for a certain
                     amount of time will slow your heart rate, and focusing your mind on the practice will develop mental peace, deep insight and fantastic benefits in flexibility.</p>
 
-                <ul>Benefits of Yoga include
+                <p>Benefits of Hot Yoga include:</p>
+                <ul>
                     <li>Increased flexibilitye</li>
                     <li>Increased balance and stability</li>
                     <li>A full mind and body workout</li>
