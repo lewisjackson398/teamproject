@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once('includes/membership_resource.php');
+
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: ../group/login.php");
@@ -23,7 +25,7 @@ echo makeHeader();
 
             <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Fill out this form to start a membership.</h1>
             <br></br>
-            <form action="includes/membership_resource.php" method="post">
+            <form action="../membership/includes/membership_resource.php" method="post">
                 <div class="form-group">
                     <label>Age</label>
                     <select class="form-control" name="age" value="">
@@ -83,6 +85,9 @@ echo makeHeader();
                 <div>
                 <div class="form-group">
                     <input type="hidden" name="payment_time" id="payment_time" value="">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="user_id" value="<?php $_SESSION['user_id'] ?>">
                 </div>
                     <input onclick="checktime()" type="submit" class="btn btn-primary" value="Submit" name="submit">
                     <input type="reset" class="btn btn-default" value="Reset">
