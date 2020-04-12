@@ -19,7 +19,7 @@ include('../../server/config/config.php');
     <section class="schedule">
         <div class="container">
             <div class="text-left" style="color: white">
-                <h2>Zumba</h2>
+                <h2>Senior Keep Fit</h2>
                 <p>All classes are available to non-members and all levels are welcome.</p>
                 <div class="1">
                     <ul>Monday
@@ -47,16 +47,12 @@ include('../../server/config/config.php');
                         <li>Afternoon: 12:00 - 12:45pm</li>
                     </ul>
                 </div>
-
-                <p>The ZUMBA program is a Latin-inspired, dance-fitness class that incorporates Latin and international music and dance movements, creating a dynamic, exciting, exhilarating and effective fitness system.
-                    A ZUMBA class combines fast and slow rhythms that tone and sculpt the body using an aerobic/fitness approach to achieve a unique blended balance of cardio and muscle-toning benefits.</p>
-                <p>Benefits of Zumba include:</p>
+                <p>Benefits of Senior Keep Fit include:</p>
                 <ul>
-                    <li>Great increase in Aerobic capacity</li>
-                    <li>A Great calorie burner</li>
-                    <li>Excellent improvements in body toning</li>
-                    <li>Great fun</li>
-                    <li>Effective & Enjoyable/li>
+                    <li>A low-impact class designed specifically for the more mature exerciser.</li>
+                    <li>Heart and lungs exercises that will improve stamina for everyday activities.</li>
+                    <li>Strength training that will help maintain strong joints and keep osteoporosis at bay.</li>
+                    <li>Some relaxing and stretching to aid mobility.</li>
                 </ul>
             </div>
         </div>
