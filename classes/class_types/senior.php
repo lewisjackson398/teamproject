@@ -19,7 +19,7 @@ include('../../server/config/config.php');
     <section class="schedule">
         <div class="container">
             <div class="text-left" style="color: white">
-                <h2>Spirit Cycle</h2>
+                <h2>Senior Keep Fit</h2>
                 <p>All classes are available to non-members and all levels are welcome.</p>
                 <ul>
                     <li>Monday lunchtime: 1.15-1.45pm</li>
@@ -30,15 +30,11 @@ include('../../server/config/config.php');
                     <li>Sunday morning: 8.30-9.00am/li>
                 </ul>
 
-                <p>Spinning is a very popular class for all ages and abilities. The class is excellent for burning calories, improving your aerobic
-                    capacity and toning up those muscles! The classes are 45 minute intense sessions involving various different sections from hill climbs to short sprints.</p>
-                <ul>Benefits of spinning include:
-                    <li>Increased stamina and endurance</li>
-                    <li>A great calorie burner (burning up to 800kcals in a class)</li>
-                    <li>Excellent improvements in aerobic capacity</li>
-                    <li>Builds strength</li>
-                    <li>Improves muscular tone</li>
-                    <li>Enjoyable exercise</li>
+                <ul>Benefits of Senior Keep Fit include
+                    <li>A low-impact class designed specifically for the more mature exerciser.</li>
+                    <li>Heart and lungs exercises that will improve stamina for everyday activities.</li>
+                    <li>Strength training that will help maintain strong joints and keep osteoporosis at bay.</li>
+                    <li>Some relaxing and stretching to aid mobility.</li>
                 </ul>
             </div>
         </div>

@@ -60,10 +60,10 @@ include('../server/config/config.php');
                                 <div class="brandon"><a href="class_types/beach_body.php">Beach Body<span>7:00 - 7:45</span></a></div>
                             </td>
                             <td>
-                                <div class="oliver"><a href="class_types/beginner.php">Beginner <span>7:00 - 7:45</span></a></div>
+                                <div class="oliver"><a href="class_types/senior.php">Senior Keep Fit<span>7:00 - 7:45</span></a></div>
                             </td>
                             <td>
-                                <div class="lewis"><a href="class_types/beginner.php">Beginner<span>7:00 - 7:45</span></a></div>
+                                <div class="lewis"><a href="class_types/senior.php">Senior Keep Fit<span>7:00 - 7:45</span></a></div>
 
                             </td>
                             <td>
@@ -95,7 +95,7 @@ include('../server/config/config.php');
 
                             </td>
                             <td>
-                                <div class="brandon"><a href="class_types/beginner.php">Beginner <span>8:00 - 8:45</span></a></div>
+                                <div class="brandon"><a href="class_types/senior.php">Senior Keep Fit <span>8:00 - 8:45</span></a></div>
                             </td>
                         </tr>
                         <tr>
@@ -120,14 +120,14 @@ include('../server/config/config.php');
 
                             </td>
                             <td>
-                                <div class="lewis"><a href="class_types/beginner.php">Beginner <span>9:00 - 9:45</span></a></div>
+                                <div class="lewis"><a href="class_types/senior.php">Senior Keep Fit <span>9:00 - 9:45</span></a></div>
                             </td>
                         </tr>
                         <tr>
                             <th class="row hidden-lg"></th>
                             <th scope="row">10:00 - 11:00am</th>
                             <td>
-                                <div class="brandon"><a href="class_types/beginner.php">Beginner <span>10:00 - 10:45</span></a></a></div>
+                                <div class="brandon"><a href="class_types/senior.php">Senior Keep Fit <span>10:00 - 10:45</span></a></a></div>
                             </td>
                             <td>
                                 <div class="lewis"><a href="class_types/spriit_cycle.php">Spirit cycle <span>10:00 - 10:45</span></div>
@@ -220,7 +220,7 @@ include('../server/config/config.php');
                                 <div class="oliver"><a href="class_types/hot_yoga.php">Hot yoga <span>1:00 - 2:00</span></a></div>
                             </td>
                             <td>
-                                <div class="oliver"><a href="class_types/beginner.php">Beginner <span>1:00 - 2:00</span></a></div>
+                                <div class="oliver"><a href="class_types/senior.php">Senior Keep Fit <span>1:00 - 2:00</span></a></div>
                             </td>
                         </tr>
                         <tr>
@@ -245,7 +245,7 @@ include('../server/config/config.php');
                                 <div class="oliver"><a href="class_types/hot_yoga.php">Hot yoga <span>2:00 - 2:45</span></a></div>
                             </td>
                             <td>
-                                <div class="oliver"><a href="class_types/beginner.php">Beginner <span>2:00 - 3:00</span></a></div>
+                                <div class="oliver"><a href="class_types/senior.php">Senior Keep Fit <span>2:00 - 3:00</span></a></div>
                             </td>
                         </tr>
                         <tr>
@@ -265,20 +265,20 @@ include('../server/config/config.php');
                                 <div class="arlana"><a href="class_types/zumba.php">Zumba <span>3:00 - 4:00</span></a></div>
                             </td>
                             <td>
-                                <div class="lewis"><a href="class_types/beginner.php">Beginner <span>3:00 - 4:00</span></a></div>
+                                <div class="lewis"><a href="class_types/senior.php">Senior Keep Fit <span>3:00 - 4:00</span></a></div>
                             </td>
                             <td>
 
                             </td>
                             <td>
-                                <div class="oliver"><a href="class_types/beginner.php">Beginner <span>3:00 - 4:00</span></a></div>
+                                <div class="oliver"><a href="class_types/senior.php">Senior Keep Fit <span>3:00 - 4:00</span></a></div>
                             </td>
                         </tr>
                         <tr>
                             <th class="row hidden-lg"></th>
                             <th scope="row">4:00pm - 5:00pm</th>
                             <td>
-                                <div class="oliver"><a href="class_types/beginner.php">Beginner <span>4:00 - 5:00</span></a></div>
+                                <div class="oliver"><a href="class_types/senior.php">Senior Keep Fit <span>4:00 - 5:00</span></a></div>
 
                             </td>
                             <td>
@@ -320,7 +320,7 @@ include('../server/config/config.php');
 
                             </td>
                             <td>
-                                <div class="lewis"><a href="class_types/beginner.php">Beginner <span>5:00 - 6:00</span></a></div>
+                                <div class="lewis"><a href="class_types/senior.php">Senior Keep Fit <span>5:00 - 6:00</span></a></div>
                             </td>
                             <td>
 
@@ -329,11 +329,8 @@ include('../server/config/config.php');
                     </tbody>
                 </table>
             </div>
-            <div class="text-center">
-                <h2>Want to find out more or book a class?</h2>
-                <p style="color: white"> Call 01666 822 615 or email info@metrogym.co.uk</p>
-                <button class="btn btn-primary btn-xl" onclick="contact()">GET IN TOUCH</button>
-            </div>
+            <?php include('../classes/includes/make_booking.php');
+            echo makeBooking(); ?>
 
         </section>
         <?php

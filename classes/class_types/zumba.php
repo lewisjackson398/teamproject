@@ -20,31 +20,36 @@ include('../../server/config/config.php');
         <div class="container">
             <div class="text-left" style="color: white">
                 <h2>Zumba</h2>
-                <p>Tuesday nights 6.00-7.00pm in our Malmesbury gym
-                    Friday mornings 11:30am-12:30pm</p>
-                <p>Yoga means union. It is the union of our mind, breath and body. Breathing slowly and holding poses for a certain
-                    amount of time will slow your heart rate, and focusing your mind on the practice will develop mental peace, deep insight and fantastic benefits in flexibility.</p>
-                <p>Come on Tuesday nights at 6pm or Friday mornings at 10.30am and feel the physical and
-                    mental benefits that Yoga can offer you. For all levels, beginners welcome. I hope to see you soon. Azime.</p>
-
+                <p>All classes are available to non-members and all levels are welcome.</p>
                 <ul>
-                    <li>Increased flexibility</li>
-                    <li>Increased balance and stability</li>
-                    <li>A full mind and body workout</li>
-                    <li>Reduced stress and anxiety levels</li>
-                    <li> Increased strength</li>
-                    <li>Revitalised energy levels</li>
-                    <li>Increased blood circulation</li>
-                    <li>All classes are available to non-members and all levels are welcome.</li>
+                    <li>Monday lunchtime: 1.15-1.45pm</li>
+                    <li>Wednesday lunchtime: 1.15-1.45pm</li>
+                    <li>Wednesday evenings: 7.15-8.00pm</li>
+                    <li>Friday morning: 7.15-7.45am</li>
+                    <li>Wednesday lunchtime: 1.15-1.45pm</li>
+                    <li>Sunday morning: 8.30-9.00am/li>
+                </ul>
+
+                <p>The ZUMBA program is a Latin-inspired, dance-fitness class that incorporates Latin and international music and dance movements, creating a dynamic, exciting, exhilarating and effective fitness system.
+                    A ZUMBA class combines fast and slow rhythms that tone and sculpt the body using an aerobic/fitness approach to achieve a unique blended balance of cardio and muscle-toning benefits.</p>
+                <ul>Benefits of Zumba include:
+                    <li>Great increase in Aerobic capacity</li>
+                    <li>A Great calorie burner</li>
+                    <li>Excellent improvements in body toning</li>
+                    <li>Great fun</li>
+                    <li>Effective & Enjoyable/li>
                 </ul>
             </div>
         </div>
-        <?php
-        include('../../classes/includes/make_info.php');
-        include('../../group/global/makeFooter.php');
-        include('../../group/global/makeScript.php');
-        echo makeInfo();
-        echo makeFooter();
-        echo makeScript();
-        ?>
+        <?php include('../../classes/includes/make_booking.php');
+        echo makeBooking(); ?>
+    </section>
+    <?php
+    include('../../classes/includes/make_info.php');
+    include('../../group/global/makeFooter.php');
+    include('../../group/global/makeScript.php');
+    echo makeInfo();
+    echo makeFooter();
+    echo makeScript();
+    ?>
 </body>
