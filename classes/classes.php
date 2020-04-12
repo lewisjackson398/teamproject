@@ -47,7 +47,7 @@ include('../server/config/config.php');
                                 <div class="lewis">Beginner<span>7:00 - 7:45</span></div>
                             </td>
                             <td>
-                                <div class="lewis">Zumba<span>7:00 - 7:45</span></div>
+                                <div class="lewis"><a href="class_types/zumba.php">Zumba<span>7:00 - 7:45</span></a></div>
                             </td>
                             <td>
                                 <div class="brandon">Beach Body<span>7:00 - 7:45</span></div>
