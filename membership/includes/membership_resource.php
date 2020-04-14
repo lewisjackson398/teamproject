@@ -2,9 +2,9 @@
 // Include config file
 require_once("config.php");
 
-if(isset($_POST['submit']))
-{
 
+if(isset($_POST["submit"]))
+{
     $age = $_POST['age'];
     $gender = $_POST['gender'];
     $payment_type = $_POST['payment_type'];
@@ -13,40 +13,39 @@ if(isset($_POST['submit']))
     $membership_start = $_POST['membership_start'];
     $membership_end = $_POST['membership_end'];
     $user_id = $_POST['user_id'];
-
-    $insert_member = "INSERT INTO 'tblmember' ('age','gender','joining_date','end_of_membership_date','user_id')
-                        VALUES ($age, $gender, $membership_start, $membership_end, $user_id)";
+    
+    $insert_member = "INSERT INTO tblmember (age, gender, joining_date, end_of_membership_date, user_id) 
+                        VALUES ('$age', '$gender', '$membership_start', '$membership_end', '$user_id')";
 
     if(mysqli_query($link, $insert_member))
     {
-        echo "member inserted";
+        echo "Success! Your membership has started."; 
     }
     else
     {
-        echo("member not inserted");
+        echo "Sorry, something must have gone wrong. Please try again later.";
     }
 
-    /*
+    $get_member_id = "SELECT member_id FROM tblmember WHERE user_id = '$user_id'";
 
-    $get_memberid = "SELECT 'member_id' FROM 'tblmember' WHERE 'user_id' = $user_id";
+    $result = mysqli_query($link, $get_member_id);
 
-    $member_id = mysqli_query($link, $get_memberid);
+    $row = mysqli_fetch_array($result, MYSQLI_NUM);
 
-    $insert_payment = "INSERT INTO 'tblpayment' ('member_id','type','amount','payment_time','payment_date')
-                        VALUES ($member_id, $payment_type, $price, $payment_time, $membership_start)";
+    $member_id = $row[0];
+
+    $insert_payment = "INSERT INTO tblpayment (member_id, type, amount, payment_time, payment_date) 
+                        VALUES ('$member_id', '$payment_type', '$price', '$payment_time', '$membership_start')";
 
     if(mysqli_query($link, $insert_payment))
     {
-        echo "payment inserted";
+        echo "Success! Your payment was approved.";
     }
     else
     {
-        echo "payment not inserted";
+        echo "Something was wrong with your payment. Please try again later." . mysqli_error($link);
     }
 
-    */
+    mysqli_close($link);
 }
-
-
-
 ?>
