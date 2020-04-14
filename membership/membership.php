@@ -87,7 +87,7 @@ echo makeHeader();
                     <input type="hidden" name="payment_time" id="payment_time" value="">
                 </div>
                 <div class="form-group">
-                    <input type="hidden" name="user_id" value="<?php $_SESSION['user_id'] ?>">
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
                 </div>
                     <input onclick="checktime()" type="submit" class="btn btn-primary" value="Submit" name="submit">
                     <input type="reset" class="btn btn-default" value="Reset">
@@ -127,8 +127,8 @@ echo makeHeader();
     }     
 
     var today = new Date();
-    var current_date = today.getDate()+ '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-    var next_date = today.getDate()+ '-' + (today.getMonth() + 2) + '-' + today.getFullYear();
+    var current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var next_date = today.getFullYear() + '-' + (today.getMonth() + 2) + '-' + today.getDate();
 
     document.getElementById("membership_start").value = current_date;
     document.getElementById("membership_end").value = next_date;
