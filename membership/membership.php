@@ -4,7 +4,14 @@ session_start();
 require_once('includes/membership_resource.php');
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
+{
+    header("location: ../group/login.php");
+    exit;
+}
+
+if($_SESSION['hasmembership'] == true)
+{
     header("location: ../group/login.php");
     exit;
 }
@@ -141,5 +148,4 @@ echo makeHeader();
         document.getElementById("payment_time").value = current_time;
     }
     
-
 </script>
