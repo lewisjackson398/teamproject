@@ -83,6 +83,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    $get_member_id = "SELECT member_id FROM tblmember WHERE user_id = '$user_id'";
+
+    if(mysqli_query($link, $get_member_id))
+    {
+        $_SESSION['hasmembership'] = true;
+    }
+    else
+    {
+        $_SESSION['hasmembership'] = false;
+    }
+
     // Close connection
     mysqli_close($link);
 }
