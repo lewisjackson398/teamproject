@@ -7,6 +7,7 @@ if(isset($_POST["submit"]))
 {
     $age = $_POST['age'];
     $gender = $_POST['gender'];
+    $membership_type = $_POST['membership_type'];
     $payment_type = $_POST['payment_type'];
     $payment_time = $_POST['payment_time'];
     $price = $_POST['price'];
@@ -14,8 +15,8 @@ if(isset($_POST["submit"]))
     $membership_end = $_POST['membership_end'];
     $user_id = $_POST['user_id'];
     
-    $insert_member = "INSERT INTO tblmember (age, gender, joining_date, end_of_membership_date, user_id) 
-                        VALUES ('$age', '$gender', '$membership_start', '$membership_end', '$user_id')";
+    $insert_member = "INSERT INTO tblmember (age, gender, membership_type, joining_date, end_of_membership_date, user_id) 
+                        VALUES ('$age', '$gender', '$membership_type', '$membership_start', '$membership_end', '$user_id')";
 
     if(mysqli_query($link, $insert_member))
     {
@@ -47,5 +48,7 @@ if(isset($_POST["submit"]))
     }
 
     mysqli_close($link);
+
+    header("location: ../group/login.php");
 }
 ?>
