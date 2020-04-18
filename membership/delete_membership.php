@@ -10,14 +10,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
     exit;
 }
 
-if($_SESSION['hasmembership'] == false)
-{
-    echo "It looks like you don't have a membership, please start a membership before you wish to delete it.";
-    header("location: ../group/login.php");
-    exit;
-}
-
-// Initialize the session
 include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>
@@ -44,8 +36,6 @@ echo makeHeader();
     </section>
 <?php
     include('../group/global/makeFooter.php');
-    include('../group/global/makeScript.php');
     echo makeFooter();
-    echo makeScript();
 ?>
 </body>
