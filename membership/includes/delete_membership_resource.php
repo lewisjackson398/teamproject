@@ -2,50 +2,40 @@
 // Include config file
 require_once("config.php");
 
-
-if(isset($_POST["submit"]))
+// If the user selected yes on the form
+if(isset($_POST["yes"]))
 {
-    $age = $_POST['age'];
-    $gender = $_POST['gender'];
-    $membership_type = $_POST['membership_type'];
-    $payment_type = $_POST['payment_type'];
-    $price = $_POST['price'];
-    $user_id = $_POST['user_id'];
-    
-    $insert_member = "INSERT INTO tblmember (age, gender, membership_type, joining_date, end_of_membership_date, user_id) 
-                        VALUES ('$age', '$gender', '$membership_type', '$membership_start', '$membership_end', '$user_id')";
+    // Query for deleting the member where to user_id is equal to the session user_id
+    $delete_member = "DELETE FROM tblmember WHERE user_id = '$user_id'";
 
-    if(mysqli_query($link, $insert_member))
+    // Run the above query
+    if(mysqli_query($link, $delete_member))
     {
-        echo "Success! Your membership has started."; 
+        deleteMembershipTrue();
+        //Set the session variable to false as the user no longer has a membership
+        $_SESSION['hasmembership'] = false;
     }
     else
     {
-        echo "Sorry, something must have gone wrong. Please try again later.";
+        deleteMembershipFalse();
     }
-
-    $get_member_id = "SELECT member_id FROM tblmember WHERE user_id = '$user_id'";
-
-    $result = mysqli_query($link, $get_member_id);
-
-    $row = mysqli_fetch_array($result, MYSQLI_NUM);
-
-    $member_id = $row[0];
-
-    $insert_payment = "INSERT INTO tblpayment (member_id, type, amount, payment_time, payment_date) 
-                        VALUES ('$member_id', '$payment_type', '$price', '$payment_time', '$membership_start')";
-
-    if(mysqli_query($link, $insert_payment))
-    {
-        echo "Success! Your payment was approved.";
-    }
-    else
-    {
-        echo "Something was wrong with your payment. Please try again later." . mysqli_error($link);
-    }
-
-    mysqli_close($link);
-
+}
+else
+{
+    //If the user did not select yes, then redirect to the login page where they will be redirected to the welcome page, if they are still logged in
     header("location: ../group/login.php");
 }
+    
 ?>
+
+<script>
+    function deleteMembershipTrue
+    {
+        alert("Your membership has been successfully deleted");
+    }
+
+    function deleteMembershipFalse
+    {
+        alert("Something went wrong deleting your membership, please try again later");
+    }
+</script>
