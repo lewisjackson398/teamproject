@@ -83,14 +83,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    // Get the member id from the table tblmember where the id is equal to the loggedin id
     $get_member_id = "SELECT member_id FROM tblmember WHERE user_id = '$user_id'";
 
     if(mysqli_query($link, $get_member_id))
     {
+        // If the user has a member id then set the session variable equal to true
         $_SESSION['hasmembership'] = true;
     }
     else
     {
+        // If the user does not have a member id set the session variable to false
         $_SESSION['hasmembership'] = false;
     }
 
