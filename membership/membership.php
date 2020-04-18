@@ -4,9 +4,11 @@ session_start();
 require_once('includes/membership_resource.php');
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
 {
+    echo "It looks like you're not logged in, please login.";
     header("location: ../group/login.php");
+    exit;
 }
 
 // Initialize the session
@@ -139,16 +141,6 @@ echo makeHeader();
         var current_time = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
 
         document.getElementById("payment_time").value = current_time;
-    }
-    
-    function hasMembership()
-    {
-        $hasmembership = <?php $_SESSION['hasmembership']; ?>
-        if ($hasmembership == true)
-        {
-            alert("It looks like you already have a membership, redirecting you to the welcome page, where you can do that");
-            header("location: ../teamproject/group/login.php");
-        }
     }
 
 </script>
