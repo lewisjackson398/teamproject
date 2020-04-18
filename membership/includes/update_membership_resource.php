@@ -13,6 +13,16 @@ if(isset($_POST["submit"]))
     $price = $_POST['price'];
     $user_id = $_POST['user_id'];
 
+    $check_member = "SELECT member_id FROM tblmember WHERE user_id = '$user_id'";
+    $check_member_result = mysqli_query($link, $check_member);
+    
+    if(mysqli_num_rows($check_member_result) == 0)
+    {
+        header("Refresh: 5; url= /teamproject/group/welcome.php");
+        echo "It looks like you don't have a membership to update, redirecting you in 5 seconds"; 
+        exit;
+    }
+
     // Query for updating the member table with the new values 
     $update_member = "UPDATE tblmember 
                         SET age = '$age', gender = '$gender', membership_type = '$membership_type'
@@ -21,11 +31,13 @@ if(isset($_POST["submit"]))
     // Run the above query
     if(mysqli_query($link, $update_member))
     {
-        updateMembershipTrue();
+        echo "Your membership has been updated";
+        echo "<br></br>";
     }
     else
     {
-        updateMembershipFalse();
+        echo "Something went wrong updating your membership, please try again later";
+        echo "<br></br>";
     }
 
     // Query to get member details from the memebr table where the user_id is equal to the session user_id
@@ -62,39 +74,25 @@ if(isset($_POST["submit"]))
     // Run the above query
     if(mysqli_query($link, $new_payment))
     {
-        updatePaymentTrue();
+        echo "Your new payment details have been added, you will be billed at the end of your current membership";
+        echo "<br></br>";
     }
     else
     {
-        updatePaymentFalse();
+        echo "Something went wrong with your payment, please try again later";
+        echo "<br></br>";
     }
 
     // Close the database connection
     mysqli_close($link);
-
-    // Redirect to the login page, if the user is still logged in, then they will be redirected to the welcome page
-    header("location: ../teamproject/group/login.php");
 }
 ?>
 
+<button onclick="myFunction()">OK</button>
+
 <script>
-    function updateMembershipTrue()
+    function myFunction()
     {
-        alert("Your membership has been updated");
-    }
-
-    function updateMembershipFalse()
-    {
-        alert("Something went wrong with updating your membership, please try again later");
-    }
-
-    function updatePaymentTrue()
-    {
-        alert("Your new payment details have been added, you will be billed at the end of your current membership package");
-    }
-
-    function updatePaymentFalse()
-    {
-        alert("Something went wrong with your payment, please try again later");
+        location.replace("/teamproject/group/welcome.php");
     }
 </script>
