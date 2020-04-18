@@ -16,6 +16,16 @@ if(isset($_POST["submit"]))
     $membership_end = $_POST['membership_end'];
     $user_id = $_POST['user_id'];
     
+    $check_member = "SELECT member_id FROM tblmember WHERE user_id = '$user_id'";
+    $check_member_result = mysqli_query($link, $check_member);
+    
+    if(mysqli_num_rows($check_member_result) !== 0)
+    {
+        header("Refresh: 5; url= /teamproject/group/welcome.php");
+        echo "It looks like you already have a membership, redirecting you in 5 seconds";
+        exit;
+    }
+
     // Query for inserting the form data into the member table
     $insert_member = "INSERT INTO tblmember (age, gender, membership_type, joining_date, end_of_membership_date, user_id) 
                         VALUES ('$age', '$gender', '$membership_type', '$membership_start', '$membership_end', '$user_id')";
@@ -23,11 +33,13 @@ if(isset($_POST["submit"]))
     // Run the above query
     if(mysqli_query($link, $insert_member))
     {
-        membershipTrue(); 
+        echo "Your membership has been created.";
+        echo "<br></br>";
     }
     else
     {
-        membershipFalse();
+        echo "Sorry, something must have went wrong creating your membership, please try again later.";
+        echo "<br></br>";
     }
 
     // Query for getting the member id now that the user is in the member table where the user_id in the database is equal to the user_id from the session variable
@@ -49,39 +61,27 @@ if(isset($_POST["submit"]))
     // Run the above query
     if(mysqli_query($link, $insert_payment))
     {
-        paymentTrue();
+        echo "Your payment has came through.";
+        echo "<br></br>";
     }
     else
     {
-        paymentFalse();
+        echo "Something has went wrong with your payment, please try again later.";
+        echo "<br></br>";
     }
 
     // Close the database connection
     mysqli_close($link);
-
-    // Redirect to the login page, which will redirect to the welcome page if the user is still logged in
-    header("location: ../group/login.php");
 }
 ?>
 
+<button onclick="myFunction()">OK</button>
+
 <script>
-    function membershipTrue()
+    function myFunction()
     {
-        alert("Your membership has been created");
-    }
-
-    function membershipFalse()
-    {
-        alert("Something went wrong with creating your membership, please try again later");
-    }
-
-    function paymentTrue()
-    {
-        alert("Your payment has came through");
-    }
-
-    function paymentFalse()
-    {
-        alert("Something has went wrong with your payment, please try again later");
+        location.replace("/teamproject/group/welcome.php");
     }
 </script>
+
+
