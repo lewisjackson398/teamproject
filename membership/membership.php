@@ -7,13 +7,6 @@ require_once('includes/membership_resource.php');
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
 {
     header("location: ../group/login.php");
-    exit;
-}
-
-if($_SESSION['hasmembership'] == true)
-{
-    header("location: ../group/login.php");
-    exit;
 }
 
 // Initialize the session
@@ -148,4 +141,14 @@ echo makeHeader();
         document.getElementById("payment_time").value = current_time;
     }
     
+    function hasMembership()
+    {
+        $hasmembership = <?php $_SESSION['hasmembership']; ?>
+        if ($hasmembership == true)
+        {
+            alert("It looks like you already have a membership, redirecting you to the welcome page, where you can do that");
+            header("location: ../teamproject/group/login.php");
+        }
+    }
+
 </script>
