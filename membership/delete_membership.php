@@ -28,7 +28,7 @@ echo makeHeader();
             <form action="../membership/includes/delete_membership_resource.php" method="post">
                 <div class="form-group">
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
-                    <input type="submit" class="btn btn-primary" value="Yes" name="yes">
+                    <input type="submit" class="btn btn-danger" value="Yes" name="yes">
                     <input type="submit" class="btn btn-default" value="No" name="no">
                 </div>
             </form>

@@ -77,7 +77,7 @@ echo makeHeader();
                 <div class="form-group">
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
                 </div>
-                    <input type="submit" class="btn btn-primary" value="Submit" name="submit">
+                    <input type="submit" class="btn btn-success" value="Submit" name="submit">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
             </form>

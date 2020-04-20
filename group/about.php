@@ -15,7 +15,7 @@ echo makeHeader();
                   <source src="/teamproject/resources/videos/video.mp4" type="video/mp4">
                </video>
                <h4>How did MetroGym begin?</h4>
-               <p style="padding-bottom: 20px;">Because jill gave us the task idea</p>
+               <p>Our mission is to help people everywhere to lead a healthy and happy life every day. Come and join us today.</p>
                <h4>What is our vision?</h4>
                <p>Some may call it a vision, but for us, it’s a way of life. It’s our Monday-thru-every-day mantra.
                   <br>An unfiltered philosophy that drives us to create a community and a gym for all.</p>
