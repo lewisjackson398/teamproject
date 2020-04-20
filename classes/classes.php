@@ -24,12 +24,6 @@ include('../server/config/config.php');
             </div>
         </div>
 
-        <div class="classnav">
-            <?php
-            include('includes/make_nav.php');
-            echo makeClassNav();
-            ?>
-        </div>
         <div class="container">
             <table class="table" id="myTable">
                 <thead class="hidden-xs">

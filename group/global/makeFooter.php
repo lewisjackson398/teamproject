@@ -1,7 +1,7 @@
 <?php
 function makeFooter()
 {
-    $footer = <<<FOOTER
+  $footer = <<<FOOTER
     <section class="footer">
     <div class="container">
       <div class="row">
@@ -10,12 +10,12 @@ function makeFooter()
             <h3>Where <span>are we</span></h3>
           </div>
           <p>
-            <span>Baruch College</span>
-            <span>55 Lexington Ave.</span>
-            <span>New York, NY 10010</span>
+          <span>Northumbria University</span>
+          <span>Sutherland Building</span>
+          <span>Newcastle-upon-Tyne,</br> NE1 8ST</span>
           </p>
           <p>
-            <span>Phone: <b><a href="tel:7181234567">7181234567</a></b></span>
+            <span>Phone: <b><a href="tel:0191 227 4646">0191 227 4646</a></b></span>
             <span>email: <b><a href="mailto:contact@metrogym.co.uk">contact@metrogym.co.uk</a></b></span>
           </p>
         </div>
@@ -41,7 +41,37 @@ function makeFooter()
           <p>No committment. Free 14 day trial pass on your first visit.</p>
         </div>
       </div>
-      <div style="color:#4c4c4c; padding-top: 30px;">© 2020, MetroGym. A WEBSITE BY LEWIS, BRANDON, ARLANA AND OLIVER.
+
+      <!-- Call to action -->
+      <ul class="list-unstyled list-inline text-center py-2">
+          <li class="list-inline-item">
+              <h5 class="mb-1">Register for free</h5>
+          </li>
+          <li class="list-inline-item">
+              <a href="#!" class="btn btn-primary btn-rounded">Sign up!</a>
+          </li>
+      </ul>
+</br>
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+              <a class="btn-floating btn-fb btn-lg mx-1">
+                  <i class="fa fa-facebook"> </i>
+              </a>
+          </li>
+          <li class="list-inline-item">
+              <a class="btn-floating btn-tw btn-lg mx-1">
+                  <i class="fa fa-twitter"> </i>
+              </a>
+          </li>
+          <li class="list-inline-item">
+              <a class="btn-floating btn-gplus btn-lg mx-1">
+                  <i class="fa fa-google-plus"> </i>
+              </a>
+          </li>
+      </ul>
+
+      <div style="color:#4c4c4c; padding-top: 30px;">© 2020, MetroGym. A website made by Lewis, Brandon, Arlana, Oliver.
       </div>
     </div>
   </section>
@@ -60,5 +90,5 @@ function makeFooter()
 
 </html>
 FOOTER;
-    return $footer;
+  return $footer;
 }

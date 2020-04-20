@@ -23,10 +23,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
             </div>
             <p>
-                <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-                <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-                <a href="/teamproject/membership/update_membership.php" class="btn btn-warning">Update membership</a>
-                <a href="/teamproject/membership/delete_membership.php" class="btn btn-danger">Delete membership</a>
+                <a href="reset-password.php" class="btn btn-warning btn-xl">Reset Your Password</a>
+                <a href="logout.php" class="btn btn-danger btn-xl">Sign Out of Your Account</a>
+                <a href="/teamproject/membership/update_membership.php" class="btn btn-warning btn-xl">Update membership</a>
+                <a href="/teamproject/membership/delete_membership.php" class="btn btn-danger btn-xl">Delete membership</a>
             </p>
         </div>
     </section>

@@ -783,18 +783,18 @@ video {
   background: #f2f2f2;
 }
 
-  .classnav {
-    padding-top: 70px;
-    float: left;
-    width: 400px;
-  }
+.classnav {
+  padding-top: 70px;
+  float: left;
+  width: 300px;
+}
 
-  .classnav nav {
-    font-size: 30px;
-    list-style-type: none;
-    text-align: right;
-  }
+.classnav nav {
+  font-size: 30px;
+  list-style-type: none;
+  text-align: right;
+}
 
-  .classnav a {
-    font-size: 20px;
-  }
+.classnav a {
+  font-size: 20px;
+}

@@ -14,7 +14,7 @@ include('../server/config/config.php');
                 <h2>Book a class today!</h2>
             </div>
 
-<p> penis </p>
+<p> test </p>
 
 
 

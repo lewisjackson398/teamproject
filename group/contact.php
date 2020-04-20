@@ -9,13 +9,12 @@ echo makeHeader();
    echo makeNav();
    ?>
    <section class="contact">
-      <div class="map">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12091.968445934113!2d-73.9833745!3d40.7401991!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec88233d3a5d270f!2sBaruch+College!5e0!3m2!1sen!2sus!4v1526250779418" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
       <div class="container">
-         <div class="text-center">
-            <h2>Drop us a message</h2>
+         <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1144.8748399462527!2d-1.6079968916224208!3d54.97748883440377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e70c8a2a4a037%3A0x29992653bff31398!2sNewcastle%20upon%20Tyne%20NE1%208ST!5e0!3m2!1sen!2suk!4v1587373385649!5m2!1sen!2suk" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
          </div>
+
+         <h2>Drop us a message</h2>
          <form id="contact-form" method="post" action="contact.php" role="form">
             <div class="messages"></div>
             <div class="controls">
@@ -55,7 +54,7 @@ echo makeHeader();
                      </div>
                   </div>
                   <div class="col-md-12">
-                     <input type="submit" class="btn btn-primary btn-xl" value="Send message">
+                     <input type="submit" class="btn btn-success btn-xl" value="Send message">
                   </div>
                </div>
                <div class="row">

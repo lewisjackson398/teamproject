@@ -7,6 +7,7 @@ echo makeHeader();
    <?php include('group/global/makeNav.php');
    echo makeNav();
    ?>
+
    <header>
       <div class="header-content">
          <div class="header-content-inner">
@@ -16,6 +17,7 @@ echo makeHeader();
          </div>
       </div>
    </header>
+
    <section class="work_day">
       <div class="text-center">
          <h2 style="color:white;">MetroGym's workout of the day</h2>
@@ -56,6 +58,7 @@ echo makeHeader();
          </div>
       </div>
    </section>
+
    <section class="schedule">
       <div class="text-center">
          <h2>Class Weekly Schedule</h2>
@@ -72,12 +75,6 @@ echo makeHeader();
          </div>
       </div>
 
-      <div class="classnav">
-         <?php
-         include('classes/includes/make_nav.php');
-         echo makeClassNav();
-         ?>
-      </div>
       <div class="container">
          <table class="table" id="myTable">
             <thead class="hidden-xs">
@@ -375,10 +372,12 @@ echo makeHeader();
             </tbody>
          </table>
       </div>
+
       <?php include('classes/includes/make_booking.php');
       echo makeBooking(); ?>
 
    </section>
+   
    <section class="fitness-classes">
       <div class="text-center">
          <h2>Fitness Classes</h2>

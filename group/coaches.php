@@ -11,6 +11,8 @@ echo makeHeader();
     <div class="text-center">
       <h1>Our Coaches</h1>
     </div>
+</br>
+</br>
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-3">
@@ -18,8 +20,8 @@ echo makeHeader();
         </div>
         <div class="col-md-3 col-sm-3">
           <div class="info">
-            <p><b>Willard Nye</b></p>
-            <p>Willard started in traditional martial arts but took up "western-style" wrestling, boxing, and Mixed
+            <p><b>Lewis Jackson</b></p>
+            <p>Lewis started in traditional martial arts but took up "western-style" wrestling, boxing, and Mixed
               Martial Arts (MMA) over 20 years ago. His background in competitive endurance sports also makes him the
               house authority on training methodology and practices. </p>
           </div>
@@ -30,8 +32,8 @@ echo makeHeader();
         </div>
         <div class="col-md-3 col-sm-3">
           <div class="info">
-            <p><b>Moe Smith</b></p>
-            <p>A boxing historian and collector, Moe knows all the stories worth telling. He also has a keen interest in
+            <p><b>Brandon Henderson</b></p>
+            <p>A boxing historian and collector, Brandon knows all the stories worth telling. He also has a keen interest in
               exercise physiology and is always on the hunt or the newest and most progressive training techniques. </p>
           </div>
         </div>
@@ -43,8 +45,8 @@ echo makeHeader();
         </div>
         <div class="col-md-3 col-sm-3">
           <div class="info">
-            <p><b>Sarah Joel</b></p>
-            <p>Sarah is a MMA practitioner and expert in traditional Filipino and Chinese Martial Arts. Her educational
+            <p><b>Arlana Keen</b></p>
+            <p>Arlana is a MMA practitioner and expert in traditional Filipino and Chinese Martial Arts. Her educational
               background in educational theory means her classes are expertly structured to get the most out of session.
             </p>
           </div>
@@ -55,8 +57,8 @@ echo makeHeader();
         </div>
         <div class="col-md-3 col-sm-3">
           <div class="info">
-            <p><b>Adrian William</b></p>
-            <p>Adrian is a longtime student of MetroGym. He exhibits a sophisticated understanding of the theoretical
+            <p><b>Oliver Howe</b></p>
+            <p>Oliver is a longtime student of MetroGym. He exhibits a sophisticated understanding of the theoretical
               underpinnings of the gym methodology and theoretical framework. </p>
           </div>
         </div>
