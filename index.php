@@ -1,11 +1,12 @@
 <?php
 include('group/global/makeHeader.php');
+include('group/global/makeNav.php');
 echo makeHeader();
+echo makeNav();
 ?>
 
 <body id="page-top">
-   <?php include('group/global/makeNav.php');
-   echo makeNav();
+   <?php 
    ?>
 
    <header>
