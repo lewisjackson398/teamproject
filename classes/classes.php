@@ -321,6 +321,7 @@ include('../server/config/config.php');
                 </tbody>
             </table>
         </div>
+
         <?php include('../classes/includes/make_booking.php');
         echo makeBooking(); ?>
 

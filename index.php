@@ -372,12 +372,12 @@ echo makeHeader();
             </tbody>
          </table>
       </div>
-
-      <?php include('classes/includes/make_booking.php');
-      echo makeBooking(); ?>
-
+      <?php
+      include('classes/includes/make_booking.php');
+      echo makeBooking();
+      ?>
    </section>
-   
+
    <section class="fitness-classes">
       <div class="text-center">
          <h2>Fitness Classes</h2>
