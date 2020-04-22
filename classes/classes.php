@@ -55,109 +55,9 @@ require_once('includes/add_class_resource.php');
                 </tbody>
             </table>
         </div>
-
-        <?php include('../classes/global/make_booking.php');
-        echo makeBooking(); ?>
-
-        </br>
-        <div class="container" style="display: none;" id="join">
-            <form action="includes/add_class_resource.php" method="post" id="form">
-                <div class="form-group">
-                    <label>Date</label>
-                    <select class="form-control" name="date">
-                        <?php
-
-                        $sql = "SELECT DISTINCT date from tbltimetable";
-                        $result = mysqli_query($link, $sql);
-
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value=" . $row['date'] . ">" .  $row['date'] . "</br></option>";
-                            }
-                        }
-                        ?>
-                    </select>
-                    <span class="help-block"></span>
-                </div>
-                <div class="form-group">
-                    <label>Class name</label>
-                    <select class="form-control" name="class_names">
-                        <?php
-
-                        $sql = "SELECT DISTINCT class from tbltimetable";
-                        $result = mysqli_query($link, $sql);
-
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value=" . $row['class'] . ">" .  $row['class'] . "</br></option>";
-                            }
-                        }
-                        ?>
-                    </select>
-                    <span class="help-block"></span>
-                </div>
-                <div class="form-group">
-                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
-                </div>
-                <div class="form-group">
-                    <label>Start time</label>
-                    <select class="form-control" name="class_start">
-                        <?php
-
-                        $sql = "SELECT DISTINCT start from tbltimetable ORDER BY start";
-                        $result = mysqli_query($link, $sql);
-
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value=" . $row['start'] . ">" .  $row['start'] . "</br></option>";
-                            }
-                        }
-                        ?>
-                    </select>
-                    <span class="help-block"></span>
-                </div>
-                <div class="form-group">
-                    <label>End time</label>
-                    <select class="form-control" name="class_end">
-                        <?php
-
-                        $sql = "SELECT DISTINCT finish from tbltimetable ORDER BY finish";
-                        $result = mysqli_query($link, $sql);
-
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value=" . $row['finish'] . ">" .  $row['finish'] . "</br></option>";
-                            }
-                        }
-                        ?>
-                    </select>
-                    <span class="help-block"></span>
-                </div>
-                <div class="form-group">
-                    <label>Instructor</label>
-                    <select class="form-control" name="instructor_name">
-                        <?php
-
-                        $sql = "SELECT DISTINCT instructor_name from tbltimetable";
-                        $result = mysqli_query($link, $sql);
-
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value=" . $row['instructor_name'] . ">" .  $row['instructor_name'] . "</br></option>";
-                            }
-                        }
-                        ?>
-                    </select>
-                    <span class="help-block"></span>
-                </div>
-                <div>
-                    <input type="submit" class="btn btn-success" value="Join Class" name="join" onclick="classInfo()">
-                    <input type="reset" class="btn btn-default" value="Reset">
-                </div>
-            </form>
-        </div>
         <br>
-        <div class="container" id="form2">
+
+        <div class="container">
             <h2>Your active classes</h2>
             <table class="table">
                 <thead class="thead-dark">
@@ -184,18 +84,74 @@ require_once('includes/add_class_resource.php');
                     ?>
                 </tbody>
             </table>
+        </div>
 
-            <form action="delete_class.php">
-                <input type="submit" class="btn btn-danger" value="Delete Class">
+        <div class="container" id="addClass">
+            <form action="includes/add_class_resource.php" method="post">
+                <div class="form-group">
+                    <label>
+                        <h1>Select a class to join</h1>
+                    </label>
+                    <select class="form-control" name="class">
+                        <?php
+                        $sql = "SELECT * from tbltimetable";
+                        $result = mysqli_query($link, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo "<option value="  . $row['date'] . "," . $row['class'] . "," . $row['instructor_name'] . "," . $row['start'] . "," . $row['finish'] . ">"
+                                    . $row['date'] . " - " . $row['class']  . " - " . $row['start'] . " - " . $row['finish'] . "</br></option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                    <span class="help-block"></span>
+                    <div class="form-group">
+                        <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-success" value="Join Class" name="join">
+                </div>
             </form>
-
-
         </div>
+        <br>
+        <div class="container" id="deleteClass">
+            <form action="includes/delete_class_resource.php" method="post">
+                <div class="form-group">
+                    <label>
+                        <h1>Select a class to delete</h1>
+                    </label>
+                    <select class="form-control" name="class">
+                        <?php
 
+                        $sql = "SELECT * from tblclasses WHERE user_id = '$user_id'";
+                        $result = mysqli_query($link, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo "<option value=" . $row['class_id'] . "," . $row['date'] . "," . $row['class'] . "," . $row['start'] . "," . $row['finish'] . ">"
+                                    . $row['date'] . " - " . $row['class']  . " - " . $row['start'] . " - " . $row['finish'] . "</br></option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                    <span class="help-block"></span>
+                    <div class="form-group">
+                        <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-warning" value="Delete Class" name="delete">
+                </div>
+            </form>
         </div>
+        <?php include('../classes/global/make_booking.php');
+        echo makeBooking(); ?>
 
+        </br>
+        </div>
     </section>
-
 
     <?php
     include('../classes/global/make_info.php');
