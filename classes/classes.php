@@ -20,9 +20,10 @@ require_once('includes/add_class_resource.php');
             <a id="choice-arlana" class="btn btn-primary btn-xl">Arlana</a>
             <a id="choice-oliver" class="btn btn-primary btn-xl">Oliver</a>
             <div class="search-box">
-                <input type="text" autocomplete="off" id="myInput" onkeyup="myFunction()" placeholder="Search classes..." />
+                <input type="text" autocomplete="off" id="myInput" placeholder="Search classes..." />
                 <div class="result"></div>
             </div>
+            <p><b>Total Records - <span id="total_records"></span></b></p>
         </div>
 
 
@@ -30,9 +31,9 @@ require_once('includes/add_class_resource.php');
             <?php include('global/make_nav.php');
             echo makeClassNav();
             ?>
-            <table class="table">
+            <table class="table" id="timetable">
                 <thead class="thead-dark">
-                    <tr>
+                    <tr id="timetable_row2">
                         <th scope="col">Date</th>
                         <th scope="col">Class</th>
                         <th scope="col">Instructor</th>
@@ -46,7 +47,7 @@ require_once('includes/add_class_resource.php');
                     $result = mysqli_query($link, $sql);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_array($result)) {
-                            echo "<tr onclick='joinClass()'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+                            echo "<tr onclick='joinClass() id='timetable_row''><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
         <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
                         }
                         echo "</table>";
@@ -161,4 +162,5 @@ require_once('includes/add_class_resource.php');
     echo makeFooter();
     echo makeScript();
     ?>
+    <script src="script.js"></script>
 </body>

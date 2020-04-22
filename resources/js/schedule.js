@@ -7,7 +7,7 @@ $('.search-box input[type="text"]').on("keyup input", function () {
     var resultDropdown = $(this).siblings(".result");
     if (inputVal.length) {
         $.get("backend-search.php", {
-            class: inputVal
+            term: inputVal
         }).done(function (data) {
             // Display the returned data in browser
             resultDropdown.html(data);
@@ -23,18 +23,41 @@ $(document).on("click", ".result p", function () {
 });
 
 
+//search classes found in database
+$('.search-box input[type="text"]').on("keyup input", function () {
+    // Get input value on change
+    var inputVal = $(this).val();
+    var resultDropdown = $(this).siblings(".result");
+    if (inputVal.length) {
+        $.get("backend-buttons.php", {
+            term: inputVal
+        }).done(function (data) {
+            // Display the returned data in browser
+            resultDropdown.html(data);
+        });
+    } else {
+        resultDropdown.empty();
+    }
+});
+// Set search input value on click of result item
+$(document).on("click", ".result p", function () {
+    $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+    $(this).parent(".result").empty();
+});
+/*
+
 //hide elements that dont appear in search
 function myFunction() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
+    table = document.getElementById("timetable");
+    tr = document.getElementById("timetable_row2");
 
     // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("div")[0];
+        td = tr[i].getElementsByTagName("td")[0];
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -45,6 +68,8 @@ function myFunction() {
         };
     };
 };
+
+
 
 $(".buttons").on('click', 'a', function () {
     event.preventDefault();
@@ -58,7 +83,8 @@ $(".buttons").on('click', '#choice-all', function () {
     $(".table tbody tr td div").removeClass('active');
 });
 
-*/
+
+
 function joinClass() {
 
     //button onclick display add/remove from class card
@@ -97,3 +123,5 @@ function row() {
     }
 
 };
+
+*/
