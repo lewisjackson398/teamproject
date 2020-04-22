@@ -1,11 +1,8 @@
 <?php
-
 session_start();
-
 include('../group/global/makeHeader.php');
 echo makeHeader();
-include('../server/config/config.php');
-include('class_enquiry.php');
+require_once('backend.php');
 ?>
 
 <body id="page-top" class="page page_schedule">
@@ -68,7 +65,7 @@ include('class_enquiry.php');
         </br>
         <div class="container" style="display: none;" id="join">
 
-            <form action="backend.php" method="post">
+            <form action="backend.php" method="post" id="form">
                 <div class="form-group">
                     <label>Class name</label>
                     <select class="form-control" name="class_names">
@@ -135,15 +132,16 @@ include('class_enquiry.php');
                             while ($row = mysqli_fetch_array($result)) {
                                 echo "<option value>" . $row["instructor_name"] . "</br> </option>";
                             }
-                        }
+                        } echo $row["instructor_name"]; 
                         ?>
                     </select>
                     <span class="help-block"></span>
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-success" value="Join Class" name="submit">
+                    <input type="submit" class="btn btn-success" value="Join Class" name="join">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
+                
             </form>
 
 

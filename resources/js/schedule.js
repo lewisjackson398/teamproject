@@ -74,6 +74,12 @@ function joinClass() {
 
 };
 
+// $(document).ready(function(){
+//     $("#form").submit(function(){
+//         window.location.replace("backend.php");
+//     });
+//   });
+
 
 // // handles the click event for link 1, sends the query
 // function getOutput() {
