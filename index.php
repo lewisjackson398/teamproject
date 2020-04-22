@@ -374,7 +374,7 @@ echo makeNav();
          </table>
       </div>
       <?php
-      include('classes/includes/make_booking.php');
+      include('classes/global/make_booking.php');
       echo makeBooking();
       ?>
    </section>

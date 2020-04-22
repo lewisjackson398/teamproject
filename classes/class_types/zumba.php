@@ -18,7 +18,7 @@ echo makeNav();
             <div class="col-lg-2">
 
                 <?php
-                include('../includes/make_nav.php');
+                include('../global/make_nav.php');
                 echo makeClassNav();
                 ?>
 
@@ -68,12 +68,12 @@ echo makeNav();
 
     </br>
     </br>
-    <?php include('../../classes/includes/make_booking.php');
+    <?php include('../../classes/global/make_booking.php');
     echo makeBooking(); ?>
     </br>
     </br>
     <?php
-    include('../../classes/includes/make_info.php');
+    include('../../classes/global/make_info.php');
     include('../../group/global/makeFooter.php');
     include('../../group/global/makeScript.php');
     echo makeInfo();

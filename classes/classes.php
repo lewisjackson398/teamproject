@@ -2,7 +2,7 @@
 session_start();
 include('../group/global/makeHeader.php');
 echo makeHeader();
-require_once('backend.php');
+require_once('includes/add_class_resource.php');
 ?>
 
 <body id="page-top" class="page page_schedule">
@@ -25,8 +25,12 @@ require_once('backend.php');
             </div>
         </div>
 
+
         <div class="container">
-            <table border="3" class="table">
+            <?php include('global/make_nav.php');
+            echo makeClassNav();
+            ?>
+            <table class="table">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Date</th>
@@ -52,20 +56,29 @@ require_once('backend.php');
             </table>
         </div>
 
-        <?php include('../classes/includes/make_booking.php');
+        <?php include('../classes/global/make_booking.php');
         echo makeBooking(); ?>
 
-
-        </br>
-        </br>
-
-        </br>
-        </br>
-        </br>
         </br>
         <div class="container" style="display: none;" id="join">
+            <form action="includes/add_class_resource.php" method="post" id="form">
+                <div class="form-group">
+                    <label>Date</label>
+                    <select class="form-control" name="date">
+                        <?php
 
-            <form action="backend.php" method="post" id="form">
+                        $sql = "SELECT DISTINCT date from tbltimetable";
+                        $result = mysqli_query($link, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo "<option value=" . $row['date'] . ">" .  $row['date'] . "</br></option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                    <span class="help-block"></span>
+                </div>
                 <div class="form-group">
                     <label>Class name</label>
                     <select class="form-control" name="class_names">
@@ -76,7 +89,7 @@ require_once('backend.php');
 
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value>" . $row["class"] . "</br> </option>";
+                                echo "<option value=" . $row['class'] . ">" .  $row['class'] . "</br></option>";
                             }
                         }
                         ?>
@@ -96,7 +109,7 @@ require_once('backend.php');
 
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value>" . $row["start"] . "</br> </option>";
+                                echo "<option value=" . $row['start'] . ">" .  $row['start'] . "</br></option>";
                             }
                         }
                         ?>
@@ -113,7 +126,7 @@ require_once('backend.php');
 
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value>" . $row["finish"] . "</br> </option>";
+                                echo "<option value=" . $row['finish'] . ">" .  $row['finish'] . "</br></option>";
                             }
                         }
                         ?>
@@ -130,20 +143,54 @@ require_once('backend.php');
 
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value>" . $row["instructor_name"] . "</br> </option>";
+                                echo "<option value=" . $row['instructor_name'] . ">" .  $row['instructor_name'] . "</br></option>";
                             }
-                        } echo $row["instructor_name"]; 
+                        }
                         ?>
                     </select>
                     <span class="help-block"></span>
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-success" value="Join Class" name="join">
+                    <input type="submit" class="btn btn-success" value="Join Class" name="join" onclick="classInfo()">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
-                
+            </form>
+        </div>
+        <br>
+        <div class="container" id="form2">
+            <h2>Your active classes</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">Instructor</th>
+                        <th scope="col">Starting Time</th>
+                        <th scope="col">Ending Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $user_id = $_SESSION['user_id'];
+                    $sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
+                    $result = mysqli_query($link, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo "<tr onclick='row()'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+                                  <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
+                        }
+                        echo "</table>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+            <form action="delete_class.php">
+                <input type="submit" class="btn btn-danger" value="Delete Class">
             </form>
 
+
+        </div>
 
         </div>
 
@@ -151,7 +198,7 @@ require_once('backend.php');
 
 
     <?php
-    include('../classes/includes/make_info.php');
+    include('../classes/global/make_info.php');
     include('../group/global/makeFooter.php');
     include('../group/global/makeScript.php');
     echo makeInfo();
