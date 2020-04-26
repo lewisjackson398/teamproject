@@ -3,8 +3,8 @@
 function makeClassNav()
 {
     $classNav = <<<NAV
-    <nav>
-        <h3 class="text-center" style="color: white";>Classes</h3>
+    <nav class="classNav">
+        <h3 class="text-left" style="color: white";>Classes</h3>
         <li><a href="/teamproject/classes/classes.php">Class Timetable</a></li>
         <li><a href="/teamproject/classes/class_types/hot_yoga.php">Hot Yoga</a></li>
         <li><a href="/teamproject/classes/class_types/zumba.php">Zumba</a></li>

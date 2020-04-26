@@ -2,7 +2,7 @@
 session_start();
 include('../group/global/makeHeader.php');
 echo makeHeader();
-require_once('includes/add_class_resource.php');
+include('../server/config/config.php')
 ?>
 
 <body id="page-top" class="page page_schedule">
@@ -13,24 +13,18 @@ require_once('includes/add_class_resource.php');
         <div class="text-center">
             <h2>Class Weekly Schedule</h2>
         </div>
-        <div class="buttons text-center">
-            <a id="choice-all" class="btn btn-primary btn-xl">All Trainers</a>
-            <a id="choice-lewis" class="btn btn-primary btn-xl">Lewis</a>
-            <a id="choice-brandon" class="btn btn-primary btn-xl">Brandon</a>
-            <a id="choice-arlana" class="btn btn-primary btn-xl">Arlana</a>
-            <a id="choice-oliver" class="btn btn-primary btn-xl">Oliver</a>
-            <div class="search-box">
-                <input type="text" autocomplete="off" id="myInput" placeholder="Search classes..." />
-                <div class="result"></div>
-            </div>
-            <p><b>Total Records - <span id="total_records"></span></b></p>
-        </div>
-
 
         <div class="container">
-            <?php include('global/make_nav.php');
-            echo makeClassNav();
-            ?>
+            <div class="makeNav">
+                <?php include('global/make_nav.php');
+                echo makeClassNav();
+                ?>
+            </div>
+            <div id="search-box">
+                <input type="text" oninput="w3.filterHTML('#timetable', '.item', this.value)" placeholder="Search classes..." />
+            </div>
+            <br>
+            <br>
             <table class="table" id="timetable">
                 <thead class="thead-dark">
                     <tr id="timetable_row2">
@@ -47,7 +41,7 @@ require_once('includes/add_class_resource.php');
                     $result = mysqli_query($link, $sql);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_array($result)) {
-                            echo "<tr onclick='joinClass() id='timetable_row''><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+                            echo "<tr onclick='joinClass()' class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
         <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
                         }
                         echo "</table>";
@@ -57,38 +51,39 @@ require_once('includes/add_class_resource.php');
             </table>
         </div>
         <br>
-
-        <div class="container">
-            <h2>Your active classes</h2>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Class</th>
-                        <th scope="col">Instructor</th>
-                        <th scope="col">Starting Time</th>
-                        <th scope="col">Ending Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $user_id = $_SESSION['user_id'];
-                    $sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
-                    $result = mysqli_query($link, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_array($result)) {
-                            echo "<tr onclick='row()'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+        <div id="active" style="display: none;">
+            <div class="container">
+                <h2>Your active classes</h2>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Instructor</th>
+                            <th scope="col">Starting Time</th>
+                            <th scope="col">Ending Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $user_id = $_SESSION['user_id'];
+                        $sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
+                        $result = mysqli_query($link, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo "<tr onclick='row()'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
                                   <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
+                            }
+                            echo "</table>";
                         }
-                        echo "</table>";
-                    }
-                    ?>
-                </tbody>
-            </table>
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="container" id="addClass">
-            <form action="includes/add_class_resource.php" method="post">
+        <div id="addDelete" style="display: none;" class="container">
+            <form action="includes/add_class.php" method="post">
                 <div class="form-group">
                     <label>
                         <h1>Select a class to join</h1>
@@ -115,10 +110,8 @@ require_once('includes/add_class_resource.php');
                     <input type="submit" class="btn btn-success" value="Join Class" name="join">
                 </div>
             </form>
-        </div>
-        <br>
-        <div class="container" id="deleteClass">
-            <form action="includes/delete_class_resource.php" method="post">
+
+            <form action="includes/delete_class.php" method="post">
                 <div class="form-group">
                     <label>
                         <h1>Select a class to delete</h1>
@@ -147,6 +140,8 @@ require_once('includes/add_class_resource.php');
                 </div>
             </form>
         </div>
+        <br>
+
         <?php include('../classes/global/make_booking.php');
         echo makeBooking(); ?>
 
@@ -162,5 +157,4 @@ require_once('includes/add_class_resource.php');
     echo makeFooter();
     echo makeScript();
     ?>
-    <script src="script.js"></script>
 </body>
