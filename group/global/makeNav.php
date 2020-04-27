@@ -39,8 +39,9 @@ function makeNav()
                <a class="page-scroll" href="/teamproject/group/login.php">Login</a>
              </li>
              <li>
-             <a class="page-scroll" href="/teamproject/admin/admin.php">Admin</a>
-           </li>
+               <a class="page-scroll" href="/teamproject/admin/admin.php">Admin</a>
+             </li> 
+
           </ul>
        </div>
     </div>
