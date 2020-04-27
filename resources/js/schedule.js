@@ -36,6 +36,27 @@ $(document).on("click", ".result p", function () {
 // });
 
 
+function displayTwitterFeed() {
+    $.getJSON("../twitter/returnHashtag.php", function (tweetdata) {
+
+        let username = '';
+        let message = '';
+
+
+
+        $.each(tweetdata.statuses, function (i, tweet) {
+            username = tweet.user.name;
+            message = tweet.text;
+            console.log(tweet);
+            $("#tweet-list").append("<p>" + username + " tweeted: "
+                + tweet.text + " " + "</p>");
+            $("#tweet-list").append("<p>" + username + " tweeted: "
+                + tweet.text + " " + "</p>");
+        });
+    })
+};
+
+
 
 function joinClass() {
 
@@ -60,3 +81,40 @@ function row() {
     }
 
 };
+
+
+window.twttr = (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function (f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));
+
+
+twttr.widgets.createTimeline(
+    {
+        sourceType: "profile",
+        screenName: "TwitterDev"
+    },
+    document.getElementById("tweet-timeline")
+);
+
+twttr.widgets.createShareButton(
+    document.getElementById("tweet-buttons"),
+    {
+        size: "large",
+        text: "custom share text",
+        hashtags: "example,demo",
+        via: "twitterdev"
+    }
+);

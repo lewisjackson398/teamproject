@@ -1,6 +1,6 @@
 <?php
 session_start();
-//include('/XAMPP/htdocs/teamproject/server/config/config.php');
+include('/XAMPP/htdocs/teamproject/server/config/config.php');
 include('../../group/global/makeHeader.php');
 include('../../group/global/makeNav.php');
 echo makeHeader();
@@ -43,7 +43,7 @@ if (isset($_POST['join'])) {
             </div>
         </body>
         ";
-    } else { 
+    } else {
         echo "
        
         <body id='page-top' class='page page_schedule'>
@@ -62,6 +62,36 @@ if (isset($_POST['join'])) {
         ";
     }
 }
+?>
+<div class="container">
+
+    <div id="tweet-buttons">
+        <div class="row row-no-gutters">
+            <div class="col-sm-8">
+                <h3 style="color: white;">Share a link with your followers and friends today!</h3>
+            </div>
+            <div class="col-sm-1">
+                <a class="twitter-share-button" style="padding: 0;" data-size="large" data-text="Join a class with me today!" data-hashtags="metrogym">
+                    Tweet
+                </a>
+            </div>
+            <div class="col-sm-1">
+                <a class="twitter-follow-button" href="https://twitter.com/metrogym" data-size="large">
+                    Follow @metrogym</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="tweet-timeline">
+        <a class="twitter-timeline" href="https://twitter.com/metrogym" data-tweet-limit=5.>
+            Tweets by @metrogym
+        </a>
+    </div>
+
+</div>
+<br>
+<?php
 include('../../group/global/makeScript.php');
 include('../../group/global/makeFooter.php');
 echo makeScript();
