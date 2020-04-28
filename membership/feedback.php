@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once('includes/membership_resource.php');
+require_once('includes/feedback_resource');
 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
@@ -22,12 +22,11 @@ echo makeHeader();
     echo makeNav();
     ?>
     <br><br>
-    <section class="membership_cont">
+    <section class="feedback_cont">
         <div class="container">
-
             <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Fill out this form to give feedback.</h1>
             <br></br>
-            <form action="../membership/includes/membership_resource.php" method="post">
+            <form action="../membership/includes/feedback_resource.php" method="post">
                 <div class="form-group">
                     <textarea maxlength="500" rows="4" cols="50" name="description">Enter text here...</textarea>
                 </div>
