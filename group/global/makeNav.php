@@ -27,6 +27,9 @@ function makeNav()
                 <a class="page-scroll" href="/teamproject/group/coaches.php">Coaches</a>
              </li>
              <li>
+               <a class="page-scroll" href="/teamproject/forum/forum.php">Forum</a>
+            </li> 
+             <li>
                 <a class="page-scroll" href="/teamproject/group/about.php">About</a>
              </li>
              <li>
