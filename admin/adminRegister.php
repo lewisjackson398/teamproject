@@ -119,7 +119,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h2>Set Up your admin account</h2>
         <p>Please fill this form to set up your account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>"> 
                 <label>Username</label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
