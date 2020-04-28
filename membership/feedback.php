@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once('includes/feedback_resource');
+require_once('includes/feedback_resource.php');
 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
@@ -28,10 +28,12 @@ echo makeHeader();
             <br></br>
             <form action="../membership/includes/feedback_resource.php" method="post">
                 <div class="form-group">
-                    <textarea maxlength="500" rows="4" cols="50" name="description">Enter text here...</textarea>
+                    <textarea maxlength="500" rows="4" cols="140" name="description" placeholder="Enter feedback here..."></textarea>
                 </div>
+                <div class="form-group">
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
                 </div>
+                <div class="form-group">
                     <input type="submit" class="btn btn-success" value="Submit" name="submit">
                 </div>
             </form>
