@@ -28,12 +28,12 @@ echo makeNav();
                   <p style="font-weight: 700; border-bottom: 1px solid white; padding-bottom: 7px; color: #c1a77d;">
                      Bronze Package</p>
                   <p>Access to all amenities and classes.</p>
-                  <p style="font-weight: 700; padding-top: 20px;">$100.00 /Month</p>
-                  <p>May dues $100.00</p>
-                  <p>Initiation fee $200.00</p>
-                  <p style="font-weight: 700;">Promotional savings (-$150.00)</p>
+                  <p style="font-weight: 700; padding-top: 20px;">£100.00 /Month</p>
+                  <p>May dues £100.00</p>
+                  <p>Initiation fee £200.00</p>
+                  <p style="font-weight: 700;">Promotional savings (-£150.00)</p>
                   <p>Total Due Today</p>
-                  <p style="font-weight: 700; padding-top: 10px;">$150.00</p>
+                  <p style="font-weight: 700; padding-top: 10px;">£150.00</p>
                </div>
             </div>
             <div class="col-md-4 col-sm-4">
@@ -41,12 +41,12 @@ echo makeNav();
                   <p style="font-weight: 700; border-bottom: 1px solid white; padding-bottom: 7px; color: #bcbcbc;">
                      Silver Package</p>
                   <p>Access to all amenities and classes.</p>
-                  <p style="font-weight: 700; padding-top: 20px;">$150.00 /Month</p>
-                  <p>May dues $150.00</p>
-                  <p>Initiation fee $200.00</p>
-                  <p style="font-weight: 700;">Promotional savings (-$150.00)</p>
+                  <p style="font-weight: 700; padding-top: 20px;">£150.00 /Month</p>
+                  <p>May dues £150.00</p>
+                  <p>Initiation fee £200.00</p>
+                  <p style="font-weight: 700;">Promotional savings (-£150.00)</p>
                   <p>Total Due Today</p>
-                  <p style="font-weight: 700; padding-top: 10px;">$200.00</p>
+                  <p style="font-weight: 700; padding-top: 10px;">£200.00</p>
                </div>
             </div>
             <div class="col-md-4 col-sm-4">
@@ -54,12 +54,12 @@ echo makeNav();
                   <p style="font-weight: 700; border-bottom: 1px solid white; padding-bottom: 7px; color: #e8ac35;">Gold
                      Package</p>
                   <p>Access to all amenities and classes.</p>
-                  <p style="font-weight: 700; padding-top: 20px;">$200.00 /Month</p>
-                  <p>May dues $200.00</p>
-                  <p>Initiation fee $200.00</p>
-                  <p style="font-weight: 700;">Promotional savings (-$150.00)</p>
+                  <p style="font-weight: 700; padding-top: 20px;">£200.00 /Month</p>
+                  <p>May dues £200.00</p>
+                  <p>Initiation fee £200.00</p>
+                  <p style="font-weight: 700;">Promotional savings (-£150.00)</p>
                   <p>Total Due Today</p>
-                  <p style="font-weight: 700; padding-top: 10px;">$250.00</p>
+                  <p style="font-weight: 700; padding-top: 10px;">£250.00</p>
                </div>
             </div>
          </div>
