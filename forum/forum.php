@@ -41,8 +41,9 @@ $password = @$_POST['password'];
 $repass = @$_POST['repassword']; 
 $email = @$_POST['email']; 
 
-if (isset*($_POST['submit']))
+if (isset*($_POST['submit'])){
     echo "HOOOO HOO";
+}
 ?>
 
                     <?php
