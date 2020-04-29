@@ -14,7 +14,7 @@ session_start();
 include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>
-
+<html>
 <body id="page-top" class="page forum">
     <?php include('../group/global/makeNav.php');
     echo makeNav();
@@ -24,15 +24,21 @@ echo makeHeader();
         <div class="container">
             <form action="register.php" method ="POST"> 
                 Username: <input type="text" name="username">
-                <br />Password: <input type ="Password" name="username"> 
-                <br />Confirm password: <input type="password" name="username"> 
-                <br />Email: <input type="text" name="username">
+                <br />Password: <input type ="Password" name="password"> 
+                <br />Confirm password: <input type="password" name="repassword"> 
+                <br />Email: <input type="text" name="email">
                 <br /><input type="submit" name="submit" value="Register"> or <a href="..group/login.php">Login</a>
             </form>
-        
-
         </div>
-    </section>    
+    </section>
+</body>    
+<html>
+
+<?php
+$username = @$_POST['username']; 
+$password = @$_POST['password']; 
+$repass = @$_POST['repassword']; 
+$email = @$_POST['email']; 
 
 
 
