@@ -27,7 +27,7 @@ echo makeHeader();
                 <br />Password: <input type ="Password" name="username"> 
                 <br />Confirm password: <input type="password" name="username"> 
                 <br />Email: <input type="text" name="username">
-                <br /><input type="submit" name="submit" value="Register"> or <a href="login.php">Login</a>
+                <br /><input type="submit" name="submit" value="Register"> or <a href="..group/login.php">Login</a>
             </form>
         
 
