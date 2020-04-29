@@ -40,7 +40,7 @@ $password = @$_POST['password'];
 $repass = @$_POST['repassword']; 
 $email = @$_POST['email']; 
 
-
+?>
 
                     <?php
                     include('../group/global/makeFooter.php');
