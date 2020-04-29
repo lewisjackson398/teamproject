@@ -1,3 +1,48 @@
+"use strict";
+var w3 = {};
+
+w3.getElements = function (id) {
+    if (typeof id == "object") {
+        return [id];
+    } else {
+        return document.querySelectorAll(id);
+    }
+};
+
+w3.filterHTML = function (id, sel, filter) {
+    var a, b, c, i, ii, iii, hit;
+    a = w3.getElements(id);
+    for (i = 0; i < a.length; i++) {
+        b = a[i].querySelectorAll(sel);
+        for (ii = 0; ii < b.length; ii++) {
+            hit = 0;
+            if (b[ii].innerText.toUpperCase().indexOf(filter.toUpperCase()) > -1) {
+                hit = 1;
+            }
+            c = b[ii].getElementsByTagName("*");
+            for (iii = 0; iii < c.length; iii++) {
+                if (c[iii].innerText.toUpperCase().indexOf(filter.toUpperCase()) > -1) {
+                    hit = 1;
+                }
+            }
+            if (hit == 1) {
+                b[ii].style.display = "";
+
+            } else {
+                b[ii].style.display = "none";
+            }
+        }
+    }
+};
+
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
 /*
 
 //search classes found in database
@@ -34,29 +79,6 @@ $(document).on("click", ".result p", function () {
 // $(".buttons").on('click', '#choice-all', function () {
 //     $(".table tbody tr td div").removeClass('active');
 // });
-
-
-function displayTwitterFeed() {
-    $.getJSON("../twitter/returnHashtag.php", function (tweetdata) {
-
-        let username = '';
-        let message = '';
-
-
-
-        $.each(tweetdata.statuses, function (i, tweet) {
-            username = tweet.user.name;
-            message = tweet.text;
-            console.log(tweet);
-            $("#tweet-list").append("<p>" + username + " tweeted: "
-                + tweet.text + " " + "</p>");
-            $("#tweet-list").append("<p>" + username + " tweeted: "
-                + tweet.text + " " + "</p>");
-        });
-    })
-};
-
-
 
 function joinClass() {
 

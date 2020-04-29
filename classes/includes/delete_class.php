@@ -39,7 +39,7 @@ if (isset($_POST['delete'])) {
     // Run the above query
     if (mysqli_query($link, $delete_class)) {
         echo "        
-            <body id='page-top' class='page page_schedule'>
+            <body id='page-top' class='page work_day'>
                 <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                     <h1 class='display-3'>$_SESSION[username] has deleted a class.</h1>
                     <p class='lead'>Please check to make sure you have deleted the right class below.</p>
@@ -49,14 +49,14 @@ if (isset($_POST['delete'])) {
                     Having trouble? <a href='../../group/contact.php'>Contact us</a>
                     </p>
                     <p class='lead'>
-                    <a class='btn btn-primary btn-sm' href='../../index.php' role='button'>Continue to homepage</a>
+                    <a class='btn btn-success btn-sm' href='../../index.php' role='button'>Continue to homepage</a>
                     </p>
                 </div>
             </body>
     ";
     } else {
         echo "         
-            <body id='page-top' class='page page_schedule'>
+            <body id='page-top' class='page work_day'>
                 <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                     <h1 class='display-3'>Sorry!</h1>
                     <p class='lead'><strong>Something has gone wrong</strong><br> Please try again.</p>
@@ -65,7 +65,7 @@ if (isset($_POST['delete'])) {
                     If the problem still exists please contact us here.<a href='../../group/contact.php'> Contact us</a>
                     </p>
                     <p class='lead'>
-                    <a class='btn btn-primary btn-sm' href='../classes.php' role='button'>Continue back to classes</a>
+                    <a class='btn btn-success btn-sm' href='../classes.php' role='button'>Continue back to classes</a>
                     </p>
                 </div>
             </body>
@@ -73,34 +73,44 @@ if (isset($_POST['delete'])) {
     }
 }
 ?>
-<div class="container">
+    <section class="schedule">
+        <div class="container">
+            <h3 style="color: white;" class="text-center">Follow us on our social media for the latest updates!</h3>
+            <div class="row">
+                <div class="col-md-5 col-sm-5">
+                    <div id="tweet-buttons">
+                        <div class="row">
+                            <h3 style="color: white;">Twitter</h3>
+                            <a class="twitter-follow-button" href="https://twitter.com/metrogym" data-size="large">
+                                Follow @metrogym</a>
+                            <div id="tweet-timeline">
+                                <a class="twitter-timeline" href="https://twitter.com/metrogym" data-tweet-limit=5>
+                                    Tweets by @metrogym
+                                </a>
+                            </div>
+                            <a class="twitter-share-button" data-size="large" data-text="Join a class with me today!" data-hashtags="metrogym">
+                                Tweet
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-5" style="float: right;">
+                    <div class="row">
+                        <div id="fb-root"></div>
+                        <h3 style="color: white;">Facebook</h3>
+                        <div class="fb-share-button" style="padding-bottom: 5px;" data-size="large" data-href="https://www.facebook.com/Hullgym" data-layout="button_count"></div>
+                        <br>
+                        <div class="fb-page" data-tabs="timeline,events,messages" data-href="https://www.facebook.com/Hullgym" width="500" height="1305" data-hide-cover="false"></div>
+                    </div>
 
-    <div id="tweet-buttons">
-        <div class="row row-no-gutters">
-            <div class="col-sm-8">
-                <h3 style="color: white;">Share a link with your followers and friends today!</h3>
-            </div>
-            <div class="col-sm-1">
-                <a class="twitter-share-button" style="padding: 0;" data-size="large" data-text="Join a class with me today!" data-hashtags="metrogym">
-                    Tweet
-                </a>
-            </div>
-            <div class="col-sm-1">
-                <a class="twitter-follow-button" href="https://twitter.com/metrogym" data-size="large">
-                    Follow @metrogym</a>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <div id="tweet-timeline">
-        <a class="twitter-timeline" href="https://twitter.com/metrogym" data-tweet-limit=5.>
-            Tweets by @metrogym
-        </a>
-    </div>
-
-</div>
-<br>
+        <br>
+        <?php include('../../classes/global/make_booking.php');
+        echo makeBooking(); ?>
+        <br>
+    </section>
 
 <?php
 include('../../group/global/makeScript.php');
