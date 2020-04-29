@@ -11,8 +11,8 @@ session_start();
  //   exit;
 //}
 
-include('makeHeader.php');
-echo makeHeader();
+//include('makeHeader.php');
+//echo makeHeader();
 ?>
 
 <head>
