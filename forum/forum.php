@@ -22,6 +22,7 @@ echo makeHeader();
     <br><br>
     <section class="forum_cont">
         <div class="container">
+          <h2> Register To Use Forum</h2> 
             <form action="register.php" method ="POST"> 
                 Username: <input type="text" name="username">
                 <br />Password: <input type ="Password" name="password"> 
