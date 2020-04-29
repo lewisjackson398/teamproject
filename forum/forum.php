@@ -11,7 +11,7 @@ session_start();
 //    exit;
 //}
 
-include('makeHeader.php');
+include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>
 
@@ -20,7 +20,7 @@ echo makeHeader();
 </head>
 
 <body id="page-top" class="page forum">
-    <?php include('makeNav.php');
+    <?php include('../group/global/makeNav.php');
     echo makeNav();
     ?>
 
