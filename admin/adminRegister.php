@@ -3,8 +3,8 @@
 require_once "../server/config/config.php";
  
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = $job_title = "";
-$username_err = $password_err = $confirm_password_err = $job_title_err = "";
+$username = $password = $confirm_password = "";
+$username_err = $password_err = $confirm_password_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT user_id FROM tbladmin WHERE username = ?";
+        $sql = "SELECT id FROM tbladmin WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -60,37 +60,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $confirm_password_err = "Password did not match.";
         }
     }
-
-    //Validate job_title
-    if (empty(trim($_POST["job_title"]))) {
-        $job_title_err = "Please enter your job title.";
-    } else {
-        $job_title = trim($_POST["job_title"]);
-    }
     
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($job_title_err)) {
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO tbladmin (username, password, job_title) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO tbladmin (username, password) VALUES (?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_password, $param_jobtitle);
+            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
             
             // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            $param_jobtitle = $job_title; 
             
             // Attempt to execute the prepared statement
-            if (mysqli_stmt_execute($stmt)) {
+            if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: ../admin/admin.php");
+                header("location: adminLogin.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
-
 
             // Close statement
             mysqli_stmt_close($stmt);
@@ -110,16 +101,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
-        .container{ width: 350px; padding: 20px; }
+        .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
 <body>
-<section class="register_cont">
-    <div class="container">
-        <h2>Set Up your admin account</h2>
-        <p>Please fill this form to set up your account.</p>
+    <div class="wrapper">
+        <h2>Sign Up</h2>
+        <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>"> 
+            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
@@ -134,16 +124,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
-            <div class="form-group <?php echo (!empty($job_title_err)) ? 'has-error' : ''; ?>">
-                <label>Job Title</label>
-                <input type="jobtitle" name="job_title" class="form-control" value="<?php echo $job_title; ?>">
-                <span class="help-block"><?php echo $job_title_err; ?></span>
-            </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an admin account set up? <a href="admin.php">Login here</a>.</p>
+            <p>Already have an account? <a href="adminLogin.php">Login here</a>.</p>
         </form>
     </div>    
 </body>
