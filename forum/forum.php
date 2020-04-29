@@ -4,12 +4,12 @@ session_start();
 //require_once('includes/membership_resource.php');
 
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
-{
-    echo "It looks like you're not logged in, please login.";
-    header("location: ../group/login.php");
-    exit;
-}
+//if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
+//{
+  //  echo "It looks like you're not logged in, please login.";
+ //   header("location: ../group/login.php");
+ //   exit;
+//}
 
 include('makeHeader.php');
 echo makeHeader();
