@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once('includes/membership_resource.php');
+//require_once('includes/membership_resource.php');
 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
