@@ -20,9 +20,7 @@ session_start();
 </head>
 
 <body id="page-top" class="page forum">
-    <?php include('makeNav.php');
-    echo makeNav();
-    ?>
+    
 
 
     <div id="category_1"class="row forumModule forumMargin">
