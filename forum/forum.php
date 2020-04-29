@@ -125,6 +125,6 @@ function startDiscussion(cat_id){
 <script src="themes/default/js/forum_home.js" type="text/javascript"></script>
 
     <?php
-    include('makeFooter.php');
+    include('../group/global/makeFooter.php');
     echo makeFooter();
     ?>
