@@ -25,6 +25,8 @@ if (isset($_POST['join'])) {
     $sql = "INSERT INTO tblclasses (date, class, instructor_name, start, finish, user_id)
     VALUES ('$str_arr[0]', '$str_arr[1]', '$str_arr[2]', '$str_arr[3]', '$str_arr[4]', '$user_id')";
 
+    $sql2 = "SELECT class_id FROM tblclasses WHERE user_id = '$user_id' ";
+
     // Run the above query
     if (mysqli_query($link, $sql)) {
         echo "
@@ -62,44 +64,44 @@ if (isset($_POST['join'])) {
     }
 }
 ?>
-    <section class="schedule">
-        <div class="container">
-            <h3 style="color: white;" class="text-center">Follow us on our social media for the latest updates!</h3>
-            <div class="row">
-                <div class="col-md-5 col-sm-5">
-                    <div id="tweet-buttons">
-                        <div class="row">
-                            <h3 style="color: white;">Twitter</h3>
-                            <a class="twitter-follow-button" href="https://twitter.com/metrogym" data-size="large">
-                                Follow @metrogym</a>
-                            <div id="tweet-timeline">
-                                <a class="twitter-timeline" href="https://twitter.com/metrogym" data-tweet-limit=5>
-                                    Tweets by @metrogym
-                                </a>
-                            </div>
-                            <a class="twitter-share-button" data-size="large" data-text="Join a class with me today!" data-hashtags="metrogym">
-                                Tweet
+<section class="schedule">
+    <div class="container">
+        <h3 style="color: white;" class="text-center">Follow us on our social media for the latest updates!</h3>
+        <div class="row">
+            <div class="col-md-5 col-sm-5">
+                <div id="tweet-buttons">
+                    <div class="row">
+                        <h3 style="color: white;">Twitter</h3>
+                        <a class="twitter-follow-button" href="https://twitter.com/metrogym" data-size="large">
+                            Follow @metrogym</a>
+                        <div id="tweet-timeline">
+                            <a class="twitter-timeline" href="https://twitter.com/metrogym" data-tweet-limit=5>
+                                Tweets by @metrogym
                             </a>
                         </div>
+                        <a class="twitter-share-button" data-size="large" data-text="Join a class with me today!" data-hashtags="metrogym">
+                            Tweet
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-5 col-sm-5" style="float: right;">
-                    <div class="row">
-                        <div id="fb-root"></div>
-                        <h3 style="color: white;">Facebook</h3>
-                        <div class="fb-share-button" style="padding-bottom: 5px;" data-size="large" data-href="https://www.facebook.com/Hullgym" data-layout="button_count"></div>
-                        <br>
-                        <div class="fb-page" data-tabs="timeline,events,messages" data-href="https://www.facebook.com/Hullgym" width="500" height="1305" data-hide-cover="false"></div>
-                    </div>
-
                 </div>
             </div>
+            <div class="col-md-5 col-sm-5" style="float: right;">
+                <div class="row">
+                    <div id="fb-root"></div>
+                    <h3 style="color: white;">Facebook</h3>
+                    <div class="fb-share-button" style="padding-bottom: 5px;" data-size="large" data-href="https://www.facebook.com/Hullgym" data-layout="button_count"></div>
+                    <br>
+                    <div class="fb-page" data-tabs="timeline,events,messages" data-href="https://www.facebook.com/Hullgym" width="500" height="1305" data-hide-cover="false"></div>
+                </div>
+
+            </div>
         </div>
-        <br>
-        <?php include('../../classes/global/make_booking.php');
-        echo makeBooking(); ?>
-        <br>
-    </section>
+    </div>
+    <br>
+    <?php include('../../classes/global/make_booking.php');
+    echo makeBooking(); ?>
+    <br>
+</section>
 <?php
 include('../../group/global/makeScript.php');
 include('../../group/global/makeFooter.php');

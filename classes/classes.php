@@ -78,9 +78,19 @@ include('../server/config/config.php')
                         $user_id = $_SESSION['user_id'];
                         $sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
                         $result = mysqli_query($link, $sql);
-                        if (mysqli_num_rows($result) > 0) {
+                        if (mysqli_num_rows($result) <= 5) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "<tr onclick='row()'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+                                echo "<tr class='actives' onclick='row()'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+                                  <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
+                            }
+                            echo "</table>";
+                        } else if (mysqli_num_rows($result) == 0) {
+                            echo "<h1 style='color: white;'>No active classes.</h1>";
+                        }
+                        if (mysqli_num_rows($result) > 5) {
+                            echo "<h1> You're only allowed 5 active classes at once. </h1>";
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo "<tr class='actives' onclick='row()'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
                                   <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
                             }
                             echo "</table>";
