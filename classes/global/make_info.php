@@ -1,9 +1,7 @@
-
 <?php
 function makeInfo()
 {
     $info = <<<INFO
-    </section>
     <section class="work_day">
         <div class="container">
             <div class="row">
@@ -41,3 +39,4 @@ function makeInfo()
     INFO;
     return $info;
 }
+?>
