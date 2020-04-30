@@ -14,40 +14,28 @@ session_start();
 include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>
+
 <html>
+    <head>
+    <tiitle>Forum</title>
+    </head> 
+
+
+
 <body id="page-top" class="page forum">
     <?php include('../group/global/makeNav.php');
     echo makeNav();
     ?>
-    <br><br>
-    <section class="forum_cont">
-        <div class="container">
-          <h2> Register To Access Forum</h2> 
-            <form action="register.php" method ="POST"> 
-                Username: <input type="text" name="username">
-                <br />Password: <input type ="Password" name="password"> 
-                <br />Confirm password: <input type="password" name="repassword"> 
-                <br />Email: <input type="text" name="email">
-                <br /><input type="submit" name="submit" value="Register"> or <a href="..group/login.php">Login</a>
-            </form>
-        </div>
-    </section>
+
+   
+
+   
 </body>    
 <html>
 
-<?php
-$username = @$_POST['username']; 
-$password = @$_POST['password']; 
-$repass = @$_POST['repassword']; 
-$email = @$_POST['email']; 
 
-if (isset($_POST['submit'])){
-    echo "HOOOO HOO";
-}
-?>
 
-                    <?php
-                    include('../group/global/makeFooter.php');
-                    echo makeFooter();
-                    ?>
- 
+        <?php
+        include('../group/global/makeFooter.php');
+        echo makeFooter();
+        ?>
