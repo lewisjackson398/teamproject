@@ -3,7 +3,8 @@
 require_once "../server/config/config.php";
 
 $status = "";
-if(isset($_POST['new']) && $_POST['new']==1){
+if(isset($_POST['submit']))
+{
     $class_id =$_REQUEST['class_id'];
     $user_id = $_REQUEST['user_id'];
     $date = $_REQUEST['date'];

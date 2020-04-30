@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('/XAMPP/htdocs/teamproject/server/config/config.php');
+include('../../server/config/config.php');
 include('../../group/global/makeHeader.php');
 include('../../group/global/makeNav.php');
 echo makeHeader();

@@ -1,4 +1,3 @@
-
 <?php
 function makeBooking()
 {
@@ -11,3 +10,4 @@ function makeBooking()
     BOOKING;
     return $booking;
 }
+?>

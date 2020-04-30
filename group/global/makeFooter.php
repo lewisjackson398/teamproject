@@ -82,3 +82,4 @@ function makeFooter()
 FOOTER;
   return $footer;
 }
+?>

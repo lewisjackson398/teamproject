@@ -1,7 +1,7 @@
 <?php
 session_start();
 //connect to db
-include('/XAMPP/htdocs/teamproject/server/config/config.php');
+include('../../server/config/config.php');
 include('../../group/global/makeHeader.php');
 include('../../group/global/makeNav.php');
 echo makeHeader();

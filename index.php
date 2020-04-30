@@ -7,9 +7,6 @@ echo makeNav();
 ?>
 
 <body id="page-top">
-   <?php
-   ?>
-
    <header>
       <div class="header-content">
          <div class="header-content-inner">
@@ -25,53 +22,53 @@ echo makeNav();
    echo makeInfo();
    ?>
    <section class="schedule">
-        <div class="text-center">
-            <h2>Class Weekly Schedule</h2>
-        </div>
-        <br>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="makeNav">
-                        <?php include('classes/global/make_nav.php');
-                        echo makeClassNav();
-                        ?>
-                    </div>
-                </div>
-
-                <div class="col-sm-10">
-                    <div id="search-box">
-                        <input type="text" oninput="w3.filterHTML('#timetable', '.item', this.value)" placeholder="Search classes..." />
-                    </div>
-                    <table class="table" id="timetable">
-                        <thead>
-                            <tr id="timetable_row2">
-                                <th scope="col">Date</th>
-                                <th scope="col">Class</th>
-                                <th scope="col">Instructor</th>
-                                <th scope="col">Starting Time</th>
-                                <th scope="col">Ending Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $sql = "SELECT * FROM tbltimetable ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start ";
-                            $result = mysqli_query($link, $sql);
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_array($result)) {
-                                    echo "<tr class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
-                                    <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
-                                }
-                                echo "</table>";
-                            }
-                            ?>
-                        </tbody>
-
-                    </table>
-                </div>
+      <div class="text-center">
+         <h2>Class Weekly Schedule</h2>
+      </div>
+      <br>
+      <br>
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-2">
+               <div class="makeNav">
+                  <?php include('classes/global/make_nav.php');
+                  echo makeClassNav();
+                  ?>
+               </div>
             </div>
-        </div>
+
+            <div class="col-sm-10">
+               <div id="search-box">
+                  <input type="text" oninput="w3.filterHTML('#timetable', '.item', this.value)" placeholder="Search classes..." />
+               </div>
+               <table class="table" id="timetable">
+                  <thead>
+                     <tr id="timetable_row2">
+                        <th scope="col">Date</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">Instructor</th>
+                        <th scope="col">Starting Time</th>
+                        <th scope="col">Ending Time</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <?php
+                     $sql = "SELECT * FROM tbltimetable ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start ";
+                     $result = mysqli_query($link, $sql);
+                     if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+                           echo "<tr class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+                                    <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
+                        }
+                        echo "</table>";
+                     }
+                     ?>
+                  </tbody>
+
+               </table>
+            </div>
+         </div>
+      </div>
    </section>
 
    <section class="fitness-classes">

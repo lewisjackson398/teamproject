@@ -1,4 +1,3 @@
-
 <?php
 function makeClassNav()
 {
@@ -19,3 +18,4 @@ function makeClassNav()
     NAV;
     return $classNav;
 }
+?>

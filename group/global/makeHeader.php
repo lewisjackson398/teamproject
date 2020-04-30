@@ -19,3 +19,4 @@ function makeHeader()
 HEADER;
    return $header;
 }
+?>
