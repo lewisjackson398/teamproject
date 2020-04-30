@@ -25,7 +25,7 @@ echo makeNav();
 
             <div class="col-lg-10">
                 <div class="text-left" style="color: white">
-                    <h2 style="color: white">Beach Body</h2>
+                    <h2 style="color: white">Kettlebells</h2>
                     <p>All classes are available to non-members and all levels are welcome.</p>
                     <div>
                         <ul>Monday

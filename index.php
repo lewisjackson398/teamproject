@@ -1,4 +1,5 @@
 <?php
+include('server/config/config.php');
 include('group/global/makeHeader.php');
 include('group/global/makeNav.php');
 echo makeHeader();
@@ -6,7 +7,7 @@ echo makeNav();
 ?>
 
 <body id="page-top">
-   <?php 
+   <?php
    ?>
 
    <header>
@@ -19,364 +20,58 @@ echo makeNav();
       </div>
    </header>
 
-   <section class="work_day">
-      <div class="text-center">
-         <h2 style="color:white;">MetroGym's workout of the day</h2>
-      </div>
-      <div class="container">
-         <div class="row">
-            <div class="col-md-3 col-sm-6">
-               <div class="item">
-                  <div class="date">Thursday 16/04/2020</div>
-                  <div class="image"><img src="https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="img-responsive"></div>
-                  <p>Go hardcore in this CTC-based program. Use all stations plus suspension trainers, medicine balls
-                     and bands to crush your 6-pack!</p>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="item">
-                  <div class="date">Friday 17/04/2020</div>
-                  <div class="image"><img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="img-responsive"></div>
-                  <p>Calorie burning cardio and pilates based toning combine to maximize your fat burning potential.</p>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="item">
-                  <div class="date">Saturday 18/04/2020</div>
-                  <div class="image"><img src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="img-responsive"></div>
-                  <p>A high energy; high impact blend of kicks and punches set to upbeat music. The perfect combination
-                     of martial arts, boxing and cardiovascular training.</p>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="item">
-                  <div class="date">Sunday 19/04/2020</div>
-                  <div class="image"><img src="https://images.pexels.com/photos/917653/pexels-photo-917653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="img-responsive"></div>
-                  <p>The perfect core strengthening solution: concentrated ab-centric floorwork paired with deep
-                     restorative stretching.</p>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-
+   <?php
+   include('classes/global/make_info.php');
+   echo makeInfo();
+   ?>
    <section class="schedule">
-      <div class="text-center">
-         <h2>Class Weekly Schedule</h2>
-      </div>
-      <div class="buttons text-center">
-         <a id="choice-all" class="btn btn-primary btn-xl">All Trainers</a>
-         <a id="choice-lewis" class="btn btn-primary btn-xl">Lewis</a>
-         <a id="choice-brandon" class="btn btn-primary btn-xl">Brandon</a>
-         <a id="choice-arlana" class="btn btn-primary btn-xl">Arlana</a>
-         <a id="choice-oliver" class="btn btn-primary btn-xl">Oliver</a>
-         <div class="search-box">
-            <input type="text" autocomplete="off" id="myInput" onkeyup="myFunction()" placeholder="Search classes..." />
-            <div class="result"></div>
-         </div>
-      </div>
+        <div class="text-center">
+            <h2>Class Weekly Schedule</h2>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="makeNav">
+                        <?php include('classes/global/make_nav.php');
+                        echo makeClassNav();
+                        ?>
+                    </div>
+                </div>
 
-      <div class="container">
-         <table class="table" id="myTable">
-            <thead class="hidden-xs">
-               <tr>
-                  <th></th>
-                  <th>Monday</th>
-                  <th>Tuesday</th>
-                  <th>Wednesday</th>
-                  <th>Thursday</th>
-                  <th>Friday</th>
-                  <th>Saturday</th>
-                  <th>Sunday</th>
-               </tr>
-            </thead>
-            <tbody class="bod">
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">7:00 - 8:00am</th>
-                  <td>
-                     <div class="brandon"><a href="classes/class_types/hot_yoga.php">Hot Yoga <span>7:00 - 7:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/zumba.php">Zumba<span>7:00 - 7:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="brandon"><a href="classes/class_types/beach_body.php">Beach Body<span>7:00 - 7:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/senior.php">Senior Keep Fit<span>7:00 - 7:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/senior.php">Senior Keep Fit<span>7:00 - 7:45</span></a></div>
+                <div class="col-sm-10">
+                    <div id="search-box">
+                        <input type="text" oninput="w3.filterHTML('#timetable', '.item', this.value)" placeholder="Search classes..." />
+                    </div>
+                    <table class="table" id="timetable">
+                        <thead>
+                            <tr id="timetable_row2">
+                                <th scope="col">Date</th>
+                                <th scope="col">Class</th>
+                                <th scope="col">Instructor</th>
+                                <th scope="col">Starting Time</th>
+                                <th scope="col">Ending Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $sql = "SELECT * FROM tbltimetable ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start ";
+                            $result = mysqli_query($link, $sql);
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_array($result)) {
+                                    echo "<tr class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+                                    <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
+                                }
+                                echo "</table>";
+                            }
+                            ?>
+                        </tbody>
 
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="arlana"><a href="class_types/sprirt_cycle.php">Spirit Cycle <span>7:00 - 7:45</span></a></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">8:00 - 9:00am</th>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/zumba.php">Zumba <span>8:00 - 8:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="brandon"><a href="classes/class_types/beach_body.php">Beach Body <span>8:00 - 8:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/beach_body.php">Beach Body <span>8:00 - 8:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="brandon"><a href="classes/class_types/senior.php">Senior Keep Fit <span>8:00 - 8:45</span></a></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">9:00 - 10:00am</th>
-                  <td>
-
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/zumba.php">Zumba <span>9:00 - 9:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="brandon"><a href="classes/class_types/beach_body.php">Beach Body <span>9:00 - 9:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/beach_body.php">Beach Body <span>9:00 - 9:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/senior.php">Senior Keep Fit <span>9:00 - 9:45</span></a></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">10:00 - 11:00am</th>
-                  <td>
-                     <div class="brandon"><a href="classes/class_types/senior.php">Senior Keep Fit <span>10:00 - 10:45</span></a></a></div>
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="class_types/spriit_cycle.php">Spirit cycle <span>10:00 - 10:45</span></div>
-                  </td>
-                  <td>
-                     <div class="arlana"><a href="classes/class_types/zumba.php">Zumba <span>10:00 - 10:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/beach_body.php">Beach Body <span>10:00 - 10:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/hot_yoga.php">Hot yoga <span>10:00 - 10:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">11:00 - 12:00pm</th>
-                  <td>
-                     <div class="arlana"><a href="classes/class_types/zumba.php">Zumba <span>11:00 - 11:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/beach_body.php">Beach Body <span>11:00 - 12:00</span></a></div>
-                  </td>
-                  <td>
-                     <div class="brandon"><a href="classes/class_types/zumba.php">Zumba <span>11:00 - 12:00</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/beach_body.php">Beach Body <span>11:00 - 11:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/hot_yoga.php">Hot yoga <span>11:00 - 11:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">12:00pm - 1:00pm</th>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/hot_yoga.php">Hot yoga <span>12:00 - 1:00</span></a></div>
-                  </td>
-                  <td>
-                     <div class="arlana"><a href="classes/class_types/spirit_cycle.php">Spirit cycle <span>12:00 - 12:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/beach_body.php">Beach Body <span>12:00 - 12:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="brandon"><a href="classes/class_types/spirit_cycle.php">Spirit cycle <span>12:00 - 1:00</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/hot_yoga.php">Hot yoga <span>9:00 - 9:45</span></a></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">1:00pm - 2:00pm</th>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/beach_body.php">Beach Body <span>1:00 - 1:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="arlana"><a href="classes/class_types/zumba.php">Zumba <span>1:00 - 2:00</span></a></div>
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/beach_body.php">Beach Body <span>1:00 - 2:00</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/spirit_cycle.php">Hot yoga <span>1:00 - 2:00</span></a></div>
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/senior.php">Senior Keep Fit <span>1:00 - 2:00</span></a></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">2:00pm - 3:00pm</th>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/beach_body.php">Beach Body <span>2:00 - 2:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="arlana"><a href="classes/class_types/zumba.php">Zumba <span>2:00 - 2:45</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/spirit_cycle.php">Hot yoga <span>2:00 - 2:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/senior.php">Senior Keep Fit <span>2:00 - 3:00</span></a></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">3:00pm - 4:00pm</th>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="brandon"><a href="classes/class_types/spirit_cycle.php">Zumba <span>3:00 - 4:00</span></a></div>
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/hot_yoga.php">Hot yoga <span>3:00 - 4:00</span></a></div>
-
-                  </td>
-                  <td>
-                     <div class="arlana"><a href="classes/class_types/zumba.php">Zumba <span>3:00 - 4:00</span></a></div>
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/senior.php">Senior Keep Fit <span>3:00 - 4:00</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/senior.php">Senior Keep Fit <span>3:00 - 4:00</span></a></div>
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">4:00pm - 5:00pm</th>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/senior.php">Senior Keep Fit <span>4:00 - 5:00</span></a></div>
-
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/beach_body.php">Beach Body <span>4:00 - 4:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="arlana"><a href="classes/class_types/zumba.php">Zumba <span>4:00 - 4:45</span></a></div>
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/beach_body.php">Beach Body <span>4:00 - 5:00</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/hot_yoga.php">Hot yoga <span>4:00 - 5:00</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-               </tr>
-               <tr>
-                  <th class="row hidden-lg"></th>
-                  <th scope="row">5:00pm - 6:00pm</th>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/beach_body.php">Beach Body <span>5:00 - 6:00</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="arlana"><a href="classes/class_types/zumba.php">Zumba <span>5:00 - 6:00</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-                  <td>
-                     <div class="oliver"><a href="classes/class_types/hot_yoga.php">Hot yoga <span>5:00 - 5:45</span></a></div>
-
-                  </td>
-                  <td>
-                     <div class="lewis"><a href="classes/class_types/senior.php">Senior Keep Fit <span>5:00 - 6:00</span></a></div>
-                  </td>
-                  <td>
-
-                  </td>
-               </tr>
-            </tbody>
-         </table>
-      </div>
-      <?php
-      include('classes/global/make_booking.php');
-      echo makeBooking();
-      ?>
+                    </table>
+                </div>
+            </div>
+        </div>
    </section>
 
    <section class="fitness-classes">
@@ -398,7 +93,7 @@ echo makeNav();
                      <i class="icon-default icon-2"></i>
                   </div>
                   <div class="service-content insideService">
-                     <h2 class="service-title "><a href="classes/class_types/senior.php" class="title">Senior Keep Fit</a> </h2>
+                     <h2 class="service-title "><a href="classes/class_types/senior.php" class="title">Seniors</a> </h2>
                      <p>Are you just starting out at MetroGym? We're here for you every step of the way.</p>
                   </div>
                </div>
@@ -420,7 +115,7 @@ echo makeNav();
                      <i class="icon-default icon-4"></i>
                   </div>
                   <div class="service-content insideService">
-                     <h2 class="service-title"><a href="classes/class_types/beach_body.php" class="title">Beach Body</a></h2>
+                     <h2 class="service-title"><a href="classes/class_types/beach_body.php" class="title">Boxing</a></h2>
                      <p>Get fit, healthy and lose weight with expert nutrition plans and Beachbody's workout system.</p>
                   </div>
                </div>
@@ -431,7 +126,7 @@ echo makeNav();
                      <i class="icon-default icon-5"></i>
                   </div>
                   <div class="service-content insideService">
-                     <h2 class="service-title"><a href="classes/class_types/spirit_cycle.php" class="title">Spirit Cycle</a></h2>
+                     <h2 class="service-title"><a href="classes/class_types/spirit_cycle.php" class="title">Cycling</a></h2>
                      <p>Spirit Cycle has revolutionized indoor Beginner and taken the world of fitness by storm.</p>
                   </div>
                </div>
@@ -442,7 +137,7 @@ echo makeNav();
                      <i class="icon-default icon-6"></i>
                   </div>
                   <div class="service-content insideService">
-                     <h2 class="service-title"><a href="classes/class_types/hot_yoga.php" class="title">Hot Yoga</a></h2>
+                     <h2 class="service-title"><a href="classes/class_types/hot_yoga.php" class="title">Yoga</a></h2>
                      <p>A vigorous approach to yoga techniques characterized by flowing poses linked to the breath.</p>
                   </div>
                </div>

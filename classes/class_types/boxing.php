@@ -1,3 +1,4 @@
+@@ -1,75 +0,0 @@
 <?php
 include('../../server/config/config.php');
 include('../../group/global/makeHeader.php');
@@ -25,7 +26,7 @@ echo makeNav();
 
             <div class="col-lg-10">
                 <div class="text-left" style="color: white">
-                    <h2 style="color: white">Spirit Cycle</h2>
+                    <h2 style="color: white">Boxing</h2>
                     <p>All classes are available to non-members and all levels are welcome.</p>
                     <div>
                         <ul>Tuesday
