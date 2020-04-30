@@ -21,8 +21,8 @@ echo makeHeader();
         <div class="contasiner">
            
             <h2>Forum</h2>
-            <p>Post to add to the discussion.</p>
-            <a href="post.php"><button></button></a>
+            <p>Want to add to the discussion?</p>
+            <a href="post.php"><button>Create Post</button></a>
            
         </div>
     </section>
