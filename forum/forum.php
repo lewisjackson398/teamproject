@@ -15,7 +15,8 @@ echo makeHeader();
 
 <html>
     <head>
-    <tiitle>Forum</title>
+    <h2>Forum</h2>
+            <p>Post to add to the discussion.</p>
     </head> 
 
 
@@ -24,14 +25,10 @@ echo makeHeader();
     <?php include('../group/global/makeNav.php');
     echo makeNav();
     ?>
-
    
-
    
 </body>    
 <html>
-
-
 
         <?php
         include('../group/global/makeFooter.php');
