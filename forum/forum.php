@@ -23,10 +23,10 @@ echo makeHeader();
            
             <h2>Metro Gym Forum</h2>
             <p>Want to add to the discussion?</p>
-                <input onclick="()" type = "button" class="btn btn-success" value="create post" name="create post">
-                
-                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm">
-                        Launch Normal Form
+                <!-- <input onclick="()" type = "button" class="btn btn-success" value="create post" name="create post"> --- Might use might not--> 
+
+                    <button class="btn btn-success" data-toggle="modal" data-target="#myModalNorm">
+                        Create post
                     </button>
 
 
