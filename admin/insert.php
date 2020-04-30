@@ -12,13 +12,19 @@ if(isset($_POST['new']) && $_POST['new']==1){
     $finish = $_REQUEST['finish'];
     $instructor_name = $_REQUEST['instructor_name'];
     
-    $ins_query="insert into tblclasses
-    (`class_id`,`user_id`,`date`,`class`, `start`,`finish`, `instructor_name`)values
-    ('$class_id','$user_id','$date','$class','$start','$finish','$instructor_name)";
-    mysqli_query($con,$ins_query)
-    or die(mysql_error());
-    $status = "New Class Inserted Successfully.
-    </br></br><a href='view.php'>View Inserted Record</a>";
+    $ins_query="INSERT INTO tblclasses (class_id, user_id, date, class, start, finish, instructor_name) VALUES ($class_id, $user_id,'$date','$class','$start','$finish','$instructor_name')";
+
+    if(mysqli_query($link, $ins_query))
+    {
+        echo "successful";
+    }
+    else
+    {
+        echo "error: " . mysqli_error($link);
+    }
+    //or die(mysql_error());
+    //$status = "New Class Inserted Successfully.
+    //</br></br><a href='view.php'>View Inserted Record</a>";
 }
 ?>
 <!DOCTYPE html>
