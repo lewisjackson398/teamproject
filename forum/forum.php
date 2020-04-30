@@ -18,9 +18,12 @@ echo makeHeader();
     echo makeNav();
     ?>
     <section class="forum_post">
-        <div class="container">
+        <div class="contasiner">
+           
             <h2>Forum</h2>
             <p>Post to add to the discussion.</p>
+            <a href="post.php"><button></button></a>
+           
         </div>
     </section>
    
