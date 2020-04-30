@@ -22,7 +22,7 @@ echo makeHeader();
            
             <h2>Forum</h2>
             <p>Want to add to the discussion?</p>
-                <input type = "button" class="btn btn-success" value="create_post" name="create post">
+                <input type = "button" class="btn btn-success" value="create post" name="create post">
 
 
                 
