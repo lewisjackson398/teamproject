@@ -13,6 +13,7 @@ include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>
 
+<!-- Header and post button --> 
 <body id="page-top" class="page forum">
     <?php include('../group/global/makeNav.php');
     echo makeNav();
@@ -20,9 +21,13 @@ echo makeHeader();
     <section class="forum_post">
         <div class="contasiner">
            
-            <h2>Forum</h2>
+            <h2>Metro Gym Forum</h2>
             <p>Want to add to the discussion?</p>
-                <input type = "button" class="btn btn-success" value="create post" name="create post">
+                <input onclick="()" type = "button" class="btn btn-success" value="create post" name="create post">
+                
+                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm">
+                        Launch Normal Form
+                    </button>
 
 
                 
