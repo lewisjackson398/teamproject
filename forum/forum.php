@@ -26,38 +26,38 @@ echo makeHeader();
                 <!-- <input onclick="()" type = "button" class="btn btn-success" value="create post" name="create post"> --- Might use might not--> 
         </div>
     </section>
-                    <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+        <div>
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">New Post</button>
 
-                        <!-- Modal -->
-                        <div id="myModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>Some text in the modal.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                            </div>
-
+                    <!-- Modal content-->
+                    <div class="form-group">
+                        <label for="postTitleTitle">Post Title</label>
+                        <input type="text" class="form-control" id="postTitle" placeholder="Post Title"/>
                     </div>
+                    <div class="form-group">
+                        <label for="postContent">Post Content</label>
+                        <input type="textarea" class="form-control" id="postContent" placeholder="Enter Text"/>
                     </div>
 
-                
-           
-      
-   
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Submit">
+                        <input type="reset" class="btn btn-default" value="Reset">
+                    </div>
+        </div>
+    </section>           
+    
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
+
 </body>    
 <html>
 
-    <?php
-    include('../group/global/makeFooter.php');
-    echo makeFooter();
-    ?>
+    
