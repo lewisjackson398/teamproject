@@ -6,30 +6,70 @@ include('../../group/global/makeNav.php');
 echo makeHeader();
 echo makeNav();
 
-//add a user to a class.
-if (isset($_POST['join'])) {
-    // Collect the form input values and store them in variables
+// Check if the user is logged in, if not then redirect him to login page
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: ../../group/login.php");
+    exit;
+}
 
-    $user_id = $_POST['user_id'];
-    // use of explode 
-    $class = $_POST['class'];
-    //remove whitespace from a string
-    // $stripped = str_replace(' ', '', $class);
-    // echo $stripped ."<br>";
-    //seperate each word by a comma into an array 
-    $str_arr = explode(",", $class);
-    //print_r($str_arr);
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
+$result = mysqli_query($link, $sql);
 
-    //insert into the db a new class member
-    //Only works for one word answers but might have to do. 
-    $sql = "INSERT INTO tblclasses (date, class, instructor_name, start, finish, user_id)
+
+$class = $_POST['class'];
+$str_arr = explode(",", $class);
+//print_r($str_arr);
+$get_class_id = "SELECT class_id FROM tblclasses WHERE user_id = '$user_id' & class_id = '$str_arr[0]'";
+//echo $get_class_id . "<br>";
+$class_result = mysqli_query($link, $get_class_id);
+// Store the result above as an array
+$class_rows = mysqli_fetch_array($class_result, MYSQLI_NUM);
+// Store the first object in the array, which is the class_id, as a variable
+$class_id = $class_rows[0];
+//echo $class_id . "<br>";
+
+//Cant create a class if user has more than 5 active classes.
+if (mysqli_num_rows($result) >= 5) {
+    echo "<body id='page-top' class='page work_day'>
+            <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
+                <h3 class='display-3'>Sorry, you're only allowed to join 5 classes at once.</h3>
+            </div>
+        </body>";
+}
+//Dont allow the user to join the same class twice. 
+else if ($class_id = $class_id) {
+    echo "<body id='page-top' class='page work_day'>
+            <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
+                <h3 class='display-3'>Sorry, you can't join the same session twice.</h3>
+            </div>
+        </body>";
+} else {
+
+    //add a user to a class.
+    if (isset($_POST['join'])) {
+        // Collect the form input values and store them in variables
+
+        $user_id = $_POST['user_id'];
+        // use of explode 
+        $class = $_POST['class'];
+        //remove whitespace from a string
+        // $stripped = str_replace(' ', '', $class);
+        // echo $stripped ."<br>";
+        //seperate each word by a comma into an array 
+        $str_arr = explode(",", $class);
+        //print_r($str_arr);
+
+        //insert into the db a new class member
+        //Only works for one word answers but might have to do. 
+        $sql = "INSERT INTO tblclasses (date, class, instructor_name, start, finish, user_id)
     VALUES ('$str_arr[0]', '$str_arr[1]', '$str_arr[2]', '$str_arr[3]', '$str_arr[4]', '$user_id')";
 
-    $sql2 = "SELECT class_id FROM tblclasses WHERE user_id = '$user_id' ";
+        $sql2 = "SELECT class_id FROM tblclasses WHERE user_id = '$user_id' ";
 
-    // Run the above query
-    if (mysqli_query($link, $sql)) {
-        echo "
+        // Run the above query
+        if (mysqli_query($link, $sql)) {
+            echo "
         <body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                 <h1 class='display-3'>Class Confirmation!</h1>
@@ -45,8 +85,8 @@ if (isset($_POST['join'])) {
             </div>
         </body>
         ";
-    } else {
-        echo "
+        } else {
+            echo "
         <body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                 <h1 class='display-3'>Sorry!</h1>
@@ -61,6 +101,7 @@ if (isset($_POST['join'])) {
             </div>
         </body>
         ";
+        }
     }
 }
 ?>
