@@ -26,38 +26,69 @@ echo makeHeader();
                 <!-- <input onclick="()" type = "button" class="btn btn-success" value="create post" name="create post"> --- Might use might not--> 
         </div>
     </section>
-                    <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+        <div>
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">New Post</button>
 
-                        <!-- Modal -->
-                        <div id="myModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>Some text in the modal.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                            </div>
-
+                    <!-- Modal content
+                    <div class="form-group">
+                        <label for="postTitleTitle">Post Title</label>
+                        <input type="text" class="form-control" id="postTitle" placeholder="Post Title"/>
                     </div>
+                    <div class="form-group">
+                        <label for="postContent">Post Content</label>
+                        <input type="textarea" class="form-control" id="postContent" placeholder="Enter Text"/>
                     </div>
+                    -->
+                    <form action="forum.php" method="POST">
+                    <br />
+                    Title: <br /><input type="text" name="post_title" style="width: 400px;"><br />                    
+                    <br />
+                    Content: <br/ >
+                    <textarea style="resize: none; width: 400px; height 800px;" name ="content" "></textarea>
+                    <br />
 
-                
-           
-      
-   
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Submit">
+                        <input type="reset" class="btn btn-default" value="Reset">
+                    </div>
+        </div>
+    </section>           
+    
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
+
 </body>    
 <html>
 
-    <?php
-    include('../group/global/makeFooter.php');
-    echo makeFooter();
-    ?>
+<?php
+    $p_title = @$_POST['post_title'];
+    $content = @$_POST['content'];
+    $date = date("y-m-d");
+
+    if(isset($_POST['submit'])){
+        if($p_title && $content)
+            if(stlen($p_title) >=5 && stlen($p_title) <= 70 ){
+                if($query = mysql_query("INSERT INTO tblforum_posts('post_id', post_title, post_content, post_creator, 'date') VALUES('', '"$p_title."', '"$content."', '".$_SESSION["loggedin"]."'. '".$date."')"))
+                echo "success";
+            }
+            else{echo"failure";}
+
+                else {
+                    echo "Post title must be between 5 and 70 characters long";
+                }
+            }
+        }
+        else{
+                echo "Please fill in the fields"; 
+        }
+    
+?> 
+
+    
