@@ -34,7 +34,7 @@ echo makeHeader();
                 <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
-                    <!-- Modal content-->
+                    <!-- Modal content
                     <div class="form-group">
                         <label for="postTitleTitle">Post Title</label>
                         <input type="text" class="form-control" id="postTitle" placeholder="Post Title"/>
@@ -43,7 +43,14 @@ echo makeHeader();
                         <label for="postContent">Post Content</label>
                         <input type="textarea" class="form-control" id="postContent" placeholder="Enter Text"/>
                     </div>
-
+                    -->
+                    <form action="post.php" method="POST">
+                    <br />
+                    Post Title: <br /><input type="text" name="topic_name" style="width: 400px;"><br />                    
+                    <br />
+                    Content: <br/ >
+                    <textarea style="resize: none; width: 400px; height 800px;"></textarea>
+                    <br />
 
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Submit">
