@@ -21,15 +21,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
     <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. You are all logged in.</h1>
     </div>
     <p>
         <a href="adminReset-password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="adminLogout.php" class="btn btn-danger">Sign Out of Your Account</a>
-        <a href="addClass.php" class="btn btn-danger">Add a Class</a>
-        <a href="updateClass.php" class="btn btn-danger">Update a class</a>
-        <a href="deleteClass.php" class="btn btn-danger">Delete a class</a>
-        
+        <a href="classes.php" class="btn btn-danger">Classes</a>
+
+
     </p>
 </body>
 </html>
