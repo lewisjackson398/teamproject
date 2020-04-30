@@ -34,20 +34,20 @@ require_once "../server/config/config.php";
 <?php
 $count=1;
 $sel_query="Select * from tblclasses ORDER BY class_id;";
-$result = mysqli_query($con,$sel_query);
+$result = mysqli_query($link ,$sel_query);
 while($row = mysqli_fetch_assoc($result)) { ?>
-<tr><td align="center"><?php echo $count; ?></td>
-<td align="center"><?php echo $row["class_id"]; ?></td>
-<td align="center"><?php echo $row["user_id"]; ?></td>
-<td align="center"><?php echo $row["date"]; ?></td>
-<td align="center"><?php echo $row["class"]; ?></td>
-<td align="center"><?php echo $row["start"]; ?></td>
-<td align="center"><?php echo $row["finish"]; ?></td>
-<td align="center"><?php echo $row["instructor_name"]; ?></td>
-<td align="center">
+<tr><td allign="center"><?php echo $count; ?></td>
+<td allign="center"><?php echo $row["class_id"]; ?></td>
+<td allign="center"><?php echo $row["user_id"]; ?></td>
+<td allign="center"><?php echo $row["date"]; ?></td>
+<td allign="center"><?php echo $row["class"]; ?></td>
+<td allign="center"><?php echo $row["start"]; ?></td>
+<td allign="center"><?php echo $row["finish"]; ?></td>
+<td allign="center"><?php echo $row["instructor_name"]; ?></td>
+<td allign="center">
 <a href="edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
 </td>
-<td align="center">
+<td allign="center">
 <a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a>
 </td>
 </tr>
