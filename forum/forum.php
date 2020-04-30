@@ -22,7 +22,10 @@ echo makeHeader();
            
             <h2>Forum</h2>
             <p>Want to add to the discussion?</p>
-            <a href="post.php"><button>Create Post</button></a>
+                <input type = "button" class="btn btn-success" value="create_post" name="create_post">
+
+
+                
            
         </div>
     </section>
