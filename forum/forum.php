@@ -44,12 +44,12 @@ echo makeHeader();
                         <input type="textarea" class="form-control" id="postContent" placeholder="Enter Text"/>
                     </div>
                     -->
-                    <form action="post.php" method="POST">
+                    <form action="forum.php" method="POST">
                     <br />
-                    Post Title: <br /><input type="text" name="topic_name" style="width: 400px;"><br />                    
+                    Title: <br /><input type="text" name="post_title" style="width: 400px;"><br />                    
                     <br />
                     Content: <br/ >
-                    <textarea style="resize: none; width: 400px; height 800px;"></textarea>
+                    <textarea style="resize: none; width: 400px; height 800px;" name ="content" "></textarea>
                     <br />
 
                     <div class="form-group">
@@ -66,5 +66,29 @@ echo makeFooter();
 
 </body>    
 <html>
+
+<?php
+    $p_title = @$_POST['post_title'];
+    $content = @$_POST['content'];
+    $date = date("y-m-d");
+
+    if(isset($_POST['submit'])){
+        if($p_title && $content)
+            if(stlen($p_title) >=5 && stlen($p_title) <= 70 ){
+                if($query = mysql_query("INSERT INTO tblforum_posts('post_id', post_title, post_content, post_creator, 'date') VALUES('', '"$p_title."', '"$content."', '".$_SESSION["loggedin"]."'. '".$date."')"))
+                echo "success";
+            }
+            else{echo"failure";}
+
+                else {
+                    echo "Post title must be between 5 and 70 characters long";
+                }
+            }
+        }
+        else{
+                echo "Please fill in the fields"; 
+        }
+    
+?> 
 
     
