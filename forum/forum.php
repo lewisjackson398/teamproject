@@ -13,24 +13,21 @@ include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>
 
-<html>
-    <head>
-    <h2>Forum</h2>
-            <p>Post to add to the discussion.</p>
-    </head> 
-
-
-
 <body id="page-top" class="page forum">
     <?php include('../group/global/makeNav.php');
     echo makeNav();
     ?>
-   
+    <section class="forum_post">
+        <div class="container">
+            <h2>Forum</h2>
+            <p>Post to add to the discussion.</p>
+        </div>
+    </section>
    
 </body>    
 <html>
 
-        <?php
-        include('../group/global/makeFooter.php');
-        echo makeFooter();
-        ?>
+    <?php
+    include('../group/global/makeFooter.php');
+    echo makeFooter();
+    ?>
