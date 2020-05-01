@@ -30,28 +30,26 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     //put sql into mysqli query
     $duplicate = mysqli_query($link, $sql2);
 
-    //if the user is set 
-    if (isset($user_id)) {
-        //then check if the user has the a duplicate class
-        if (mysqli_num_rows($duplicate) > 0) {
-            //display the duplicate error message
-            echo "<body id='page-top' class='page work_day'>
+    //if the user is set and if the user has the a duplicate class
+    if (isset($user_id) || mysqli_num_rows($duplicate) > 0) {
+        //display the duplicate error message
+        echo "<body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                 <h3 class='display-3'>Sorry, you can't join the same session twice.</h3>
             </div>
         </body>";
-        }
-        //if the user has more than 5 classes.
-        else if (mysqli_num_rows($result) >= 5) {
-            //display the too many classes error message
-            echo "<body id='page-top' class='page work_day'>
+    }
+    //if the user has more than 5 classes.
+    else if (mysqli_num_rows($result) >= 5) {
+        //display the too many classes error message
+        echo "<body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                 <h3 class='display-3'>Sorry, you're only allowed to join 5 classes at once.</h3>
             </div>
         </body>";
-        }
-        //if the validation passes submit the post.
-    } else {
+    }
+    //if the validation passes submit the post.
+    else {
         if (isset($_POST['join'])) {
             // Collect the form input values and store them in variables
             $user_id = $_POST['user_id'];
