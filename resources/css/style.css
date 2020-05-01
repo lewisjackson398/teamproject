@@ -767,25 +767,15 @@ video {
 
   Olis stuff 
 
-*/
-
-a {
-    color: #0000ff
-
-}
 
 .cat_links {
-  display: block;
-  padding: 5px;
-  padding-top: 10px;
-  padding-bottom 10px;
-  border: 1px solid #000000;
-  margin-bottom: 5px;
-  background-color: #cccccc;
-  color: #000000;
+  background: #0f0f0f;
+  padding: 20px;
+  color: white;
 }
 
 .cat_links:hover{
-  background-color: #dddddd; 
+  background-color: #df1414; 
 
 }
+*/
