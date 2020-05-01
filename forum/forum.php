@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-require_once('includes/membership_resource.php');
 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
@@ -12,43 +11,52 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
 }
 
 // Initialize the session
-include('../group/global/makeHeader.php');
-echo makeHeader();
+//include('../group/global/makeHeader.php');
+//echo makeHeader();
 ?>
 
 
-<!-- Header and post button --> 
-<body id="page-top" class="page forum">
-    <?php include('../group/global/makeNav.php');
-    echo makeNav();
-    ?>
-    <section class="forum_post">
+<section class="forum">
         <div class="contasiner">
             <h2>Metro Gym Forum</h2>
             <p>Want to add to the discussion?</p>
         </div>
     </section>    
 
-
-<div id="content">
-<?php
-include('../server/config/config.php')
-$sql = "SELECT * FROM categories ORDER BY category_title ASC";
-$res = mysql_query($sql) or die(mysql_error());
-if (mysql_rows($res) > 0){
-    }   else {
-        echo "<p> Currently there are no categories are available. </p>";
-    }
-
-    
-}
-?> 
 </div> 
 
+
+<body id="page-top" class="page forum">
+    <?php include('../group/global/makeNav.php');
+    echo makeNav();
+    ?>
+  
+<div id="content">
+<?php
+include('../server/config/config.php');
+$sql = "SELECT * FROM tblcategories ORDER BY category_title ASC";
+$result = mysqli_query($link, $sql) or die (mysqli_error(connection));
+$categories =""; 
+if (mysqli_num_rows($result) > 0){
+    while ($row = mysqli_fetch_assoc($result)){
+        $id = $row['id']; 
+        $title = $row['category_title'];
+        $description = $row['category_description']; 
+        $categories .="<a href='#' class = 'cat_links'>.$title. - <font size=' -1'></font>".$description."</a>";
+    }
+    echo $categories;
+} else {
+        echo "<p> Currently there are no categories are available. </p>";
+    }
+?> 
+
+
+
+
     
 <?php
-include('../group/global/makeFooter.php');
-echo makeFooter();
+//include('../group/global/makeFooter.php');
+//echo makeFooter();
 ?>
 
 </body>    
