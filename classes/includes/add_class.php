@@ -18,10 +18,13 @@ $result = mysqli_query($link, $sql);
 
 $class = $_POST['class'];
 $str_arr = explode(",", $class);
+// shows the string printed out
 print_r($str_arr);
 
+//get the user id and the first element of the array which is the class_id 
 $duplicate = mysqli_query($link, "SELECT class_id FROM tblclasses WHERE user_id='$user_id' AND class_id='$str_arr[0]'");
 
+//check if the user has the a duplicate class
 if (mysqli_num_rows($duplicate) > 0) {
     echo "<body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
