@@ -24,11 +24,11 @@ if (isset($_POST['delete'])) {
 
     $class = $_POST['class'];
     $str_arr = explode(",", $class);
-    //print_r($str_arr);
+    print_r($str_arr);
 
 
     $get_class_id = "SELECT class_id FROM tblclasses WHERE user_id = '$user_id' & class_id = '$str_arr[0]'";
-    //echo $get_class_id . "<br>";
+    echo $get_class_id . "<br>";
 
     $class_result = mysqli_query($link, $get_class_id);
 
@@ -38,10 +38,10 @@ if (isset($_POST['delete'])) {
 
     // Store the first object in the array, which is the class_id, as a variable
     $class_id = $class_rows[0];
-    //echo $class_id . "<br>";
+    echo $class_id . "<br>";
 
     $delete_class = "DELETE FROM tblclasses WHERE class_id = '$str_arr[0]'";
-    //echo $delete_class . "<br>";
+    echo $delete_class . "<br>";
 
     // Run the above query
     if (mysqli_query($link, $delete_class)) {

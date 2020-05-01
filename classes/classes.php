@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 include('../group/global/makeHeader.php');
 echo makeHeader();
 include('../server/config/config.php')
@@ -73,10 +74,9 @@ include('../server/config/config.php')
                         <?php
                         $sql = "SELECT * from tbltimetable";
                         $result = mysqli_query($link, $sql);
-
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value="  . $row['date'] . "," . $row['class'] . "," . $row['instructor_name'] . "," . $row['start'] . "," . $row['finish'] . ">"
+                                echo "<option value=" . $row['timetable_id'] . "," . $row['date'] . "," . $row['class'] . "," . $row['instructor_name'] . "," . $row['start'] . "," . $row['finish'] . ">"
                                     . $row['date'] . " - " . $row['class']  . " - " . $row['start'] . " - " . $row['finish'] . "</br></option>";
                             }
                         }

@@ -16,36 +16,28 @@ $user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
 $result = mysqli_query($link, $sql);
 
-
 $class = $_POST['class'];
 $str_arr = explode(",", $class);
-//print_r($str_arr);
-$get_class_id = "SELECT class_id FROM tblclasses WHERE user_id = '$user_id' & class_id = '$str_arr[0]'";
-//echo $get_class_id . "<br>";
-$class_result = mysqli_query($link, $get_class_id);
-// Store the result above as an array
-$class_rows = mysqli_fetch_array($class_result, MYSQLI_NUM);
-// Store the first object in the array, which is the class_id, as a variable
-$class_id = $class_rows[0];
-//echo $class_id . "<br>";
+print_r($str_arr);
 
+$duplicate = mysqli_query($link, "SELECT class_id FROM tblclasses WHERE user_id='$user_id' AND class_id='$str_arr[0]'");
+
+if (mysqli_num_rows($duplicate) > 0) {
+    echo "<body id='page-top' class='page work_day'>
+            <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
+                <h3 class='display-3'>Sorry, you can't join the same session twice.</h3>
+            </div>
+        </body>";
+}
 //Cant create a class if user has more than 5 active classes.
-if (mysqli_num_rows($result) >= 5) {
+else if (mysqli_num_rows($result) >= 5) {
     echo "<body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                 <h3 class='display-3'>Sorry, you're only allowed to join 5 classes at once.</h3>
             </div>
         </body>";
 }
-//Dont allow the user to join the same class twice. 
-else if ($class_id = $class_id) {
-    echo "<body id='page-top' class='page work_day'>
-            <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
-                <h3 class='display-3'>Sorry, you can't join the same session twice.</h3>
-            </div>
-        </body>";
-} else {
-
+else {
     //add a user to a class.
     if (isset($_POST['join'])) {
         // Collect the form input values and store them in variables
@@ -63,9 +55,9 @@ else if ($class_id = $class_id) {
         //insert into the db a new class member
         //Only works for one word answers but might have to do. 
         $sql = "INSERT INTO tblclasses (date, class, instructor_name, start, finish, user_id)
-    VALUES ('$str_arr[0]', '$str_arr[1]', '$str_arr[2]', '$str_arr[3]', '$str_arr[4]', '$user_id')";
+    VALUES ('$str_arr[1]', '$str_arr[2]', '$str_arr[3]', '$str_arr[4]', '$str_arr[5]', '$user_id')";
 
-        $sql2 = "SELECT class_id FROM tblclasses WHERE user_id = '$user_id' ";
+        //echo"$sql";
 
         // Run the above query
         if (mysqli_query($link, $sql)) {
@@ -75,7 +67,7 @@ else if ($class_id = $class_id) {
                 <h1 class='display-3'>Class Confirmation!</h1>
                 <p class='lead'><strong>$_SESSION[username] has joined a class at MetroGym</strong><br> Please check the class details below are correct.</p>
                 <hr>
-                <p> $str_arr[0] - $str_arr[1] - $str_arr[2] - $str_arr[3] - $str_arr[4] </p>
+                <p> $str_arr[1] - $str_arr[2] - $str_arr[3] - $str_arr[4] - $str_arr[5] </p>
                 <p>
                 Having trouble? <a href='../../group/contact.php'>Contact us</a>
                 </p>
@@ -107,22 +99,20 @@ else if ($class_id = $class_id) {
 ?>
 <section class="schedule">
     <div class="container">
-        <h3 style="color: white;" class="text-center">Follow us on our social media for the latest updates!</h3>
+        <h3 style="color: white;" class="text-center">Share this class with your friends!</h3>
         <div class="row">
             <div class="col-md-5 col-sm-5">
                 <div id="tweet-buttons">
                     <div class="row">
                         <h3 style="color: white;">Twitter</h3>
-                        <a class="twitter-follow-button" href="https://twitter.com/metrogym" data-size="large">
-                            Follow @metrogym</a>
+                        <a class="twitter-share-button" data-size="large" data-text="Join a class with me today!" data-hashtags="metrogym">
+                            Tweet
+                        </a>
                         <div id="tweet-timeline">
                             <a class="twitter-timeline" href="https://twitter.com/metrogym" data-tweet-limit=5>
                                 Tweets by @metrogym
                             </a>
                         </div>
-                        <a class="twitter-share-button" data-size="large" data-text="Join a class with me today!" data-hashtags="metrogym">
-                            Tweet
-                        </a>
                     </div>
                 </div>
             </div>
