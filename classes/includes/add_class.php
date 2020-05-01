@@ -10,61 +10,71 @@ echo makeNav();
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: ../../group/login.php");
     exit;
-}
+} else {
+    //get userid
+    $user_id = $_SESSION['user_id'];
+    //select all the classes from that user
+    $sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
+    //put sql into mysqli query
+    $result = mysqli_query($link, $sql);
 
-$user_id = $_SESSION['user_id'];
-$sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
-$result = mysqli_query($link, $sql);
+    //grab the class string
+    $class = $_POST['class'];
+    //split the string into an array which is seperated by a comma
+    $str_arr = explode(",", $class);
+    // shows the string printed out
+    print_r($str_arr);
 
-$class = $_POST['class'];
-$str_arr = explode(",", $class);
-// shows the string printed out
-print_r($str_arr);
+    //get the timetable_id
+    $sql2 = "SELECT timetable_id FROM tbltimetable WHERE timetable_id='$str_arr[0]'";
+    //put sql into mysqli query
+    $duplicate = mysqli_query($link, $sql2);
 
-//get the user id and the first element of the array which is the class_id 
-$duplicate = mysqli_query($link, "SELECT class_id FROM tblclasses WHERE user_id='$user_id' AND class_id='$str_arr[0]'");
-
-//check if the user has the a duplicate class
-if (mysqli_num_rows($duplicate) > 0) {
-    echo "<body id='page-top' class='page work_day'>
+    //if the user is set 
+    if (isset($user_id)) {
+        //then check if the user has the a duplicate class
+        if (mysqli_num_rows($duplicate) > 0) {
+            //display the duplicate error message
+            echo "<body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                 <h3 class='display-3'>Sorry, you can't join the same session twice.</h3>
             </div>
         </body>";
-}
-//Cant create a class if user has more than 5 active classes.
-else if (mysqli_num_rows($result) >= 5) {
-    echo "<body id='page-top' class='page work_day'>
+        }
+        //if the user has more than 5 classes.
+        else if (mysqli_num_rows($result) >= 5) {
+            //display the too many classes error message
+            echo "<body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                 <h3 class='display-3'>Sorry, you're only allowed to join 5 classes at once.</h3>
             </div>
         </body>";
-}
-else {
-    //add a user to a class.
-    if (isset($_POST['join'])) {
-        // Collect the form input values and store them in variables
+        }
+        //if the validation passes submit the post.
+    } else {
+        if (isset($_POST['join'])) {
+            // Collect the form input values and store them in variables
+            $user_id = $_POST['user_id'];
+            $class = $_POST['class'];
+            //remove whitespace from a string
+            // $stripped = str_replace(' ', '', $class);
+            // echo $stripped ."<br>";
 
-        $user_id = $_POST['user_id'];
-        // use of explode 
-        $class = $_POST['class'];
-        //remove whitespace from a string
-        // $stripped = str_replace(' ', '', $class);
-        // echo $stripped ."<br>";
-        //seperate each word by a comma into an array 
-        $str_arr = explode(",", $class);
-        //print_r($str_arr);
+            //seperate each word by a comma into an array 
+            $str_arr = explode(",", $class);
+            //print_r($str_arr);
 
-        //insert into the db a new class member
-        //Only works for one word answers but might have to do. 
-        $sql = "INSERT INTO tblclasses (date, class, instructor_name, start, finish, user_id)
+            //insert into the db a new class member.
+            //Only works for one word answers but might have to do. 
+            $sql = "INSERT INTO tblclasses (date, class, instructor_name, start, finish, user_id)
     VALUES ('$str_arr[1]', '$str_arr[2]', '$str_arr[3]', '$str_arr[4]', '$str_arr[5]', '$user_id')";
 
-        //echo"$sql";
+            //echo"$sql";
 
-        // Run the above query
-        if (mysqli_query($link, $sql)) {
-            echo "
+            // Run the above query
+            if (mysqli_query($link, $sql)) {
+                //display the success message 
+                echo "
         <body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                 <h1 class='display-3'>Class Confirmation!</h1>
@@ -80,8 +90,9 @@ else {
             </div>
         </body>
         ";
-        } else {
-            echo "
+            } else {
+                //display the db failed message 
+                echo "
         <body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
                 <h1 class='display-3'>Sorry!</h1>
@@ -96,6 +107,7 @@ else {
             </div>
         </body>
         ";
+            }
         }
     }
 }
