@@ -97,14 +97,26 @@ function showActiveClasses() {
 
 
 
-function showAddDeleteClasses() {
+// function showAddDeleteClasses() {
 
-    //button onclick display add/remove from class card
-    var x = document.getElementById("addDelete");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
+//     //button onclick display add/remove from class card
+//     var x = document.getElementById("addDelete");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
 
-};
+// };
+
+// function showAddClasses() {
+
+//     //button onclick display add/remove from class card
+//     var x = document.getElementById("add");
+//     if (x.style.display === "block") {
+//         x.style.display = "none";
+//     } else {
+//         x.style.display = "none";
+//     }
+
+// };
