@@ -7,6 +7,13 @@ include('../../group/global/makeNav.php');
 echo makeHeader();
 echo makeNav();
 
+// Check if the user is logged in, if not then redirect him to login page
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
+{
+    header("location: ../../group/login.php");
+    exit;
+}
+
 //delete a class if they are no longer going.
 if (isset($_POST['delete'])) {
     // Collect the form input values and store them in variables

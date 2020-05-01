@@ -46,7 +46,7 @@ include('../server/config/config.php')
                             $result = mysqli_query($link, $sql);
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_array($result)) {
-                                    echo "<tr onclick='joinClass()' class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+                                    echo "<tr onclick='showActiveClasses()' class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
                                     <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
                                 }
                                 echo "</table>";
@@ -59,47 +59,9 @@ include('../server/config/config.php')
             </div>
         </div>
         <br>
-        <div id="active" style="display: none;">
-            <div class="container">
-                <h2>Your active classes</h2>
-                <h3 style="color: white;">Select a row to add or delete a class.</h3>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">Class</th>
-                            <th scope="col">Instructor</th>
-                            <th scope="col">Starting Time</th>
-                            <th scope="col">Ending Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $user_id = $_SESSION['user_id'];
-                        $sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
-                        $result = mysqli_query($link, $sql);
-                        if (mysqli_num_rows($result) <= 5) {
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo "<tr class='actives' onclick='row()'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
-                                  <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
-                            }
-                            echo "</table>";
-                        } else if (mysqli_num_rows($result) == 0) {
-                            echo "<h1 style='color: white;'>No active classes.</h1>";
-                        }
-                        if (mysqli_num_rows($result) > 5) {
-                            echo "<h1> You're only allowed 5 active classes at once. </h1>";
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo "<tr class='actives' onclick='row()'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
-                                  <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
-                            }
-                            echo "</table>";
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+
+        <?php include('includes/display.php'); ?>
+
 
         <div id="addDelete" style="display: none;" class="container">
             <form action="includes/add_class.php" method="post">

@@ -83,7 +83,7 @@ twttr.widgets.createShareButton(
 );
 
 
-function joinClass() {
+function showActiveClasses() {
 
     //button onclick display add/remove from class card
     var x = document.getElementById("active");
@@ -95,7 +95,9 @@ function joinClass() {
 
 };
 
-function row() {
+
+
+function showAddDeleteClasses() {
 
     //button onclick display add/remove from class card
     var x = document.getElementById("addDelete");
