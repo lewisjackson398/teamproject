@@ -26,12 +26,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     print_r($str_arr);
 
     //get the timetable_id
-    $sql2 = "SELECT timetable_id FROM tbltimetable WHERE timetable_id='$str_arr[0]'";
+    $sql2 = "SELECT tbltimetable.timetable_id FROM tbltimetable, tblclasses WHERE user_id = '$user_id' AND timetable_id='$str_arr[0]'";
+    echo $sql2;
     //put sql into mysqli query
     $duplicate = mysqli_query($link, $sql2);
+    print_r($duplicate);
 
     //if the user is set and if the user has the a duplicate class
-    if (isset($user_id) || mysqli_num_rows($duplicate) > 0) {
+    if (mysqli_num_rows($duplicate) > 0) {
         //display the duplicate error message
         echo "<body id='page-top' class='page work_day'>
             <div style='background:transparent !important; color: white;' class='jumbotron container text-center'>
