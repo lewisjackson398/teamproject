@@ -39,18 +39,16 @@ echo makeHeader();
                 <div style = "text-align: center;">
                     <?php
                         include_once("../forum/includes/config.php");
-                  
                         $tid = $_GET['tid'];
                         $cid = $_GET['cid'];
-                    
-                       
+                                           
                         $sql = "SELECT * FROM tbltopics WHERE category_id='".$cid."' AND id='".$tid."' LIMIT 1";
                         $result = mysqli_query($link, $sql) or die (mysqli_error($link));
                         if(mysqli_num_rows($result) == 1) {
                             echo "<table width='100%'>";
                             if ($_SESSION['loggedin']) { echo "<tr><td colspan ='2'><input type='submit' value='Add Reply' onClick=\"window.location =
-                                post_reply.php?cid=".$cid."$tid=".$tid."\" /><hr />"; } else {echo "<tr><td colspan='2'><p>Please log in to add reply</p><hr /></td></tr>";}
-                                while ($row = mysqli_fetch_assoc($link, $result)){
+                                post_reply.php?cid=".$cid."&tid=".$tid."\" /><hr />"; } else {echo "<tr><td colspan='2'><p>Please log in to add reply</p><hr /></td></tr>";}
+                                while ($row = mysqli_fetch_assoc($result)){
                                     $sql2 = "SELECT * FROM posts WHERE category_id='".$cid."' AND topic_id='".$tid."'";
                                     $result2 = mysqli_query($link, $sql2) or die (mysqli_error($link));
                                     while ($row2 = mysqli_fetch_assoc($result2)){
