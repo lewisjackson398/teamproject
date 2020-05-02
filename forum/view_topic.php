@@ -39,11 +39,11 @@ echo makeHeader();
                 <div style = "text-align: center;">
                     <?php
                         include_once("../forum/includes/config.php");
-                        $tid = "";
+                  
                         $tid = $_GET['tid'];
                         $cid = $_GET['cid'];
-
-                        //$tid = isset($_GET['tid']) ? $_GET['tid'] : '';
+                    
+                       
                         $sql = "SELECT * FROM tbltopics WHERE category_id='".$cid."' AND id='".$tid."' LIMIT 1";
                         $result = mysqli_query($link, $sql) or die (mysqli_error($link));
                         if(mysqli_num_rows($result) == 1) {

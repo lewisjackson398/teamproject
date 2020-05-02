@@ -33,7 +33,7 @@ if (isset($_POST['topic_submit'])) {
         $sql3 = "UPDATE categories SET last_post_date=now(), last_user_posted='".$creator."' WHERE id='".$cid."' LIMIT 1"; 
         $result3 = mysqli_query($link, $sql2) or die(mysqli_error($link));
         if (($result1) && ($result2) && ($result3)) {
-            header("Location: view_topic.php?cid=".$cid."$tid=".$new_topic_id);             
+            header("Location: view_topic.php?cid=".$cid."&tid=".$new_topic_id);             
         } else {
             echo "A problem occured when creating your topic. Please try again"; 
         }
