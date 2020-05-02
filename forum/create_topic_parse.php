@@ -25,10 +25,10 @@ if (isset($_POST['topic_submit'])) {
         $creator = $_SESSION['loggedin'];
         $sql = "INSERT INTO tbltopics (category_id, topic_title, topic_creator, topic_date, topic_reply_date) 
         VALUES ('".$cid."', '".$title."', '".$creator."', now(), now())";
-        $result = mysqli_query($link, $sql) or die (mysqli_error($link));
-        $new_topic_id = mysqli_insert_id(connection);
+        $result1 = mysqli_query($link, $sql) or die (mysqli_error($link));
+        $new_topic_id = mysqli_insert_id($link);
         $sql2 = "INSERT INTO posts (category_id, topic_id, post_creator, post_content, post_date) 
-        VALUES ('".$cid."', '".$new_topic_id."', '".$creator."', '".$content."', now(), now())"; 
+        VALUES ('".$cid."', '".$new_topic_id."', '".$creator."', '".$content."', now())"; 
         $result2 = mysqli_query($link, $sql2) or die(mysqli_error($link));
         $sql3 = "UPDATE categories SET last_post_date=now(), last_user_posted='".$creator."' WHERE id='".$cid."' LIMIT 1"; 
         $result3 = mysqli_query($link, $sql2) or die(mysqli_error($link));

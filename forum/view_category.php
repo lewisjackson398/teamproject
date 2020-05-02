@@ -51,11 +51,12 @@ echo makeHeader();
                         if (mysqli_num_rows($result) == 1){
                             $sql2 = "SELECT * FROM tbltopics WHERE category_id='".$cid."' ORDER BY topic_reply_date DESC";
                             $result2 = mysqli_query($link, $sql2) or die (mysqli_error($link)); 
+                            $topics = "";// -------------- Might be bad later on 
                             if (mysqli_num_rows($result2) > 0){
                                 $topics .= "<table width = 100%' style='border-collapse: collapse;'>";
                                 $topics .= "<tr><td colspan ='3'><a href='forum.php'>Return to Forum Index Page</a>".$logged."<hr /></td></tr>";
                                 $topics .= "<tr style='background-color: #dddddd;'><td>Topic Title</td><td width='65' align='center'>Replies</td>
-                                <td width='65' align='center'> Views</td><tr>";
+                                <td width='65' align='center'>Views</td><tr>";
                                 $topics .= "<tr><td colspan='3'><hr /></td><tr>";
                                 while ($row = mysqli_fetch_assoc($result2)) {
                                     $tid = $row['id'];
@@ -68,6 +69,7 @@ echo makeHeader();
                                     $topics .= "<tr><td colspan='3'><hr /></td><tr>";
                                 }
                                 $topics .= "</table>";
+                                echo $topics;
                             } else {
                                 echo "<a href='forum.php'>Return To Forum Index Page</a><hr />";
                                 echo "<p>No Topics exist in this category.".$logged."</p>";

@@ -8,11 +8,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
     header("location: ../group/login.php");
     exit();
 }
-if((!isset($_SESSION["loggedin"])) || ($_GET['cid'])){
-    echo "It looks like you're not logged in, please login.";
-    header("location: ../group/login.php");
-    exit();
-}
+
 $cid = $_GET['cid'];
 
 //Initialize the session

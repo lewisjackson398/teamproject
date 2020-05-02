@@ -25,7 +25,7 @@ echo makeHeader();
   
 <section class="forum">
     <div class="text-center">
-        <h1>Metro Gym Forum</h1>
+        <h1>Metro Gym Forum </h1>
         
     </div>
     <div class="container">
