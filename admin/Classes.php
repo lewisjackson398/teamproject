@@ -1,6 +1,8 @@
 <?php
 // Include config file
 require_once "../server/config/config.php";
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,6 +11,9 @@ require_once "../server/config/config.php";
 <title>Classes</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
 <div class="form">
 <p>Welcome to the classes dashboard.</p>
@@ -18,6 +23,10 @@ require_once "../server/config/config.php";
 <p><a href="equipment.php">Book Equipment</a><p>
 <p><a href="adminLogout.php">Logout</a></p>
 </div>
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
 </body>
 </html>
     
