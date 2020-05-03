@@ -18,6 +18,9 @@ echo makeHeader();
 ?>
 <body>
 <section class="admin">
+<div class="container">
+     <div class ="row">
+            <div style = "text-align: center;">
 <div class="form">
 <p><a class="btn btn-default" href="classes.php">Home</a> 
 | <a class="btn btn-default" href="insert.php">Insert New Record</a> 
