@@ -6,7 +6,7 @@ echo makeHeader();
 
 $class_id = $_GET['class_id'];
 $query = "SELECT * FROM tblclasses WHERE class_id = '$class_id'"; 
-$result = mysqli_query($link, $query) or die ( mysqli_error());
+$result = mysqli_query($link, $query);
 $row = mysqli_fetch_assoc($result);
 
 ?>
@@ -54,7 +54,7 @@ if(isset($_POST['submit']))
                 class = '$class', 
                 start = '$start', 
                 finish = '$finish', 
-                instructor_name = '$instructor_name' 
+                instructor_name = '$instructor_name', 
                 timetable_id = '$timetable_id'
                 WHERE class_id = '$class_id'";
 
