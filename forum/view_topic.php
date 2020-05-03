@@ -55,13 +55,13 @@ echo makeHeader();
                                         by ".$row2['post_creator']." - ".$row2['post_date']."<hr />".$row2['post_content']."</div></td><td width='200' valign='top'
                                         align='center' style='border: 1px solid #000000;'>User Infor Here</td></tr><tr><td colspan='2'<hr /></td></tr>";
                                     }
-                                    //Table also doesn't show up -- Not sure why 
-                                   // $old_views = $row['topic_views'];
-                                   // $new_views = $old_views + 1;
-                                   // $sql3 = "UPDATE tbltopics SET topic_views='".$new_views."' WHERE category_id'".$cid."'AND id=''";
-                                   // $result3 = mysqli_query($link, $sql3) or die(mysqli_error($link)); 
+                                     
+                                    $old_views = $row['topic_views'];
+                                    $new_views = $old_views + 1;
+                                    $sql3 = "UPDATE tbltopics SET topic_views='".$new_views."' WHERE category_id='".$cid."' AND id='".$tid."' LIMIT 1";
+                                    $result3 = mysqli_query($link, $sql3) or die(mysqli_error($link)); 
                                    
-                                }   echo "<table>";   
+                                }   echo "</table>";   
                                     
                                 } else {
 
