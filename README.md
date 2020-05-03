@@ -1,26 +1,28 @@
-You will submit a zip file to Blackboard containing:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-a.	All the files of the system your group constructed
-b.	Sufficient installation instructions to enable the re-installation of your product
-c.	A readme document containing relevant system details (user names and passwords and so on – to your system not its hosting platform if it has one)
-d.	The URL to the GitHub repository for the project (unless there are commercial sensitivities). This will help to provide evidence of who did what e.g. the various commit logs.
+TODO
+1. ZIP FILES
 
-Ensure appropriate Ethical Approval is in place. Your group must seek Ethical Approval for your project. If you do not obtain such approval, we are sorry but we will not be able to mark your work and as such you will receive a mark of 0.
+2. INSTALLATION INSTRUCTIONS
+
+    2a. To run the website you need to install XAMPP which is a free web server solution stack package developed by Apache Friends.
+    2b. Open up XAMPP program and press the start apache server button to start the localhost server.
+    2c. Download the GITHUB repository and save the folder into the xampp/htdocs folder which will create a localhost server.
+    2d. Once the folder is saved there open up a browser (GOOGLE CHROME is recommended) and type in 'localhost/teamproject' into your URL - (teamproject is the folder name and localhost is the local server).
+    2e. If the site appears and loads correctly then everything has worked if not see 2f.
+
+    2f. Refer to this link if you cannot see the site and hopefully this fixes the problem - https://www.quora.com/How-can-I-run-live-website-in-my-local-machine-using-XAMPP
+
+3. SYSTEM DETAILS
+
+    3a. To login as a customer the username is: 'lewis398' - password is: '1234567'
+    3b. To login as an admin the username is: 'qqqqqqqqqq' - password is: 'qqqqqqqqqqqqqqqq'
+
+    3c. To view the database online please visit - https://remotemysql.com/phpmyadmin/ 
+        3d. The username is: VjP6aCbRgh - the password is: kL9UBjIFSu
+        3e. The databse config file shows the connection to the databse and can be found in the server/config folder.
+
+4. GITHUB REPOSITORY - https://github.com/lewisjackson398/teamproject
 
 
-You will be marked as follows:
-
-1	Implementation of individual specified subsystem (30 individual marks)
-Comprehensiveness of implementation of the prototyped functions of your subsystem as specified in the terms of reference, including any enhancements based on feedback received.
-
-2.	Quality and Robustness of Subsystem (30 individual marks) 
-Error handling, user validation and robustness of subsystem functions; this should be demonstrated across the scope of the individual subsystem. To obtain full marks you must have provided a fluent implementation of the full scope of your subsystem. This includes appropriate handling of related non-functional requirements for example security and Human Computer Interaction related issues.
-
-3.	Demonstration structure, understanding & responses to questions (20 individual marks)
-Structure and clarity of demonstration of your subsystem; understanding of the work done; quality of responses to questions about the prototype. We expect you to demonstrate professionalism by being punctual, using appropriate language and respect for your audience and team members and measured responses to questions. We hope it goes without saying but the demonstration of your subsystem should not disrupt a group members demonstration.
-
-4.	Quality and Consistency of System Integration (20 group marks) 
-Comprehensiveness of system integration and consistency of the whole system. You will not be penalised for incomplete individual sub-components (providing meaningful attempts have been made). Additionally if there are group issues please inform the module team at the earliest opportunity. These marks will be peer assessed.
-
-MUST DO A PEER ASSESSMENT FORM AS WELL OR CAPPED AT 40
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

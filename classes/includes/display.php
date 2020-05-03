@@ -13,7 +13,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <div id='active' style'display: none;'>
     <div class='container'>
     <h2>Your active classes</h2>
-    <h3 style='color: white;'>Select a row to add or delete a class.</h3>
+    <h3 style='color: white;'>Join or delete a class below.</h3>
         <table class='table'>
             <thead class='thead-dark'>
                 <tr>
