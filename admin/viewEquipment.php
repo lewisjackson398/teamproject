@@ -1,6 +1,8 @@
 <?php
 // Include config file
 require_once "../server/config/config.php";
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +12,9 @@ require_once "../server/config/config.php";
 <title>View Equipment</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
 <div class="form">
 <p><a href="classes.php">Back to classes</a> 
@@ -49,5 +54,9 @@ while($row = mysqli_fetch_assoc($result))
 </tbody>
 </table>
 </div>
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
 </body>
 </html>
