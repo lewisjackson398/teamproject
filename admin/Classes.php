@@ -24,8 +24,8 @@ echo makeHeader();
            <br>
            
            <p><a class="btn btn-default" href="admin.php">Home</a><p>
-           <p><a class="btn btn-default" href="insert.php">Insert New Record</a></p>
-           <p><a class="btn btn-default" href="view.php">View Records</a><p>
+           <p><a class="btn btn-default" href="insert.php">Insert New Class</a></p>
+           <p><a class="btn btn-default" href="view.php">View Classes</a><p>
            <p><a class="btn btn-default" href="equipment.php">Book Equipment</a><p>
            <p><a class="btn btn-default" href="adminLogout.php">Logout</a></p>
      </div>
