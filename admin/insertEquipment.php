@@ -3,6 +3,7 @@
 require_once "../server/config/config.php";
 include('../group/global/makeHeader.php');
 echo makeHeader(); 
+
 $status = "";
 if(isset($_POST['submit']))
 {
