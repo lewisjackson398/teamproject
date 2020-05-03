@@ -27,40 +27,32 @@ echo makeNav();
             <div class="col-lg-10">
                 <div class="text-left" style="color: white">
                     <h2 style="color: white">Zumba</h2>
-                    <p>All classes are available to non-members and all levels are welcome.</p>
-                    <div class="1">
-                        <ul>Monday
-                            <li>Morning: 8:00 - 8:45am</li>
-                            <li>Morning: 11:00 - 11:45am</li>
-                        </ul>
-                        <ul>Tuesday
-                            <li>Morning: 7:00 - 7:45am</li>
-                            <li>Afternoon: 3:00 - 4:00pm</li>
-                        </ul>
-                        <ul>Wednesday
-                            <li>Morning: 9:00 - 9:45am</li>
-                            <li>Morning: 10:00 - 10:45am</li>
-                            <li>Afternoon: 11:00 - 12:00pm</li>
-                            <li>Afternoon: 1:00 - 2:00pm</li>
-                            <li>Afternoon: 2:00 - 2:45pm</li>
-                            <li>Evening: 4:00 - 4:45pm</li>
-                            <li>Evening: 5:00 - 6:00pm</li>
-                        </ul>
-                        <ul>Thursday
-                            <li>Afternoon: 3:00 - 4:00pm</li>
-                        </ul>
+                    <div>
+                        <?php
+                        $sql = "SELECT * FROM tbltimetable WHERE class = 'Zumba'";
+                        $result = mysqli_query($link, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo "<h3 style='list-style: none;'>" . $row["date"] . "</h3><li class='class'>" . $row["class"] .  " at " . substr($row["start"], 0, -3) . " - " . substr($row["finish"], 0, -3) . "</li>";
+                            }
+                        } else {
+                            echo "<h1> Sorry there are no classes to available.</h1>";
+                        }
+                        ?>
                     </div>
+                    <br>
 
                     <p>The ZUMBA program is a Latin-inspired, dance-fitness class that incorporates Latin and international music and dance movements, creating a dynamic, exciting, exhilarating and effective fitness system.
                         A ZUMBA class combines fast and slow rhythms that tone and sculpt the body using an aerobic/fitness approach to achieve a unique blended balance of cardio and muscle-toning benefits.</p>
                     <p>Benefits of Zumba include:</p>
-                    <ul>
-                        <li>Great increase in Aerobic capacity</li>
-                        <li>A Great calorie burner</li>
-                        <li>Excellent improvements in body toning</li>
-                        <li>Great fun</li>
-                        <li>Effective & Enjoyable/li>
-                    </ul>
+
+                    <li>Great increase in Aerobic capacity</li>
+                    <li>A Great calorie burner</li>
+                    <li>Excellent improvements in body toning</li>
+                    <li>Great fun</li>
+                    <li>Effective & Enjoyable</li>
+                        <br>
+                        <p><strong style="color: #37ecba; font-size: 20px;">Classes are only available to MetroGym members. </strong></p>
                 </div>
             </div>
         </div>

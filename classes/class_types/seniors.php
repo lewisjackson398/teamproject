@@ -25,36 +25,28 @@ echo makeNav();
             <div class="col-lg-10">
                 <div class="text-left" style="color: white">
                     <h2 style="color: white">Seniors</h2>
-                    <p>All classes are available to non-members and all levels are welcome.</p>
                     <div>
-                        <ul>Monday
-                            <li>Evening: 4:00 - 5:00pm</li>
-                        </ul>
-                        <ul>Thursday
-                            <li>Morning: 7:00 - 7:45am</li>
-                        </ul>
-                        <ul>Friday
-                            <li>Morning: 7:00 - 7:45am</li>
-                            <li>Afternoon: 3:00 - 4:00pm</li>
-                        </ul>
-                        <ul>Saturday
-                            <li>Evening: 5:00 - 6:00pm</li>
-                        </ul>
-                        <ul>Sunday
-                            <li>Morning: 8:00 - 8:45am</li>
-                            <li>Morning: 9:00 - 9:45am</li>
-                            <li>Afternoon: 1:00 - 2:00pm</li>
-                            <li>Afternoon: 2:00 - 3:00pm</li>
-                            <li>Afternoon: 3:00 - 4:00pm</li>
-                        </ul>
+                        <?php
+                        $sql = "SELECT * FROM tbltimetable WHERE class = 'Seniors'";
+                        $result = mysqli_query($link, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo "<h3 style='list-style: none;'>" . $row["date"] . "</h3><li class='class'>" . $row["class"] .  " at " . substr($row["start"], 0, -3) . " - " . substr($row["finish"], 0, -3) . "</li>";
+                            }
+                        } else {
+                            echo "<h1> Sorry there are no classes to available.</h1>";
+                        }
+                        ?>
                     </div>
-                    <p>Benefits of Senior Keep Fit include:</p>
-                    <ul>
-                        <li>A low-impact class designed specifically for the more mature exerciser.</li>
-                        <li>Heart and lungs exercises that will improve stamina for everyday activities.</li>
-                        <li>Strength training that will help maintain strong joints and keep osteoporosis at bay.</li>
-                        <li>Some relaxing and stretching to aid mobility.</li>
-                    </ul>
+                    <br>
+                    <p>Benefits of this Seniors class include:</p>
+
+                    <li>A low-impact class designed specifically for the more mature exerciser.</li>
+                    <li>Heart and lungs exercises that will improve stamina for everyday activities.</li>
+                    <li>Strength training that will help maintain strong joints and keep osteoporosis at bay.</li>
+                    <li>Some relaxing and stretching to aid mobility.</li>
+                    <br>
+                    <p><strong style="color: #37ecba; font-size: 20px;">Classes are only available to MetroGym members. </strong></p>
                 </div>
             </div>
         </div>

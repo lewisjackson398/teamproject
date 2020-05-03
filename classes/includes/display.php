@@ -4,6 +4,7 @@ $sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id' ORDER BY date='Sunda
 $result = mysqli_query($link, $sql);
 
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: ../../group/login.php");
     echo "<div class='container'> <h1 style='color: white;'>You must login to view active classes.</h1></div>";
 } else {
 

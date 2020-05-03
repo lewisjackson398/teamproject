@@ -26,49 +26,33 @@ echo makeNav();
             <div class="col-lg-10">
                 <div class="text-left" style="color: white">
                     <h2 style="color: white">Kettlebells</h2>
-                    <p>All classes are available to non-members and all levels are welcome.</p>
                     <div>
-                        <ul>Monday
-                            <li>Lunchtime: 1:00 - 2:00pm</li>
-                            <li>Lunchtime: 2:00 - 2:45pm</li>
-                            <li>Evening: 5:00 - 6:00pm</li>
-                        </ul>
-                        <ul>Tuesday
-                            <li>Morning: 8:00 - 8:45am</li>
-                            <li>Morning: 11:00 - 12:00pm</li>
-                            <li>Evening: 4:00 - 4:45pm</li>
-                        </ul>
-                        <ul>Wednesday
-                            <li>Morning: 7:00 - 7:45am</li>
-                        </ul>
-                        <ul>Thursday
-                            <li>Morning: 9:00 - 9:45am</li>
-                            <li>Morning: 10:00 - 10:45am</li>
-                            <li>Afternoon: 12:00 - 12:45pm</li>
-                            <li>Afternoon: 1:00 - 2:00pm</li>
-                            <li>Evening: 4:00 - 5:00pm</li>
-                        </ul>
-                        <ul>Friday
-                            <li>Morning: 8:00 - 8:45am</li>
-                            <li>Morning: 9:00 - 9:45am</li>
-                            <li>Morning: 11:00 - 11:45am</li>
-                        </ul>
+                        <?php
+                        $sql = "SELECT * FROM tbltimetable WHERE class = 'Kettlebells'";
+                        $result = mysqli_query($link, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo "<h3 style='list-style: none;'>" . $row["date"] . "</h3><li class='class'>" . $row["class"] .  " at " . substr($row["start"], 0, -3) . " - " . substr($row["finish"], 0, -3) . "</li>";
+                            }
+                        } else {
+                            echo "<h1> Sorry there are no classes to available.</h1>";
+                        }
+                        ?>
                     </div>
+                    <br>
                     <div>
-                        <p>This is a popular, fun class with a serious purpose! This class isn’t just about looking great,
-                            but also about maintaining a general level of fitness that will keep you healthy and motivated in your work and personal life.</p>
+                        <p>Kettlebells have long been used as a dynamic tool to help strength and endurance. They engage the core in almost every lift, so support you in developing core strength. A great low impact class that gives the body a total workout.
+                            Our 2 hour classes are sure to test you in a unique way sweating away calories and toning almost every muscle in the body.</p>
 
                         <p>Benefits of Beach Body include:</p>
 
-                        <ul>
-                            <li>Full body aerobic and toning workout</li>
-                            <li>Increased stamina and endurance</li>
-                            <li>Builds strength</li>
-                            <li>Increased energy levels</li>
-                            <li>Increased flexibility</li>
-                            <li>A great calorie burner</li>
-                            <li>Enjoyable exercise</li>
-                        </ul>
+
+                        <li>Increase in Cardiovascular fitness</li>
+                        <li>Full body toning</li>
+                        <li>Fun and enjoyable</li>
+
+                        <br>
+                        <p><strong style="color: #37ecba; font-size: 20px;">Classes are only available to MetroGym members. </strong></p>
                     </div>
                 </div>
             </div>
