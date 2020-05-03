@@ -49,11 +49,11 @@ include('../server/config/config.php')
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_array($result)) {
                                     echo "<tr class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
-                                    <td class='start'>" . substr($row["start"], 0 , -3 ) . "</td><td class='finish'>" . substr($row["finish"], 0, -3) . "</td></tr>";
+                                    <td class='start'>" . substr($row["start"], 0, -3) . "</td><td class='finish'>" . substr($row["finish"], 0, -3) . "</td></tr>";
                                 }
                                 echo "</table>";
                             } else {
-                                echo "<h1> Sorry there are no classes to available.</h1>";
+                                echo "<h1 style='color: white;'> Sorry there are no classes to available.</h1>";
                             }
                             ?>
                         </tbody>
@@ -72,81 +72,93 @@ include('../server/config/config.php')
             echo '
         <div id="addDelete" class="container">
             <form action="includes/add_class.php" method="post">
-                <div class="form-group">
-                    <label style="color: white;">
-                        <h1>Select a class to join</h1>
-                    </label>
-                    <select class="form-control" name="class" id="resize">';
+                <div class="form-group">';
+
 
             $sql = "SELECT tbltimetable.* FROM tbltimetable ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start";
             $result = mysqli_query($link, $sql);
             $sql2 = "SELECT * FROM tblclasses";
             $result2 = mysqli_query($link, $sql2);
             if (mysqli_num_rows($result) > 0) {
+                echo '<label style="color: white;">
+                        <h1>Select a class to join</h1>
+                    </label>
+                    <select class="form-control" name="class" id="resize">';
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<option value=" . $row['class_id'] . "," . $row['date'] . "," . $row['class'] . "," . $row['instructor_name'] . "," . $row['start'] . "," . $row['finish'] . "," . $row['timetable_id'] . ">"
-                        . $row['date'] . " - " . $row['class']  . " - " . substr($row["start"], 0 , -3 ) . " - " . substr($row["finish"], 0 , -3 ) . "</br></option>";
+                        . $row['date'] . " - " . $row['class']  . " - " . substr($row["start"], 0, -3) . " - " . substr($row["finish"], 0, -3) . "</br></option>";
                 }
-            }
-            
-            else {
-                echo "<option value>  No classes to add. </option>";
+            } else {
+                echo "<h3 style='color: white;'><option value>No classes available to add. </option></h3>";
             }
 
-            echo '
-                    </select>
+            echo '  </select>
                     <span class="help-block"></span>
                     <div class="form-group">
                         <input type="hidden" name="user_id" value="';
             echo $_SESSION['user_id'];
             echo '"/>
                     </div>
-                </div>
+                </div>';
+
+            if (mysqli_num_rows($result) == 0) {
+                echo '';
+            } else {
+                echo '
                 <div>
                     <input style="color: white;" type="submit" class="btn btn-success" value="Join Class" name="join">
                 </div>
             </form> ';
+            }
         };
         ?>
         <?php
         if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-        }
-        else {
-                echo '
+        } else {
+
+            $sql = "SELECT * from tblclasses WHERE user_id = '$user_id' ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start";
+            $result = mysqli_query($link, $sql);
+
+            echo '
             <form action="includes/delete_class.php" method="post">
-                <div class="form-group">
-                    <label style="color: white;">
-                        <h1>Select a class to delete</h1>
-                    </label>
-                    <select class="form-control" name="class" id="resize">';
+                <div class="form-group">';
 
-                $sql = "SELECT * from tblclasses WHERE user_id = '$user_id' ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start";
-                $result = mysqli_query($link, $sql);
-
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_array($result)) {
-                        echo "<option value=" . $row['class_id'] . "," . $row['date'] . "," . $row['class'] . "," . $row['start'] . "," . $row['finish'] . ">"
-                            . $row['date'] . " - " . $row['class']  . " - " . substr($row["start"], 0 , -3 ) . " - " . substr($row["finish"], 0 , -3 ) . "</br></option>";
-                    }
-                } else {
-                    echo "<option value>  No classes to delete. </option>";
+            if (mysqli_num_rows($result) > 0) {
+                echo "<label style='color: white;'>
+                            <h1>Select a class to delete</h1>
+                          </label>
+                        <select class='form-control' name='class' id='resize'>";
+                while ($row = mysqli_fetch_array($result)) {
+                    echo "
+                        <option value=" . $row['class_id'] . "," . $row['date'] . "," . $row['class'] . "," . $row['start'] . "," . $row['finish'] . ">"
+                        . $row['date'] . " - " . $row['class']  . " - " . substr($row["start"], 0, -3) . " - " . substr($row["finish"], 0, -3) . "</br></option>";
                 }
-                echo '
-                    </select>
+            } else {
+                echo "";
+            }
+            echo '
+            </select>
                     <span class="help-block"></span>
                     <div class="form-group">
                         <input type="hidden" name="user_id" value="';
-                echo $_SESSION["user_id"];
-                echo '"/>
+
+            echo $_SESSION["user_id"];
+
+            echo '"/>
                     </div>
-                </div>
-                <div>
+                </div>';
+
+            if (mysqli_num_rows($result) == 0) {
+                echo '';
+            } else {
+                echo '     <div>
                     <input style="color: white;" type="submit" class="btn btn-warning" value="Delete Class" name="delete">
                 </div>
             </form>
         </div>
         <br>';
-            }              ?>
+            }
+        }              ?>
 
         </div>
     </section>

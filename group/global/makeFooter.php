@@ -23,7 +23,7 @@ function makeFooter()
           <div class="title">
             <h3>gift <span>cards</span></h3>
           </div>
-          <p>Give the gift of fitness. Gift cards and certificates can be used at any US location for spa services,
+          <p>Give the gift of fitness. Gift cards and certificates can be used at any UK location for spa services,
             personal training, pilates classes, The Shop and more.</p>
         </div>
         <div class="col-md-3 col-sm-12">
