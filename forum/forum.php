@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-require_once('includes/membership_resource.php');
-
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) 
 {
@@ -11,39 +9,57 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
     exit;
 }
 
-// Initialize the session
+//Initialize the session
 include('../group/global/makeHeader.php');
 echo makeHeader();
 ?>
 
+<head>
+    <title>Forum Index </title>
+</head>
 
-<!-- Header and post button --> 
 <body id="page-top" class="page forum">
-    <?php include('../group/global/makeNav.php');
+<?php include('../group/global/makeNav.php');
     echo makeNav();
-    ?>
-    <section class="forum_post">
-        <div class="contasiner">
-            <h2>Metro Gym Forum</h2>
-            <p>Want to add to the discussion?</p>
+?>
+  
+<section class="forum">
+    <div class="text-center">
+        <h1>Metro Gym Forum </h1>
+        
+    </div>
+    <div class="container">
+        <div class ="row">
+            <div style = "text-align: center;">
+                <p>Want to add to the discussion?</p>
+                <br>
+            </div>
         </div>
-    </section>    
-
-
-<div id="content">
-<?php
-include('../server/config/config.php')
-$sql = "SELECT * FROM categories ORDER BY category_title ASC";
-$res = mysql_query($sql) or die(mysql_error());
-if (mysql_rows($res) > 0){
-    }   else {
-        echo "<p> Currently there are no categories are available. </p>";
-    }
-
-    
-}
-?> 
-</div> 
+        <div class="row">
+            <div id="content">
+                <div style = "text-align: center;">
+                    <?php
+                    include('../server/config/config.php');
+                    $sql = "SELECT * FROM tblcategories ORDER BY category_title ASC";
+                    $result = mysqli_query($link, $sql) or die (mysqli_error(connection));
+                    $categories =""; 
+                    if (mysqli_num_rows($result) > 0){
+                        while ($row = mysqli_fetch_assoc($result)){
+                            $id = $row['id']; 
+                            $title = $row['category_title'];
+                            $description = $row['category_description']; 
+                            $categories .="<a href='view_category.php?cid=".$id."' class = 'cat_links'>.$title. - <font size=' -1'></font>".$description."</a>";
+                        }
+                        echo $categories;
+                    } else {
+                            echo "<p> Currently there are no categories are available. </p>";
+                        }
+                    ?>
+                </div>     
+            </div>  
+        </div>
+    </div>       
+</section>    
 
     
 <?php

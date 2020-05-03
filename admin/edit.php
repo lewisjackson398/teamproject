@@ -1,27 +1,38 @@
 <?php
 // Include config file
 require_once "../server/config/config.php";
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
 
 $class_id = $_GET['class_id'];
 $query = "SELECT * FROM tblclasses WHERE class_id = '$class_id'"; 
-$result = mysqli_query($link, $query) or die ( mysqli_error());
+$result = mysqli_query($link, $query);
 $row = mysqli_fetch_assoc($result);
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Update class</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="style.css">
 </head>
+<body id="page-top" class="page admin">
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
-<div class="form">
+<section class="admin">
+     <div class="container">
+     <div class ="row">
+            <div style = "text-align: center;">
 <p>
-    <a href="classes.php">Dashboard</a> 
-    <a href="insert.php">Insert New Record</a> 
-    <a href="AdminLogout.php">Logout</a>
+    <a class="btn btn-default" href="classes.php">Dashboard</a> 
+    <a class="btn btn-default" href="insert.php">Insert New Record</a> 
+    <a class="btn btn-default" href="AdminLogout.php">Logout</a>
 </p>
 <h1>Update class</h1>
+<br>
 <?php
 $status = "";
 
@@ -34,6 +45,7 @@ if(isset($_POST['submit']))
     $start = $_POST['start'];
     $finish = $_POST['finish'];
     $instructor_name = $_POST['instructor_name'];
+    $timetable_id = $_POST['timetable_id'];
 
     $update = "UPDATE tblclasses SET
                 class_id = $class_id,
@@ -42,7 +54,8 @@ if(isset($_POST['submit']))
                 class = '$class', 
                 start = '$start', 
                 finish = '$finish', 
-                instructor_name = '$instructor_name' 
+                instructor_name = '$instructor_name', 
+                timetable_id = '$timetable_id'
                 WHERE class_id = '$class_id'";
 
     if(mysqli_query($link, $update))
@@ -55,7 +68,7 @@ if(isset($_POST['submit']))
     } 
     //or die(mysqli_error());
     //$status = "Record Updated Successfully. </br></br>
-    echo "<a href='view.php'>View Updated class</a>";
+    echo "<a href='view.php' class='btn btn-default'>View Updated class</a>";
     //echo '<p style="color:#FF0000;">'.$status.'</p>';
 }
 else 
@@ -79,6 +92,8 @@ required value="<?php echo $row["start"];?>" /></p>
 required value="<?php echo $row["finish"];?>" /></p>
 <p><input type="text" name="instructor_name" placeholder="Enter instructor name" 
 required value="<?php echo $row["instructor_name"];?>" /></p>
+<p><input type="text" name="timetable_id" placeholder="Enter timetable_id" 
+required value="<?php echo $row["timetable_id"];?>" /></p>
 
 <p><input name="submit" type="submit" value="Update" /></p>
 </form>
@@ -87,3 +102,8 @@ required value="<?php echo $row["instructor_name"];?>" /></p>
 </div>
 </body>
 </html>
+
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>

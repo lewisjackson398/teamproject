@@ -1,6 +1,8 @@
 <?php
 // Include config file
 require_once "../server/config/config.php";
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
 
 $status = "";
 if(isset($_POST['submit']))
@@ -12,8 +14,9 @@ if(isset($_POST['submit']))
     $start = $_REQUEST['start'];
     $finish = $_REQUEST['finish'];
     $instructor_name = $_REQUEST['instructor_name'];
-    
-    $ins_query="INSERT INTO tblclasses (class_id, user_id, date, class, start, finish, instructor_name) VALUES ($class_id, $user_id,'$date','$class','$start','$finish','$instructor_name')";
+    $timetable_id = $_REQUEST['timetable_id'];
+
+    $ins_query="INSERT INTO tblclasses (class_id, user_id, date, class, start, finish, instructor_name, timetable_id) VALUES ($class_id, $user_id,'$date','$class','$start','$finish','$instructor_name', $timetable_id)";
 
     if(mysqli_query($link, $ins_query))
     {
@@ -33,15 +36,21 @@ if(isset($_POST['submit']))
 <head>
 <meta charset="utf-8">
 <title>Insert New Record</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="style.css">
 </head>
+<body id="page-top" class="page admin">
 <body>
-<div class="form">
-<p><a href="classes.php">Back to Classes</a> 
-| <a href="view.php">View Records</a> 
-| <a href="adminLogout.php">Logout</a></p>
+<section class="admin">
+     <div class="container">
+     <div class ="row">
+    <div style = "text-align: center;">
+
+<a class="btn btn-default" href="classes.php">Back to Classes</a>
+<a class="btn btn-default" href="view.php">View Records</a>
+<a class="btn btn-default" href="adminLogout.php">Logout</a>
 <div>
 <h1>Insert New Record</h1>
+<br>
 <form name="form" method="post" action=""> 
 <input type="hidden" name="new" value="1" />
 <p><input type="text" name="class_id" placeholder="Class Id" required /></p>
@@ -51,12 +60,19 @@ if(isset($_POST['submit']))
 <p><input type="text" name="start" placeholder ="Start time" required /></p>
 <p><input type="text" name="finish" placeholder ="Finish time" required /></p>
 <p><input type="text" name="instructor_name" placeholder ="Instructors Name" required /></p>
+<p><input type="text" name="timetable_id" placeholder ="Timetable ID" required /></p>
 
 
 <p><input name="submit" type="submit" value="Submit" /></p>
 </form>
-<p style="color:#FF0000;"><?php echo $status; ?></p>
+<p style="color:#000000;"><?php echo $status; ?></p>
 </div>
 </div>
+</section>
 </body>
 </html>
+
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>

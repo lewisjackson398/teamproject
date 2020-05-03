@@ -47,7 +47,7 @@ include('../server/config/config.php')
                             $result = mysqli_query($link, $sql);
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_array($result)) {
-                                    echo "<tr onclick='showActiveClasses()' class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
+                                    echo "<tr class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
                                     <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
                                 }
                                 echo "</table>";
@@ -64,7 +64,7 @@ include('../server/config/config.php')
         <?php include('includes/display.php'); ?>
 
 
-        <div id="addDelete" style="display: none;" class="container">
+        <div id="addDelete" class="container">
             <form action="includes/add_class.php" method="post">
                 <div class="form-group">
                     <label style="color: white;">
@@ -72,16 +72,20 @@ include('../server/config/config.php')
                     </label>
                     <select class="form-control" name="class">
                         <?php
-                        $sql = "SELECT * from tbltimetable";
+                        $sql = "SELECT tbltimetable.* FROM tbltimetable";
                         $result = mysqli_query($link, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "<option value=" . $row['timetable_id'] . "," . $row['date'] . "," . $row['class'] . "," . $row['instructor_name'] . "," . $row['start'] . "," . $row['finish'] . ">"
+                                echo "<option value=" . $row['class_id'] . "," . $row['date'] . "," . $row['class'] . "," . $row['instructor_name'] . "," . $row['start'] . "," . $row['finish'] . "," . $row['timetable_id'] . ">"
                                     . $row['date'] . " - " . $row['class']  . " - " . $row['start'] . " - " . $row['finish'] . "</br></option>";
                             }
                         }
+                        $sql2 = "SELECT * FROM tblclasses";
+                        $result2 = mysqli_query($link, $sql2);
+
                         ?>
                     </select>
+
                     <span class="help-block"></span>
                     <div class="form-group">
                         <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
