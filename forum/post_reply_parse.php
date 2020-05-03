@@ -8,13 +8,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
         include_once("config.php"); 
          
         $creator = $_SESSION['loggedin'];
-        echo "$creator";
         $cid = $_POST['cid'];
-        echo "$cid";
         $tid = $_POST['tid'];
-        echo = $_tid;
         $reply_content = $_POST['reply_content'];
-        echo = $reply_content; 
         $sql = "INSERT INTO posts (category_id, topic_id, post_creator, post_content, post_date)
         VALUES ('".$cid."', '".$tid."', '".$creator."', '".$reply_content."', now())";
         $result = mysqli_query($link, $sql) or die (mysql_error($link));
@@ -30,20 +26,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
             } else {
                 echo "<p>There was a problem with posting your reply, try again.</p>";            
             }
+        } else {
+            exit();
+        }
+} else {
 
-            echo "It looks like you're not logged in, please login.";
-            header("location: ../group/login.php");
-            exit;
-            }
-
-        //Initialize the session
-        include('../group/global/makeHeader.php');
-        echo makeHeader();
-} 
-else {
-            
     exit();
-}
-echo "Test break"; 
-
-?> 
+}    
+?>
