@@ -76,7 +76,7 @@ include('../server/config/config.php')
                     <label style="color: white;">
                         <h1>Select a class to join</h1>
                     </label>
-                    <select class="form-control" name="class">';
+                    <select class="form-control" name="class" id="resize">';
 
             $sql = "SELECT tbltimetable.* FROM tbltimetable ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start";
             $result = mysqli_query($link, $sql);
@@ -90,7 +90,7 @@ include('../server/config/config.php')
             }
             
             else {
-                echo "<option value>  No results to add. </option>";
+                echo "<option value>  No classes to add. </option>";
             }
 
             echo '
@@ -118,7 +118,7 @@ include('../server/config/config.php')
                     <label style="color: white;">
                         <h1>Select a class to delete</h1>
                     </label>
-                    <select class="form-control" name="class">';
+                    <select class="form-control" name="class" id="resize">';
 
                 $sql = "SELECT * from tblclasses WHERE user_id = '$user_id' ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start";
                 $result = mysqli_query($link, $sql);
@@ -129,7 +129,7 @@ include('../server/config/config.php')
                             . $row['date'] . " - " . $row['class']  . " - " . substr($row["start"], 0 , -3 ) . " - " . substr($row["finish"], 0 , -3 ) . "</br></option>";
                     }
                 } else {
-                    echo "<option value>  No results to delete. </option>";
+                    echo "<option value>  No classes to delete. </option>";
                 }
                 echo '
                     </select>

@@ -44,7 +44,7 @@ echo makeNav();
 
                     <p>This Dance-fitness class incorporates upbeat and fast pace music and dance movements, creating a dynamic, exciting, exhilarating and effective fitness system.
                         A Dance class combines fast and slow rhythms that tone and sculpt the body using an aerobic/fitness approach to achieve a unique blended balance of cardio and muscle-toning benefits.</p>
-                    <p>Benefits of Dance include:</p>
+                    <h3>Benefits of Dance include:</h3>
 
                     <li>Great increase in Aerobic capacity</li>
                     <li>A Great calorie burner</li>

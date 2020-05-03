@@ -4,6 +4,7 @@ include('group/global/makeHeader.php');
 include('group/global/makeNav.php');
 echo makeHeader();
 echo makeNav();
+error_reporting(0);
 ?>
 
 <body id="page-top">
@@ -58,9 +59,11 @@ echo makeNav();
                      if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_array($result)) {
                            echo "<tr class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
-                                    <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
+                                    <td class='start'>" . substr($row["start"], 0, -3) . "</td><td class='finish'>" . substr($row["finish"], 0, -3) . "</td></tr>";
                         }
                         echo "</table>";
+                     } else {
+                        echo "<h1> Sorry there are no classes to available.</h1>";
                      }
                      ?>
                   </tbody>

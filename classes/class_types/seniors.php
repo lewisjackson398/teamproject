@@ -38,8 +38,7 @@ echo makeNav();
                         }
                         ?>
                     </div>
-                    <br>
-                    <p>Benefits of this Seniors class include:</p>
+                    <h3>Benefits of this Seniors class include:</h3>
 
                     <li>A low-impact class designed specifically for the more mature exerciser.</li>
                     <li>Heart and lungs exercises that will improve stamina for everyday activities.</li>

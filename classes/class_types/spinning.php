@@ -43,7 +43,7 @@ echo makeNav();
                     <br>
                     <p>Spinning is a very popular class for all ages and abilities. The class is excellent for burning calories, improving your aerobic
                         capacity and toning up those muscles! The classes are 1 hour intense sessions involving various different sections from hill climbs to short sprints.</p>
-                    <h4>Benefits of Spinning include:</h4>
+                    <h3>Benefits of Spinning include:</h3>
 
                     <li>Increased stamina and endurance</li>
                     <li>A great calorie burner (burning up to 800kcals in a class)</li>

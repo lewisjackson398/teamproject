@@ -42,7 +42,7 @@ echo makeNav();
                         <p>Yoga means union. It is the union of our mind, breath and body. Breathing slowly and holding poses for a certain
                             amount of time will slow your heart rate, and focusing your mind on the practice will develop mental peace, deep insight and fantastic benefits in flexibility.</p>
 
-                        <p>Benefits of Yoga include:</p>
+                        <h3>Benefits of Yoga include:</h3>
 
                         <li>Increased flexibility</li>
                         <li>Increased balance and stability</li>

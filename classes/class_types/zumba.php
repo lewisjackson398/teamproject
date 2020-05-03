@@ -44,7 +44,7 @@ echo makeNav();
 
                     <p>The ZUMBA program is a Latin-inspired, dance-fitness class that incorporates Latin and international music and dance movements, creating a dynamic, exciting, exhilarating and effective fitness system.
                         A ZUMBA class combines fast and slow rhythms that tone and sculpt the body using an aerobic/fitness approach to achieve a unique blended balance of cardio and muscle-toning benefits.</p>
-                    <p>Benefits of Zumba include:</p>
+                    <h3>Benefits of Zumba include:</h3>
 
                     <li>Great increase in Aerobic capacity</li>
                     <li>A Great calorie burner</li>
