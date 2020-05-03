@@ -45,6 +45,7 @@ if(isset($_POST['submit']))
     $start = $_POST['start'];
     $finish = $_POST['finish'];
     $instructor_name = $_POST['instructor_name'];
+    $timetable_id = $_POST['timetable_id'];
 
     $update = "UPDATE tblclasses SET
                 class_id = $class_id,
@@ -54,6 +55,7 @@ if(isset($_POST['submit']))
                 start = '$start', 
                 finish = '$finish', 
                 instructor_name = '$instructor_name' 
+                timetable_id = '$timetable_id'
                 WHERE class_id = '$class_id'";
 
     if(mysqli_query($link, $update))
@@ -90,6 +92,8 @@ required value="<?php echo $row["start"];?>" /></p>
 required value="<?php echo $row["finish"];?>" /></p>
 <p><input type="text" name="instructor_name" placeholder="Enter instructor name" 
 required value="<?php echo $row["instructor_name"];?>" /></p>
+<p><input type="text" name="timetable_id" placeholder="Enter timetable_id" 
+required value="<?php echo $row["timetable_id"];?>" /></p>
 
 <p><input name="submit" type="submit" value="Update" /></p>
 </form>
