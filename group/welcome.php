@@ -27,6 +27,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <a href="logout.php" class="btn btn-danger btn-xl">Sign Out of Your Account</a>
                 <a href="/teamproject/membership/update_membership.php" class="btn btn-success btn-xl">Update membership</a>
                 <a href="/teamproject/membership/delete_membership.php" class="btn btn-danger btn-xl">Delete membership</a>
+                <a href="/teamproject/membership/view_membership.php" class="btn btn-success btn-xl">View membership</a>
             </p>
         </div>
     </section>
