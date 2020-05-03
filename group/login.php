@@ -26,7 +26,7 @@ echo makeHeader();
                 <div class="form-group">
                     <input type="submit" class="btn btn-success" value="Login">
                 </div>
-                <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+                <p>Don't have an account? <strong><a href="register.php" style="color: black;">Sign up now</a></strong>.</p>
             </form>
         </div>
     </section>

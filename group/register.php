@@ -47,7 +47,7 @@ echo makeHeader();
                     <input type="submit" class="btn btn-success" value="Submit">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
-                <p>Already have an account? <a href="login.php">Login here</a>.</p>
+                <p>Already have an account? <strong><a href="login.php" style="color: black;">Login here</a>.</strong></p>
             </form>
         </div>
     </section>

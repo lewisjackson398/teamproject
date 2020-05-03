@@ -94,7 +94,7 @@ error_reporting(0);
                   </div>
                   <div class="service-content insideService">
                      <h2 class="service-title "><a href="classes/class_types/seniors.php" class="title">Seniors</a> </h2>
-                     <p>Are you just starting out at MetroGym? We're here for you every step of the way.</p>
+                     <p>A low-impact class designed specifically for the more mature exerciser.</p>
                   </div>
                </div>
             </div>
@@ -116,7 +116,7 @@ error_reporting(0);
                   </div>
                   <div class="service-content insideService">
                      <h2 class="service-title"><a href="classes/class_types/boxing.php" class="title">Boxing</a></h2>
-                     <p>Get fit, healthy and lose weight with expert nutrition plans and Beachbody's workout system.</p>
+                     <p>Get fit, healthy and lose weight with expert nutrition plans and Boxing's workout system.</p>
                   </div>
                </div>
             </div>
@@ -127,7 +127,8 @@ error_reporting(0);
                   </div>
                   <div class="service-content insideService">
                      <h2 class="service-title"><a href="classes/class_types/spinning.php" class="title">Spinning</a></h2>
-                     <p>Spirit Cycle has revolutionized indoor Beginner and taken the world of fitness by storm.</p>
+                     <p>Spinning is excellent for burning calories, improving your aerobic
+                        capacity and toning up those muscles!</p>
                   </div>
                </div>
             </div>
