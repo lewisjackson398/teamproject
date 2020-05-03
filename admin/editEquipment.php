@@ -3,7 +3,6 @@
 require_once "../server/config/config.php";
 include('../group/global/makeHeader.php');
 echo makeHeader(); 
-?>
 
 $equipment_type = $_GET['equipment_type'];
 $query = "SELECT * FROM tblequipment WHERE equipment_type = '$equipment_type'"; 
@@ -15,20 +14,25 @@ $row = mysqli_fetch_assoc($result);
 <head>
 <meta charset="utf-8">
 <title>Update Equipment List</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="style.css">
 </head>
+<body id="page-top" class="page admin">
 <?php include('../group/global/makeNav.php');
     echo makeNav();
 ?>
 <body>
-<div class="form">
+<section class="admin">
+     <div class="container">
+     <div class ="row">
+            <div style = "text-align: center;">
 <p>
-    <a href="admin.php">Back to home</a> 
-    <a href="classes.php">Back to Classes</a> 
-    <a href="insertEquipment.php">Insert New Equipment</a> 
-    <a href="AdminLogout.php">Logout</a>
+    <a class="btn btn-default" href="admin.php">Back to home</a> 
+    <a class="btn btn-default" href="classes.php">Back to Classes</a> 
+    <a class="btn btn-default" href="insertEquipment.php">Insert New Equipment</a> 
+    <a class="btn btn-default" href="AdminLogout.php">Logout</a>
 </p>
 <h1>Update Equipment List</h1>
+<br>
 <?php
 $status = "";
 
@@ -53,7 +57,7 @@ if(isset($_POST['submit']))
     } 
     //or die(mysqli_error());
     //$status = "Record Updated Successfully. </br></br>
-    echo "<a href='viewEquipment.php'>View Updated Equipment List</a>";
+    echo "<a href='viewEquipment.php' class='btn btn-default'>View Updated Equipment List</a>";
     //echo '<p style="color:#FF0000;">'.$status.'</p>';
 }
 else 
@@ -74,9 +78,10 @@ required value="<?php echo $row["quantity"];?>" /></p>
 <?php } ?>
 </div>
 </div>
+</section>
+</body>
+</html>
 <?php
 include('../group/global/makeFooter.php');
 echo makeFooter();
 ?>
-</body>
-</html>
