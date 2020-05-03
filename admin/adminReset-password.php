@@ -77,19 +77,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body id="page-top" class="page admin">
 <?php include('../group/global/makeNav.php');
     echo makeNav();
 ?>
 <body>
-    <div class="wrapper">
+<section class="admin">
+    <div class="container">
+    <div class ="row">
+            <div style = "text-align: center;">
         <h2>Reset Password</h2>
+        <br>
         <p>Please fill out this form to reset your password.</p>
+        <br>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
             <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
                 <label>New Password</label>
@@ -102,14 +104,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link" href="welcome.php">Cancel</a>
+                <input type="submit" class="btn btn-default" value="Submit">
+                <a class="btn btn-default" href="admin.php">Cancel</a>
             </div>
         </form>
     </div>    
-    <?php
+</section>
+</body>
+</html>
+<?php
 include('../group/global/makeFooter.php');
 echo makeFooter();
 ?>
-</body>
-</html>
