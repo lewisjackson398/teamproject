@@ -8,7 +8,7 @@ echo makeHeader();
 <html>
 <head>
 <meta charset="utf-8">
-<title>Classes</title>
+<title>Equipment</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <?php include('../group/global/makeNav.php');
@@ -16,11 +16,10 @@ echo makeHeader();
 ?>
 <body>
 <div class="form">
-<p>Welcome to the classes dashboard.</p>
-<p><a href="admin.php">Home</a><p>
-<p><a href="insert.php">Insert New Record</a></p>
-<p><a href="view.php">View Records</a><p>
-<p><a href="equipment.php">Book Equipment</a><p>
+<p>Welcome to the equipment dashboard.</p>
+<p><a href="classes.php">Back to classes</a><p>
+<p><a href="viewEquipment.php">View equipment booked</a></p>
+<p><a href="insertEquipment.php">Book Equipment</a><p>
 <p><a href="adminLogout.php">Logout</a></p>
 </div>
 <?php

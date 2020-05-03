@@ -10,6 +10,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
  
 // Include config file
 require_once "../server/config/config.php";
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -93,12 +95,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
     <div class="wrapper">
         <h2>Login</h2>
@@ -119,6 +125,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Don't have an account? <a href="adminRegister.php">Sign up now</a>.</p>
         </form>
-    </div>    
+    </div>   
+    <?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?> 
 </body>
 </html>

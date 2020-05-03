@@ -1,13 +1,18 @@
 <?php
 // Initialize the session
 session_start();
- 
+
+
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
 ?>
+
  
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +24,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         body{ font: 14px sans-serif; text-align: center; }
     </style>
 </head>
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
     <div class="page-header">
         <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. You are all logged in.</h1>
@@ -30,5 +38,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
     </p>
+
+    <?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
 </body>
 </html>
+

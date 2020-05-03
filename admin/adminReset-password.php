@@ -10,7 +10,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
  
 // Include config file
 require_once "../server/config/config.php";
- 
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
+
 // Define variables and initialize with empty values
 $new_password = $confirm_password = "";
 $new_password_err = $confirm_password_err = "";
@@ -81,6 +83,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
     <div class="wrapper">
         <h2>Reset Password</h2>
@@ -102,5 +107,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </form>
     </div>    
+    <?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
 </body>
 </html>
