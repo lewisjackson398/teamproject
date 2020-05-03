@@ -10,16 +10,21 @@ echo makeHeader();
 <head>
 <meta charset="utf-8">
 <title>View classes</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="style.css">
 </head>
+<body id="page-top" class="page admin">
 <?php include('../group/global/makeNav.php');
     echo makeNav();
 ?>
 <body>
+<section class="admin">
+<div class="container">
+     <div class ="row">
+            <div style = "text-align: center;">
 <div class="form">
-<p><a href="classes.php">Home</a> 
-| <a href="insert.php">Insert New Record</a> 
-| <a href="adminLogout.php">Logout</a></p>
+<p><a class="btn btn-default" href="classes.php">Home</a> 
+| <a class="btn btn-default" href="insert.php">Insert New Record</a> 
+| <a class="btn btn-default" href="adminLogout.php">Logout</a></p>
 <h2>View classes</h2>
 <table width="100%" border="1" style="border-collapse:collapse;">
 <thead>
@@ -53,10 +58,10 @@ while($row = mysqli_fetch_assoc($result))
     <td allign="center"><?php echo $row["finish"]; ?></td>
     <td allign="center"><?php echo $row["instructor_name"]; ?></td>
     <td allign="center">
-    <a href="edit.php?class_id=<?php echo $row["class_id"]; ?>">Edit</a>
+    <a class="btn btn-link" href="edit.php?class_id=<?php echo $row["class_id"]; ?>">Edit</a>
     </td>
     <td allign="center">
-    <a href="delete.php?class_id=<?php echo $row["class_id"]; ?>">Delete</a>
+    <a class="btn btn-link" href="delete.php?class_id=<?php echo $row["class_id"]; ?>">Delete</a>
     </td>
     </tr>
     <?php 
@@ -64,9 +69,10 @@ while($row = mysqli_fetch_assoc($result))
 </tbody>
 </table>
 </div>
+</section>
+</body>
+</html>
 <?php
 include('../group/global/makeFooter.php');
 echo makeFooter();
 ?>
-</body>
-</html>

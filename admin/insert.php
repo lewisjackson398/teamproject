@@ -3,6 +3,7 @@
 require_once "../server/config/config.php";
 include('../group/global/makeHeader.php');
 echo makeHeader(); 
+
 $status = "";
 if(isset($_POST['submit']))
 {
@@ -34,18 +35,24 @@ if(isset($_POST['submit']))
 <head>
 <meta charset="utf-8">
 <title>Insert New Record</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="style.css">
 </head>
+<body id="page-top" class="page admin">
 <?php include('../group/global/makeNav.php');
     echo makeNav();
 ?>
 <body>
-<div class="form">
-<p><a href="classes.php">Back to Classes</a> 
-| <a href="view.php">View Records</a> 
-| <a href="adminLogout.php">Logout</a></p>
+<section class="admin">
+     <div class="container">
+     <div class ="row">
+    <div style = "text-align: center;">
+
+<a class="btn btn-default" href="classes.php">Back to Classes</a>
+<a class="btn btn-default" href="view.php">View Records</a>
+<a class="btn btn-default" href="adminLogout.php">Logout</a>
 <div>
 <h1>Insert New Record</h1>
+<br>
 <form name="form" method="post" action=""> 
 <input type="hidden" name="new" value="1" />
 <p><input type="text" name="class_id" placeholder="Class Id" required /></p>
@@ -59,12 +66,14 @@ if(isset($_POST['submit']))
 
 <p><input name="submit" type="submit" value="Submit" /></p>
 </form>
-<p style="color:#FF0000;"><?php echo $status; ?></p>
+<p style="color:#000000;"><?php echo $status; ?></p>
 </div>
 </div>
+</section>
+</body>
+</html>
+
 <?php
 include('../group/global/makeFooter.php');
 echo makeFooter();
 ?>
-</body>
-</html>

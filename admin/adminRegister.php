@@ -100,19 +100,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
+
+
 </head>
+<body id="page-top" class="page admin">
 <?php include('../group/global/makeNav.php');
     echo makeNav();
 ?>
 <body>
-    <div class="wrapper">
+<section class="admin">
+  <div class="container">
+    <div class ="row">
+            <div style = "text-align: center;">
         <h2>Sign Up</h2>
+        <br>
         <p>Please fill this form to create an account.</p>
+        <br>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
@@ -130,16 +134,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="submit" class="btn btn-default" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
             <p>Already have an account? <a href="adminLogin.php">Login here</a>.</p>
         </form>
     </div> 
-    <?php
-include('../group/global/makeFooter.php');
-echo makeFooter();
-?>   
+</section>
 </body>
 
 </html>
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>  
