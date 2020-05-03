@@ -9,23 +9,29 @@ echo makeHeader();
 <head>
 <meta charset="utf-8">
 <title>Equipment</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="style.css">
 </head>
+<body id="page-top" class="page admin">
 <?php include('../group/global/makeNav.php');
     echo makeNav();
 ?>
 <body>
-<div class="form">
-<p>Welcome to the equipment dashboard.</p>
-<p><a href="classes.php">Back to classes</a><p>
-<p><a href="viewEquipment.php">View equipment booked</a></p>
-<p><a href="insertEquipment.php">Book Equipment</a><p>
-<p><a href="adminLogout.php">Logout</a></p>
-</div>
+  <section class="admin">
+     <div class="container">
+     <div class ="row">
+            <div style = "text-align: center;">
+           <div class="form">
+            <p><strong>Welcome to the equipment dashboard.</strong></p>
+            <p><a class="btn btn-default" href="classes.php">Back to classes</a><p>
+            <p><a class="btn btn-default"href="viewEquipment.php">View equipment booked</a></p>
+            <p><a class="btn btn-default"href="insertEquipment.php">Book Equipment</a><p>
+            <p><a class="btn btn-default"href="adminLogout.php">Logout</a></p>
+       </div>
+</section>
+</body>
+</html>
 <?php
 include('../group/global/makeFooter.php');
 echo makeFooter();
 ?>
-</body>
-</html>
     
