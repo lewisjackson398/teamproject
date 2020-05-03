@@ -1,6 +1,9 @@
 <?php
 // Include config file
 require_once "../server/config/config.php";
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
+?>
 
 $equipment_type = $_GET['equipment_type'];
 $query = "SELECT * FROM tblequipment WHERE equipment_type = '$equipment_type'"; 
@@ -14,6 +17,9 @@ $row = mysqli_fetch_assoc($result);
 <title>Update Equipment List</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
 <div class="form">
 <p>
@@ -56,7 +62,7 @@ else
 <div>
 <form name="form" method="post" action=""> 
 <input type="hidden" name="new" value="1" />
-<input name="id" type="hidden" value="<?php echo $row['id'];?>" />
+<input name="id" type="hidden" value= "<?php echo $row['id'];?>" />
 <p><input type="text" name="equipment_type" placeholder="Enter Equipment Type" 
 required value="<?php echo $row["equipment_type"];?>" /></p>
 <p><input type="text" name="quantity" placeholder="Enter Quantity" 
@@ -68,5 +74,9 @@ required value="<?php echo $row["quantity"];?>" /></p>
 <?php } ?>
 </div>
 </div>
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
 </body>
 </html>
