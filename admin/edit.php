@@ -1,27 +1,38 @@
 <?php
 // Include config file
 require_once "../server/config/config.php";
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
 
 $class_id = $_GET['class_id'];
 $query = "SELECT * FROM tblclasses WHERE class_id = '$class_id'"; 
 $result = mysqli_query($link, $query) or die ( mysqli_error());
 $row = mysqli_fetch_assoc($result);
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Update class</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="style.css">
 </head>
+<body id="page-top" class="page admin">
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
-<div class="form">
+<section class="admin">
+     <div class="container">
+     <div class ="row">
+            <div style = "text-align: center;">
 <p>
-    <a href="classes.php">Dashboard</a> 
-    <a href="insert.php">Insert New Record</a> 
-    <a href="AdminLogout.php">Logout</a>
+    <a class="btn btn-default" href="classes.php">Dashboard</a> 
+    <a class="btn btn-default" href="insert.php">Insert New Record</a> 
+    <a class="btn btn-default" href="AdminLogout.php">Logout</a>
 </p>
 <h1>Update class</h1>
+<br>
 <?php
 $status = "";
 
@@ -55,7 +66,7 @@ if(isset($_POST['submit']))
     } 
     //or die(mysqli_error());
     //$status = "Record Updated Successfully. </br></br>
-    echo "<a href='view.php'>View Updated class</a>";
+    echo "<a href='view.php' class='btn btn-default'>View Updated class</a>";
     //echo '<p style="color:#FF0000;">'.$status.'</p>';
 }
 else 
@@ -87,3 +98,8 @@ required value="<?php echo $row["instructor_name"];?>" /></p>
 </div>
 </body>
 </html>
+
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
