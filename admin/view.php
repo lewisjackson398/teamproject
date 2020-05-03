@@ -36,6 +36,7 @@ echo makeHeader();
 <th><strong>start</strong></th>
 <th><strong>finish</strong></th>
 <th><strong>instructor_name</strong></th>
+<th><strong>timetable_id</strong></th>
 <th><strong>Edit</strong></th>
 <th><strong>Delete</strong></th>
 </tr>
@@ -57,6 +58,8 @@ while($row = mysqli_fetch_assoc($result))
     <td allign="center"><?php echo $row["start"]; ?></td>
     <td allign="center"><?php echo $row["finish"]; ?></td>
     <td allign="center"><?php echo $row["instructor_name"]; ?></td>
+    <td allign="center"><?php echo $row["timetable_id"]; ?></td>
+
     <td allign="center">
     <a class="btn btn-link" href="edit.php?class_id=<?php echo $row["class_id"]; ?>">Edit</a>
     </td>
