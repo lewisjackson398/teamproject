@@ -15,6 +15,7 @@ require_once "../server/config/config.php";
 <p><a href="admin.php">Home</a><p>
 <p><a href="insert.php">Insert New Record</a></p>
 <p><a href="view.php">View Records</a><p>
+<p><a href="equipment.php">Book Equipment</a><p>
 <p><a href="adminLogout.php">Logout</a></p>
 </div>
 </body>
