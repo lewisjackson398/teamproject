@@ -1,6 +1,9 @@
 <?php
 // Include config file
 require_once "../server/config/config.php";
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
+?>
 
 $class_id = $_GET['class_id'];
 $query = "SELECT * FROM tblclasses WHERE class_id = '$class_id'"; 
@@ -14,6 +17,9 @@ $row = mysqli_fetch_assoc($result);
 <title>Update class</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
 <div class="form">
 <p>
@@ -85,5 +91,9 @@ required value="<?php echo $row["instructor_name"];?>" /></p>
 <?php } ?>
 </div>
 </div>
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
 </body>
 </html>
