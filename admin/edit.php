@@ -3,12 +3,12 @@
 require_once "../server/config/config.php";
 include('../group/global/makeHeader.php');
 echo makeHeader(); 
-?>
 
 $class_id = $_GET['class_id'];
 $query = "SELECT * FROM tblclasses WHERE class_id = '$class_id'"; 
 $result = mysqli_query($link, $query) or die ( mysqli_error());
 $row = mysqli_fetch_assoc($result);
+
 ?>
 <!DOCTYPE html>
 <html>
