@@ -14,8 +14,9 @@ if(isset($_POST['submit']))
     $start = $_REQUEST['start'];
     $finish = $_REQUEST['finish'];
     $instructor_name = $_REQUEST['instructor_name'];
-    
-    $ins_query="INSERT INTO tblclasses (class_id, user_id, date, class, start, finish, instructor_name) VALUES ($class_id, $user_id,'$date','$class','$start','$finish','$instructor_name')";
+    $timetable_id = $_REQUEST['timetable_id'];
+
+    $ins_query="INSERT INTO tblclasses (class_id, user_id, date, class, start, finish, instructor_name, timetable_id) VALUES ($class_id, $user_id,'$date','$class','$start','$finish','$instructor_name', $timetable_id)";
 
     if(mysqli_query($link, $ins_query))
     {
@@ -38,9 +39,6 @@ if(isset($_POST['submit']))
 <link rel="stylesheet" href="style.css">
 </head>
 <body id="page-top" class="page admin">
-<?php include('../group/global/makeNav.php');
-    echo makeNav();
-?>
 <body>
 <section class="admin">
      <div class="container">
@@ -62,6 +60,7 @@ if(isset($_POST['submit']))
 <p><input type="text" name="start" placeholder ="Start time" required /></p>
 <p><input type="text" name="finish" placeholder ="Finish time" required /></p>
 <p><input type="text" name="instructor_name" placeholder ="Instructors Name" required /></p>
+<p><input type="text" name="timetable_id" placeholder ="Timetable ID" required /></p>
 
 
 <p><input name="submit" type="submit" value="Submit" /></p>
