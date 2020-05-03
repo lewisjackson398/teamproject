@@ -58,7 +58,10 @@ echo makeHeader();
     
 <?php
 include('../group/global/makeFooter.php');
+include('../group/global/makeScript.php');
+
 echo makeFooter();
+echo makeScript();
 ?>
 
 </body>    
