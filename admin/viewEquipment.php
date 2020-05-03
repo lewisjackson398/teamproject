@@ -32,7 +32,6 @@ echo makeHeader();
 <tr>
 <th><strong>equipment_type</strong></th>
 <th><strong>quantity</strong></th>
-<th><strong>Edit</strong></th>
 <th><strong>Delete</strong></th>
 </tr>
 </thead>
@@ -48,9 +47,6 @@ while($row = mysqli_fetch_assoc($result))
     <tr>
     <td allign="center"><?php echo $row["equipment_type"]; ?></td>
     <td allign="center"><?php echo $row["quantity"]; ?></td>
-    <td allign="center">
-    <a class="btn btn-link" href="editEquipment.php?equipment_type=<?php echo $row["equipment_type"]; ?>">Edit</a>
-    </td>
     <td allign="center">
     <a class="btn btn-link" href="deleteEquipment.php?equipment_type=<?php echo $row["equipment_type"]; ?>">Delete</a>
     </td>
