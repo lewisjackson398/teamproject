@@ -1,6 +1,8 @@
 <?php
 // Include config file
 require_once "../server/config/config.php";
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -104,6 +106,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
     <div class="wrapper">
         <h2>Sign Up</h2>
@@ -130,6 +135,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Already have an account? <a href="adminLogin.php">Login here</a>.</p>
         </form>
-    </div>    
+    </div> 
+    <?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>   
 </body>
+
 </html>
