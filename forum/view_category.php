@@ -54,9 +54,10 @@ echo makeHeader();
                             $result2 = mysqli_query($link, $sql2) or die (mysqli_error($link)); 
                            
                             if (mysqli_num_rows($result2) > 0){
-                                $topics .= "<table width = 100%' style='border-collapse: collapse;'>";
+
+                                $topics .= "<table class = table table-hover;'>";
                                 $topics .= "<tr><td colspan ='3'><a href='forum.php'>Return to Forum Index Page</a>".$logged."<hr /></td></tr>";
-                                $topics .= "<tr style='background-color: #dddddd;'><td>Topic Title</td><td width='65' align='center'>Replies</td>
+                                $topics .= "<tr><td>Topic Title</td><td width='65' align='center'>Replies</td>
                                 <td width='65' align='center'>Views</td><tr>";
                                 $topics .= "<tr><td colspan='3'><hr /></td><tr>";
                                 while ($row = mysqli_fetch_assoc($result2)) {
@@ -91,7 +92,10 @@ echo makeHeader();
     
 <?php
 include('../group/global/makeFooter.php');
+include('../group/global/makeScript.php');
+
 echo makeFooter();
+echo makeScript();
 ?>
 
 </body>    

@@ -30,8 +30,8 @@ if (isset($_POST['topic_submit'])) {
         $sql2 = "INSERT INTO posts (category_id, topic_id, post_creator, post_content, post_date) 
         VALUES ('".$cid."', '".$new_topic_id."', '".$creator."', '".$content."', now())"; 
         $result2 = mysqli_query($link, $sql2) or die(mysqli_error($link));
-        $sql3 = "UPDATE categories SET last_post_date=now(), last_user_posted='".$creator."' WHERE id='".$cid."' LIMIT 1"; 
-        $result3 = mysqli_query($link, $sql2) or die(mysqli_error($link));
+        $sql3 = "UPDATE tblcategories SET last_post_date=now(), last_user_posted='".$creator."' WHERE id='".$cid."' LIMIT 1"; 
+        $result3 = mysqli_query($link, $sql3) or die(mysqli_error($link));
         if (($result1) && ($result2) && ($result3)) {
             header("Location: view_topic.php?cid=".$cid."&tid=".$new_topic_id);             
         } else {
