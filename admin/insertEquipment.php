@@ -1,7 +1,8 @@
 <?php
 // Include config file
 require_once "../server/config/config.php";
-
+include('../group/global/makeHeader.php');
+echo makeHeader(); 
 $status = "";
 if(isset($_POST['submit']))
 {
@@ -31,6 +32,9 @@ if(isset($_POST['submit']))
 <title>Book Equipment</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
+<?php include('../group/global/makeNav.php');
+    echo makeNav();
+?>
 <body>
 <div class="form">
 <p><a href="classes.php">Back to Classes</a> 
@@ -49,5 +53,9 @@ if(isset($_POST['submit']))
 <p style="color:#FF0000;"><?php echo $status; ?></p>
 </div>
 </div>
+<?php
+include('../group/global/makeFooter.php');
+echo makeFooter();
+?>
 </body>
 </html>
