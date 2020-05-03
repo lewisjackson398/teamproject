@@ -5,6 +5,8 @@ include('../../group/global/makeHeader.php');
 include('../../group/global/makeNav.php');
 echo makeHeader();
 echo makeNav();
+//hide errors for professional use
+error_reporting(0);
 
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
@@ -67,14 +69,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
             //seperate each word by a comma into an array 
             $str_arr = explode(",", $class);
-            print_r($str_arr);
+            //print_r($str_arr);
 
             //insert into the db a new class member.
             //Only works for one word answers but might have to do. 
             $sql = "INSERT INTO tblclasses (date, class, instructor_name, start, finish, user_id, timetable_id)
     VALUES ('$str_arr[1]', '$str_arr[2]', '$str_arr[3]', '$str_arr[4]', '$str_arr[5]', '$user_id', '$str_arr[6]')";
 
-            echo "$sql";
+            //echo "$sql";
 
             // Run the above query
             if (mysqli_query($link, $sql)) {

@@ -1,6 +1,6 @@
 <?php
 $user_id = $_SESSION['user_id'];
-$sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id'";
+$sql = "SELECT * FROM tblclasses WHERE user_id = '$user_id' ORDER BY date='Sunday', date='Saturday', date='Friday', date='Thursday', date='Wednesday', date='Tuesday', date='Monday', start";
 $result = mysqli_query($link, $sql);
 
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
@@ -28,7 +28,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             echo "
             <tr class='actives'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] .
                 "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
-             <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
+             <td class='start'>" . substr($row["start"], 0 , -3 ) . "</td><td class='finish'>" . substr($row["finish"], 0 , -3 ) . "</td></tr>";
         }
         echo "</tbody>
     </table>
