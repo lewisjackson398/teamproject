@@ -95,20 +95,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body id="page-top" class="page admin">
 <?php include('../group/global/makeNav.php');
     echo makeNav();
 ?>
+
 <body>
-    <div class="wrapper">
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
+<section class="admin">
+    <div class="container">
+    <div class ="row">
+            <div style = "text-align: center;">
+        <h1>Admin Login</h1>
+<br>
+</div>
+</div>
+        <p>Please fill in your credentials to login</p>
+    
+        <div class="row">
+            <div id="content">
+                <div style = "text-align: center;">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
@@ -121,14 +128,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" class="btn" value="Login">
             </div>
-            <p>Don't have an account? <a href="adminRegister.php">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="adminRegister.php"><p><strong>Sign up now</stong></p></a>.</p>
         </form>
     </div>   
-    <?php
+</section>
+</body>
+</html>
+<?php
 include('../group/global/makeFooter.php');
 echo makeFooter();
 ?> 
-</body>
-</html>
