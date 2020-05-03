@@ -83,17 +83,19 @@ twttr.widgets.createShareButton(
 );
 
 
-function showActiveClasses() {
+/*OLD code not needed anymore.
 
-    //button onclick display add/remove from class card
-    var x = document.getElementById("active");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
+// function showActiveClasses() {
 
-};
+//     //button onclick display add/remove from class card
+//     var x = document.getElementById("active");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
+
+// };
 
 
 
@@ -120,3 +122,5 @@ function showActiveClasses() {
 //     }
 
 // };
+
+*/

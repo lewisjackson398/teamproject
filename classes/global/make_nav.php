@@ -9,7 +9,7 @@ function makeClassNav()
         <li><a href="/teamproject/classes/class_types/zumba.php">Zumba</a></li>
         <li><a href="/teamproject/classes/class_types/kettlebells.php">Kettlebells</a></li>
         <li><a href="/teamproject/classes/class_types/seniors.php">Seniors</a></li>
-        <li><a href="/teamproject/classes/class_types/cycling.php">Cycling</a></li>
+        <li><a href="/teamproject/classes/class_types/spinning.php">Spinning</a></li>
         <li><a href="/teamproject/classes/class_types/dance.php">Dance</a></li>
         <li><a href="/teamproject/classes/class_types/boxing.php">Boxing</a></li>
         <li><a href="/teamproject/classes/class_types/pilates.php">Pilates</a></li>

@@ -90,7 +90,7 @@ echo makeNav();
                      <i class="icon-default icon-2"></i>
                   </div>
                   <div class="service-content insideService">
-                     <h2 class="service-title "><a href="classes/class_types/senior.php" class="title">Seniors</a> </h2>
+                     <h2 class="service-title "><a href="classes/class_types/seniors.php" class="title">Seniors</a> </h2>
                      <p>Are you just starting out at MetroGym? We're here for you every step of the way.</p>
                   </div>
                </div>
@@ -112,7 +112,7 @@ echo makeNav();
                      <i class="icon-default icon-4"></i>
                   </div>
                   <div class="service-content insideService">
-                     <h2 class="service-title"><a href="classes/class_types/beach_body.php" class="title">Boxing</a></h2>
+                     <h2 class="service-title"><a href="classes/class_types/boxing.php" class="title">Boxing</a></h2>
                      <p>Get fit, healthy and lose weight with expert nutrition plans and Beachbody's workout system.</p>
                   </div>
                </div>
@@ -123,7 +123,7 @@ echo makeNav();
                      <i class="icon-default icon-5"></i>
                   </div>
                   <div class="service-content insideService">
-                     <h2 class="service-title"><a href="classes/class_types/spirit_cycle.php" class="title">Cycling</a></h2>
+                     <h2 class="service-title"><a href="classes/class_types/spinning.php" class="title">Spinning</a></h2>
                      <p>Spirit Cycle has revolutionized indoor Beginner and taken the world of fitness by storm.</p>
                   </div>
                </div>
@@ -134,7 +134,7 @@ echo makeNav();
                      <i class="icon-default icon-6"></i>
                   </div>
                   <div class="service-content insideService">
-                     <h2 class="service-title"><a href="classes/class_types/hot_yoga.php" class="title">Yoga</a></h2>
+                     <h2 class="service-title"><a href="classes/class_types/yoga.php" class="title">Yoga</a></h2>
                      <p>A vigorous approach to yoga techniques characterized by flowing poses linked to the breath.</p>
                   </div>
                </div>
