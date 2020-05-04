@@ -8,7 +8,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
-
+// This includes the header
 include('../group/global/makeHeader.php');
 echo makeHeader(); 
 ?>
@@ -32,6 +32,7 @@ echo makeHeader();
 <div class="container">
     <div class ="row">
             <div style = "text-align: center;">
+            <!--This displays the logged in admin users name as a welcome-->
         <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. You are all logged in.</h1>
     
     <p>
@@ -39,7 +40,7 @@ echo makeHeader();
         <a href="adminLogout.php" class="btn btn-danger">Sign Out of Your Account</a>
         <a href="Classes.php" class="btn btn-warning">Classes</a>
     </p>
-
+    <!-- This is the list of instructions on how to use the admin dashboard-->
     <h2>Instructions on how to use the admin dashboard</h2>
     <p> 1.If you require to reset your password, click on the button on this page which
     will redirect you to the reset password page, you can reset or cancel this function
