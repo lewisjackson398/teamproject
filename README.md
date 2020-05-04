@@ -16,7 +16,7 @@ TODO
 3. SYSTEM DETAILS
 
     3a. To login as a customer the username is: 'lewis398' - password is: '1234567'
-    3b. To login as an admin the username is: 'qqqqqqqqqq' - password is: 'qqqqqqqqqqqqqqqq'
+    3b. To login as an admin the username is: 'Marker' - password is: '123456'
 
     3c. To view the database online please visit - https://remotemysql.com/phpmyadmin/ 
         3d. The username is: VjP6aCbRgh - the password is: kL9UBjIFSu
