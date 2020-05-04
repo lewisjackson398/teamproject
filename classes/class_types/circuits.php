@@ -44,7 +44,7 @@ echo makeNav();
                         The format is generally a series of between 8-16 exercises around a room performed for a set time or number of repetitions.</p>
                     <p> These exercises focus on giving you a full body, high intensity workout using all of your major upper, lower and core muscle groups.
                         This class is designed to cater for all fitness levels and easier and harder adaptions of all exercises are provided to suit every level of ability.</p>
-                    <h4>Benefits of Circuits include:</h4>
+                    <h3>Benefits of Circuits include:</h3>
 
                     <li>Full body aerobic and toning workout</li>
                     <li>Increased stamina and endurance</li>

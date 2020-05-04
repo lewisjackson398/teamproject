@@ -26,9 +26,7 @@ if(isset($_POST['submit']))
     {
         echo "error: " . mysqli_error($link);
     }
-    //or die(mysql_error());
-    //$status = "New Class Inserted Successfully.
-    //</br></br><a href='view.php'>View Inserted Record</a>";
+
 }
 ?>
 <!DOCTYPE html>

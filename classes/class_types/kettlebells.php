@@ -44,7 +44,7 @@ echo makeNav();
                         <p>Kettlebells have long been used as a dynamic tool to help strength and endurance. They engage the core in almost every lift, so support you in developing core strength. A great low impact class that gives the body a total workout.
                             Our 2 hour classes are sure to test you in a unique way sweating away calories and toning almost every muscle in the body.</p>
 
-                        <p>Benefits of Beach Body include:</p>
+                        <h3>Benefits of Kettlebells include:</h3>
 
 
                         <li>Increase in Cardiovascular fitness</li>

@@ -15,39 +15,39 @@ echo makeHeader();
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group <?php echo (!empty($name_error)) ? 'has-error' : ''; ?>">
                     <label>Name</label>
-                    <input type="text" name="complete_name" class="form-control" value="<?php echo $name; ?>">
+                    <input type="text" name="complete_name" id="resize" class="form-control" value="<?php echo $name; ?>">
                     <span class="help-block"><?php echo $name_error; ?></span>
                 </div>
                 <div class="form-group <?php echo (!empty($contact_erorr)) ? 'has-error' : ''; ?>">
                     <label>Contact</label>
-                    <input type="text" name="contact" class="form-control" value="<?php echo $contact; ?>">
+                    <input type="text" name="contact" id="resize" class="form-control" value="<?php echo $contact; ?>">
                     <span class="help-block"><?php echo $contact_erorr; ?></span>
                 </div>
                 <div class="form-group <?php echo (!empty($address_erorr)) ? 'has-error' : ''; ?>">
                     <label>Email Address</label>
-                    <input type="email" name="address" class="form-control" value="<?php echo $address; ?>">
+                    <input type="email" name="address" id="resize" class="form-control" value="<?php echo $address; ?>">
                     <span class="help-block"><?php echo $address_erorr; ?></span>
                 </div>
                 <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                     <label>Username</label>
-                    <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                    <input type="text" name="username" id="resize" class="form-control" value="<?php echo $username; ?>">
                     <span class="help-block"><?php echo $username_err; ?></span>
                 </div>
                 <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                     <label>Password</label>
-                    <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+                    <input type="password" name="password" id="resize" class="form-control" value="<?php echo $password; ?>">
                     <span class="help-block"><?php echo $password_err; ?></span>
                 </div>
                 <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                     <label>Confirm Password</label>
-                    <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
+                    <input type="password" name="confirm_password" id="resize" class="form-control" value="<?php echo $confirm_password; ?>">
                     <span class="help-block"><?php echo $confirm_password_err; ?></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-success" value="Submit">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
-                <p>Already have an account? <a href="login.php">Login here</a>.</p>
+                <p>Already have an account? <strong><a href="login.php" style="color: black;">Login here</a>.</strong></p>
             </form>
         </div>
     </section>

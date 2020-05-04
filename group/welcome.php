@@ -20,14 +20,23 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="container">
             <br><br>
             <div class="page-header">
-                <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+                <h2>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to MetroGym.</h2>
             </div>
+            <h1>Where would you like to go?</h1>
             <p>
-                <a href="reset-password.php" class="btn btn-success btn-xl">Reset Your Password</a>
-                <a href="logout.php" class="btn btn-danger btn-xl">Sign Out of Your Account</a>
-                <a href="/teamproject/membership/update_membership.php" class="btn btn-success btn-xl">Update membership</a>
-                <a href="/teamproject/membership/delete_membership.php" class="btn btn-danger btn-xl">Delete membership</a>
-                <a href="/teamproject/membership/view_membership.php" class="btn btn-success btn-xl">View membership</a>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Account information</h3>
+                        <a href="reset-password.php" class="btn btn-success btn-sm">Reset Your Password</a><br>
+                        <a href="logout.php" class="btn btn-danger btn-sm">Sign Out of Your Account</a>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3>Membership information</h3>
+                        <a href="/teamproject/membership/update_membership.php" class="btn btn-success btn-md">Update membership</a><br>
+                        <a href="/teamproject/membership/delete_membership.php" class="btn btn-danger btn-md">Delete membership</a><br>
+                        <a href="/teamproject/membership/view_membership.php" class="btn btn-success btn-md">View membership</a><br>
+                    </div>
             </p>
         </div>
     </section>

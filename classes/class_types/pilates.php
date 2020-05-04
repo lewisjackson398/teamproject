@@ -44,7 +44,7 @@ echo makeNav();
                            <p>Pilates Classes here at MetroGym are mixed ability classes catering for complete beginners through to the more experienced. 
                                Our Pilates instructor Lewis will offer adaptations for those that want to push a little harder and equally ensure, those who are newer to Pilates, get as much out of the class as possible.</p>
 
-                        <p>Benefits of Pilates include:</p>
+                        <h3>Benefits of Pilates include:</h3>
 
                         <li>Increased flexibility</li>
                         <li>Increased balance and stability</li>

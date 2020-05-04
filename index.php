@@ -4,6 +4,7 @@ include('group/global/makeHeader.php');
 include('group/global/makeNav.php');
 echo makeHeader();
 echo makeNav();
+error_reporting(0);
 ?>
 
 <body id="page-top">
@@ -58,9 +59,11 @@ echo makeNav();
                      if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_array($result)) {
                            echo "<tr class='item'><td class='date'>" . $row["date"] . "</td><td class='class'>" . $row["class"] . "</td><td class='instructor'>" . $row["instructor_name"] .  "</td>
-                                    <td class='start'>" . $row["start"] . "</td><td class='finish'>" . $row["finish"] . "</td></tr>";
+                                    <td class='start'>" . substr($row["start"], 0, -3) . "</td><td class='finish'>" . substr($row["finish"], 0, -3) . "</td></tr>";
                         }
                         echo "</table>";
+                     } else {
+                        echo "<h1> Sorry there are no classes to available.</h1>";
                      }
                      ?>
                   </tbody>
@@ -91,7 +94,7 @@ echo makeNav();
                   </div>
                   <div class="service-content insideService">
                      <h2 class="service-title "><a href="classes/class_types/seniors.php" class="title">Seniors</a> </h2>
-                     <p>Are you just starting out at MetroGym? We're here for you every step of the way.</p>
+                     <p>A low-impact class designed specifically for the more mature exerciser.</p>
                   </div>
                </div>
             </div>
@@ -113,7 +116,7 @@ echo makeNav();
                   </div>
                   <div class="service-content insideService">
                      <h2 class="service-title"><a href="classes/class_types/boxing.php" class="title">Boxing</a></h2>
-                     <p>Get fit, healthy and lose weight with expert nutrition plans and Beachbody's workout system.</p>
+                     <p>Get fit, healthy and lose weight with expert nutrition plans and Boxing's workout system.</p>
                   </div>
                </div>
             </div>
@@ -124,7 +127,8 @@ echo makeNav();
                   </div>
                   <div class="service-content insideService">
                      <h2 class="service-title"><a href="classes/class_types/spinning.php" class="title">Spinning</a></h2>
-                     <p>Spirit Cycle has revolutionized indoor Beginner and taken the world of fitness by storm.</p>
+                     <p>Spinning is excellent for burning calories, improving your aerobic
+                        capacity and toning up those muscles!</p>
                   </div>
                </div>
             </div>
