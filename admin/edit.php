@@ -66,10 +66,9 @@ if(isset($_POST['submit']))
     {
         "error: " . mysqli_error($link);
     } 
-    //or die(mysqli_error());
-    //$status = "Record Updated Successfully. </br></br>
+    
     echo "<a href='view.php' class='btn btn-default'>View Updated class</a>";
-    //echo '<p style="color:#FF0000;">'.$status.'</p>';
+  
 }
 else 
 {
